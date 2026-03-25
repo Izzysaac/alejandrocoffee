@@ -19,6 +19,8 @@ export function getStaticPaths() {
 
 const { item } = Astro.props;
 
+
+
 const productId = item.nombre
 	.toLowerCase()
 	.normalize("NFD")
@@ -28,45 +30,127 @@ const productId = item.nombre
 ---
 
 <Layout>
-	<main class="flex flex-col text-center pt-12">
+	<main class="flex flex-col text-center pt-12 gap-4">
 
 		<ImageCarousel media={item.media}/>
+		<div class="flex flex-col gap-4 px-2.5 pb-10 max-w-100 m-auto">
 
-		<h1 class="text-2xl font-bold mt-2" >{item.nombre}</h1>
+			<div style="display: none;" id="product-data">
+				{JSON.stringify(item)}
+			</div>
 
-		<p>{item.descripcion}</p>
+			<h1 class="text-2xl font-bold mt-2">{item.nombre}</h1>
 
-		<p>${item.precio.toLocaleString()}</p>
+			<p class="text-sm">{item.descripcion}</p>
 
-		<div>
+			<!-- PRECIO dinámico -->
+			<p id="price">${item.variantes?.[0]?.precio.toLocaleString()}</p>
+
+			<form id="form" class="text-left">
+
+			{
+				Object.entries(item.opciones || {}).map(([opcion, valores]) => (
+					<fieldset class="flex flex-col gap-2">
+						<legend class="font-semibold capitalize">
+							{opcion}
+						</legend>
+
+						<div class="flex gap-4">
+							{
+								valores.map((valor, i) => (
+									<div>
+										<input
+											type="radio"
+											id={`${opcion}-${valor}`}
+											name={opcion}
+											value={valor}
+											checked={i === 0}
+										/>
+										<label for={`${opcion}-${valor}`}>
+											{valor}
+										</label>
+									</div>
+								))
+							}
+						</div>
+					</fieldset>
+				))
+			}
+
+			</form>
+
 			<button
-				id="add-to-cart"
-				data-id={productId}
-				data-title={item.nombre}
-				data-price={item.precio}
-				data-image={item.media?.[0] ?? ""}
-				class="bg-(--brand) text-(--on-brand) active:bg-(--brand-hover) font-bold py-2 px-4 rounded"
+			id="add-to-cart"
+			data-id={productId}
+			data-title={item.nombre}
+			data-image={item.media?.[0] ?? ""}
+			class="bg-(--brand) text-(--on-brand) active:bg-(--brand-hover) font-bold py-2 px-4 rounded"
 			>
-				Añadir al carrito
+			Añadir al carrito
 			</button>
+
+			{
+			item.detalles && (
+				<>
+					<h2 class="text-xl font-bold">
+						Detalles
+					</h2>
+
+					<p class="whitespace-pre-line text-left">
+						{item.detalles}
+					</p>
+				</>
+			)
+			}
+
 		</div>
+
 	</main>
 </Layout>
 
-<script>
-	import { addToCart } from "../../lib/cart.js";
+<script is:inline>
+	const item = JSON.parse(document.getElementById("product-data").textContent);
+	const priceElement = document.getElementById("price");
+	const addToCartButton = document.getElementById("add-to-cart");
 
-	const btn = document.getElementById("add-to-cart");
-	btn?.addEventListener("click", () => {
-		const product = {
-			id: btn.dataset.id,
-			title: btn.dataset.title,
-			price: Number(btn.dataset.price),
-			image: btn.dataset.image,
-		};
+	const getSelectedOptions = () => {
+		const selected = {};
+		Object.keys(item.opciones || {}).forEach(opcion => {
+			const input = document.querySelector(
+				`input[name="${opcion}"]:checked`
+			);
+			if (input) {
+				selected[opcion] = input.value;
+			}
+		});
+		return selected;
+	};
 
-		addToCart(product);
-		document.dispatchEvent(new Event("cart:open"));
-		window.dispatchEvent(new Event("cartUpdated"));
-	});
+	const findVariant = () => {
+		const selected = getSelectedOptions();
+		return item.variantes.find(v =>
+			Object.entries(selected).every(
+				([key, value]) => v[key] === value
+			)
+		);
+	}
+
+	const updatePrice = () => {
+		const variant = findVariant();
+
+		if (!variant) return;
+
+		priceElement.textContent = "$" + variant.precio.toLocaleString();
+
+		addToCartButton.dataset.price = variant.precio;
+		addToCartButton.dataset.sku = variant.sku;
+	}
+
+	document.querySelectorAll("input[type=radio]").forEach(input =>
+		input.addEventListener("change", updatePrice)
+	);
+
+	updatePrice();
 </script>
+
+<script src="../../scripts/addCart.js"></script>

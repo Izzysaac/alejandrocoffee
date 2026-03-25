@@ -1,6 +1,6 @@
 ---
 import CheckoutLayout from "../layouts/CheckoutLayout.astro";
-import Logotipo from "../assets/logotipo.png";
+import Logotipo from "../assets/logotipo.jpg";
 import { Image } from "astro:assets";
 import OrderSummary from "../components/cart/OrderSummary.astro";
 ---
@@ -8,7 +8,7 @@ import OrderSummary from "../components/cart/OrderSummary.astro";
 <CheckoutLayout>
 	<main class="checkout">
 		<div class="flex justify-center mb-8">
-			<Image src={Logotipo} alt="Logotipo" width={200} height={200} />
+			<Image src={Logotipo} alt="Logotipo" height={50} />
 		</div>
 	
 		<section id="emptyState" class="empty" hidden>

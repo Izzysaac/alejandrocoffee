@@ -4,27 +4,41 @@ import Image from "astro/components/Image.astro";
 import heroimg from "../assets/heroimg.png";
 
 const images = {
-	hero: "https://res.cloudinary.com/dr5knskbb/image/upload/v1771733744/hero_qdh4ws.jpg",
+	hero: "https://res.cloudinary.com/dr5knskbb/image/upload/v1774457056/hero-provisional_dwsdmg.jpg",
 	catalog:
 		"https://res.cloudinary.com/dr5knskbb/image/upload/v1771733861/catalog_iamghp.jpg",
-};
+}
 ---
 
 <Layout>
+	<div 
+		id="hero"
+		style={`background-image: url(${images.hero});`}
+		class="m-auto min-h-full pb-4 max-w-120 flex flex-col items-center background-image text-white">
 
-	<div id="hero" class="relative h-screen">
-		<p class="block absolute top-25 text-white z-10 text-center text-lg font-bold px-2.5">
-				Para aspirantes a baristas profesionales que quieren destacar desde el
-				primer vertido
+		<p class="mt-[30%] block px-2.5 text-center text-lg font-bold w-full">
+			El arte de continuar el legado
 		</p>
-		<img src={images.hero} alt="Barista profesional realizando arte latte" class="absolute inset-0 w-full h-full object-cover" />
-		<div class="absolute bottom-30 left-0 right-0 text-white px-5 text-center">
-			<p class="text-xl font-bold">Convierte tu pasión por el café en habilidades de nivel competitivo</p>
-			<a href="#catalog" class="inline-block mt-2 bg-(--brand) text-(--on-brand) px-5 py-2 rounded-full text-lg font-semibold">Ver más</a>
-		</div>
-	</div>
 
-	<div id="catalog" class="relative h-screen">
+		<div class="w-full mt-auto px-5 text-center flex flex-col gap-4">
+			<a
+				href="catalog"
+				class="block rounded bg-(--brand) px-5 py-2 text-lg font-semibold text-(--on-brand)"
+				>Tienda</a
+			>
+			<a
+				href="taller"
+				class="block rounded bg-(--brand) px-5 py-2 text-lg font-semibold text-(--on-brand)"
+				>Talleres</a
+			>
+		</div>
+
+	</div>
+<div>
+
+
+
+	<!-- <div id="catalog" class="relative h-screen">
 		<img src={images.catalog} alt="Barista profesional realizando arte latte" class="absolute inset-0 w-full h-full object-cover" />
 		<div class="absolute bottom-20 left-0 right-0 text-white p-3 text-center">
 			<p class="text-lg font-bold">
@@ -32,19 +46,19 @@ const images = {
 				seleccionados por 3× subcampeón nacional de arte latte
 			</p>
 			<a href="/catalog" class="inline-block m-2 bg-(--brand) text-(--on-brand) px-5 py-2 rounded-full text-lg font-semibold">Ver catálogo profesional</a>
-			<!-- <p>3× Subcampeón Nacional de Arte Latte · +20 competiciones · Equipamiento usado en escenarios reales</p> -->
+			<p>3× Subcampeón Nacional de Arte Latte · +20 competiciones · Equipamiento usado en escenarios reales</p>
 			<p class="text-sm font-bold">+100 baristas elevando su nivel ⭐⭐⭐⭐⭐</p>
 		</div>
-	</div>
-	
-	<div class="border-10 border-blue-600">
-		<!-- <p>Beneficio 1 Beneficio 2 Beneficio 3</p>
-	<p>Precisión en cada vertido · Calidad de competencia · Eleva tu estatus como barista</p> -->
+	</div> -->
+
+	<!-- <div class="border-10 border-blue-600">
+		<p>Beneficio 1 Beneficio 2 Beneficio 3</p>
+	<p>Precisión en cada vertido · Calidad de competencia · Eleva tu estatus como barista</p> 
 		Seccion de beneficos / sueños 
 		Dream outcome #1 outcome #2 outcome #3
-	</div>
+	</div> -->
 
-	<div class="border-10 border-red-600">
+	<!-- <div class="border-10 border-red-600">
 		Problem section headline that bluntly brings up the main pain pointe
 
 		<small>Then, agitate tge oriblem with symptoms of it</small>
@@ -54,9 +68,9 @@ const images = {
 			<li>Recognizable symptom 2</li>
 			<li>Recognizable symptom 3</li>
 		</ul>
-	</div>
+	</div> -->
 
-	<div class="border-10 border-green-600">
+	<!-- <div class="border-10 border-green-600">
 		Introduce the Solution
 
 		<strong>Lead-in with a short statment about how you get it</strong>
@@ -64,33 +78,45 @@ const images = {
 		<p>Short paragraph where you show understanding of their pain. About me, expercience</p>
 
 		<p>Short paragraph where you show why you're qualified to help them through it</p>
-	</div>
+	</div> -->
 
-	<div class="border-10 border-purple-600">
+	<!-- <div class="border-10 border-purple-600">
 		Introduce the Benefits
 		<ul>
 			<li>Benefit 1 Briefly mention the feature behind the benefit to tie it togheter</li>
 			<li>Benefit 1 Briefly mention the feature behind the benefit to tie it togheter</li>
 			<li>Benefit 1 Briefly mention the feature behind the benefit to tie it togheter</li>
 		</ul>
-	</div>
+	</div> -->
 
-	<div class="border-10 border-yellow-600">
+	<!-- <div class="border-10 border-yellow-600">
 		Testimonials
 		Cards de 3 reseñas + Proyecto de Google Reviews
-	</div>
+	</div> -->
 
-	<div class="border-10 border-rose-500">
+	<!-- <div class="border-10 border-rose-500">
 		TOma de accion de 3 pasos estilo 
 		10 razones
 		Tabla comparacion
-	</div>
-	<div class="border-10 border-orange-900">
+	</div> -->
+
+	<!-- <div class="border-10 border-orange-900">
 		Preguntas frecuentes
-	</div>
+	</div> -->
 
-	<footer>
+	<!-- <footer>
 		Powered by Isaac
-	</footer>
+	</footer> -->
 
+</div>
 </Layout>
+
+<style>
+	@import "tailwindcss";
+	.background-image {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+</style>

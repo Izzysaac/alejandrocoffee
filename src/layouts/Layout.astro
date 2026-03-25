@@ -3,9 +3,9 @@ import NavMenu from "@components/NavMenu.astro";
 import CartDialog from "@components/cart/CartDialog.astro";
 
 
-const titulo = "El Rincón del Barista";
-const descripcion = "Convierte tu pasión por el café en habilidades de nivel competitivo";
-const logo = "/logotipo.png";
+const titulo = "Alejandro's Coffee";
+const descripcion = "El arte de continuar el legado";
+const logo = "/logotipo.jpg";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -41,7 +41,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <style is:global>
 	@import "tailwindcss";
 	:root {
-	--brand: #B98141;
+	--brand: #c8774a;
 	--on-brand: #FFFFFF;
 	--brand-hover: #9A601D;
 
@@ -97,9 +97,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 	body {
 		margin: 0 auto;
 		padding: 0;
-		min-height: 100%;
 		scroll-behavior: smooth;
-		max-width: 768px;
+		width: 100%;
+        height: 100%;
 	}
 	button {
         touch-action: manipulation;

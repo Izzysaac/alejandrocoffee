@@ -1,10 +1,9 @@
 ---
 import { getCldImageUrl } from 'astro-cloudinary/helpers';
 const { media } = Astro.props;
-console.log(media)
 ---
 
-<div class="wrapper flex w-full max-w-125 snap-x snap-mandatory gap-5 overflow-x-scroll">
+<div class="wrapper flex w-full snap-x snap-mandatory gap-5 overflow-x-scroll">
 	{
         media.map((mediaSrc, i) => (
             <div class="card snap-center w-full max-w-125 shrink-0 box-border flex flex-col text-center items-center gap-2.5">

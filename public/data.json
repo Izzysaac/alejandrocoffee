@@ -1,272 +1,151 @@
 [
   {
-    "categoria": "Molinos manuales",
-    "nombre": "Molino 1",
-    "descripcion": "Molino manual con cuchillas cónicas en Acero inoxidable de 38mmMolinedas para espresso, filtrados y citación",
-    "precio": 160000,
+    "categoria": "Café",
+    "nombre": "Alejandro's Gesha",
+    "descripcion": "Presentamos este café variedad Gesha, cultivado en San Agustín y procesado mediante método lavado con un secado de 11 días.\nEn taza se caracteriza por un perfil aromático elegante, donde destacan notas cítricas a limoncillo y lima, acompañadas de matices dulces a panela y caramelo, que evolucionan y se intensifican a medida que la bebida se enfría.",
     "media": [
-      "molino_rg49td",
-      "molino_rg49td",
-      "molino_rg49td"
+      "alejandrogesha_rxo6ro",
+      "alejandrogesha2_temb9e"
     ],
-    "estado": "activo"
+    "estado": "activo",
+    "detalles": "🗺️ Región: Palestina, Huila – Colombia\n⛰️ Altura: 1400 m s. n. m.\n🌿 Variedad: Papayo\n⚙️ Beneficio: Lavado\n♨️ Tostión: Media\n👨‍🌾 Productor: Adrian Samboni\n👨‍🔬 Tostador: Adrian Samboni",
+    "opciones": {
+      "PESO": [
+        "340g",
+        "500g"
+      ],
+      "MOLIENDA": [
+        "Grano",
+        "Molido"
+      ]
+    },
+    "variantes": [
+      {
+        "sku": "gesha-340-grano",
+        "precio": 40000,
+        "PESO": "340g",
+        "MOLIENDA": "Grano"
+      },
+      {
+        "sku": "gesha-340-molido",
+        "precio": 40000,
+        "PESO": "340g",
+        "MOLIENDA": "Molido"
+      },
+      {
+        "sku": "gesha-500-grano",
+        "precio": 50000,
+        "PESO": "500g",
+        "MOLIENDA": "Grano"
+      },
+      {
+        "sku": "gesha-500-grano",
+        "precio": 50000,
+        "PESO": "500g",
+        "MOLIENDA": "Molido"
+      }
+    ]
   },
   {
-    "categoria": "Molinos manuales",
-    "nombre": "Molino 2",
-    "descripcion": "Molino manual con cuchillas cónicas en Acero inoxidable de 38mmMolinedas para espresso, filtrados y citación",
-    "precio": 240000,
+    "categoria": "Café",
+    "nombre": "Alejandro's Borbón Rojo",
+    "descripcion": "Presentamos este café de Wilson Ordoñez, cultivado en San Agustín, variedad Bourbon Rojo y proceso lavado con secado de 12 días.\nEn taza se expresa con notas a frutos rojos, flores y matices cítricos que evolucionan a medida que la bebida se enfría, ofreciendo una experiencia aromática y balanceada.",
     "media": [
-      "molino_rg49td",
-      "molino_rg49td",
-      "molino_rg49td"
+      "borbonrojo01_yfqpkv",
+      "borbonrojo02_lqtak3"
     ],
-    "estado": "activo"
+    "estado": "activo",
+    "detalles": "🗺️ Región: Palestina, Huila – Colombia\n⛰️ Altura: 1400 m s. n. m.\n🌿 Variedad: Papayo\n⚙️ Beneficio: Lavado\n♨️ Tostión: Media\n👨‍🌾 Productor: Adrian Samboni\n👨‍🔬 Tostador: Adrian Samboni",
+    "opciones": {
+      "PESO": [
+        "500g"
+      ],
+      "MOLIENDA": [
+        "Grano",
+        "Molido"
+      ]
+    },
+    "variantes": [
+      {
+        "sku": "borbonrojo-500-grano",
+        "precio": 50000,
+        "PESO": "500g",
+        "MOLIENDA": "Grano"
+      },
+      {
+        "sku": "borbonrojo-500-grano",
+        "precio": 50000,
+        "PESO": "500g",
+        "MOLIENDA": "Molido"
+      }
+    ]
   },
   {
-    "categoria": "Molinos manuales",
-    "nombre": "Molino 3",
-    "descripcion": "Molino manual con cuchillas cónicas en Acero inoxidable de 38mmMolinedas para espresso, filtrados y citación",
-    "precio": 360000,
+    "categoria": "Molinos",
+    "nombre": "Molino X",
+    "descripcion": "Descripción del producto",
     "media": [
-      "molino_rg49td"
+      "molino-manual-cafe-portatil-Acero-inoxidable-moderno-cilindrico-molienda-ajustable_3_dmyey3"
     ],
-    "estado": "activo"
-  },
-  {
-    "categoria": "Molinos manuales",
-    "nombre": "Molino 4",
-    "descripcion": "Molino manual con cuchillas cónicas en Acero inoxidable de 38mmMolinedas para espresso, filtrados y citación",
-    "precio": 480000,
-    "media": [
-      "molino_rg49td",
-      "molino_rg49td",
-      "molino_rg49td"
-    ],
-    "estado": "activo"
-  },
-  {
-    "categoria": "Molinos manuales",
-    "nombre": "Molino 5",
-    "descripcion": "Molino manual con cuchillas cónicas en Acero inoxidable de 38mmMolinedas para espresso, filtrados y citación",
-    "precio": 160000,
-    "media": [
-      "molino_rg49td",
-      "molino_rg49td",
-      "molino_rg49td"
-    ],
-    "estado": "activo"
-  },
-  {
-    "categoria": "Molinos manuales",
-    "nombre": "Molino 6",
-    "descripcion": "Molino manual con cuchillas cónicas en Acero inoxidable de 38mmMolinedas para espresso, filtrados y citación",
-    "precio": 240000,
-    "media": [
-      "molino_rg49td"
-    ],
-    "estado": "activo"
-  },
-  {
-    "categoria": "Molinos manuales",
-    "nombre": "Molino 7",
-    "descripcion": "Molino manual con cuchillas cónicas en Acero inoxidable de 38mmMolinedas para espresso, filtrados y citación",
-    "precio": 360000,
-    "media": [
-      "molino_rg49td",
-      "molino_rg49td",
-      "molino_rg49td"
-    ],
-    "estado": "activo"
-  },
-  {
-    "categoria": "Métodos de preparación",
-    "nombre": "Chemex Original",
-    "descripcion": "Capacidad de 6 tazas",
-    "precio": 310000,
-    "media": [
-      "molino_rg49td",
-      "molino_rg49td",
-      "molino_rg49td"
-    ],
-    "estado": "activo"
-  },
-  {
-    "categoria": "Métodos de preparación",
-    "nombre": "Aeropress Original",
-    "descripcion": "Incluye cuchara medidora, etc..",
-    "precio": 230000,
-    "media": [
-      "molino_rg49td"
-    ],
-    "estado": "activo"
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "molino",
+        "precio": 250000
+      }
+    ]
   },
   {
     "categoria": "Métodos de preparación",
-    "nombre": "Dripper Hario V60",
-    "descripcion": "Incluye 40 filtros",
-    "precio": 210000,
+    "nombre": "V60",
+    "descripcion": "Descripción del producto",
     "media": [
-      "molino_rg49td",
-      "molino_rg49td",
-      "molino_rg49td"
+      "download_xk54ou"
     ],
-    "estado": "activo"
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "v60",
+        "precio": 50000
+      }
+    ]
   },
   {
     "categoria": "Métodos de preparación",
-    "nombre": "Dripper cristal",
-    "descripcion": "Cafetera Dripper 02",
-    "precio": 95000,
+    "nombre": "Origami",
+    "descripcion": "Descripción del producto",
     "media": [
-      "molino_rg49td",
-      "molino_rg49td",
-      "molino_rg49td"
+      "download_enbgdz"
     ],
-    "estado": "activo"
-  },
-  {
-    "categoria": "Teteras cuello de cisne",
-    "nombre": "Hervidor eléctrico",
-    "descripcion": "",
-    "precio": 240000,
-    "media": [
-      "molino_rg49td",
-      "molino_rg49td",
-      "molino_rg49td"
-    ],
-    "estado": "inactivo"
-  },
-  {
-    "categoria": "Teteras cuello de cisne",
-    "nombre": "Hervidor programable",
-    "descripcion": "",
-    "precio": 260000,
-    "media": [
-      "molino_rg49td",
-      "molino_rg49td",
-      "molino_rg49td"
-    ],
-    "estado": "activo"
-  },
-  {
-    "categoria": "Teteras cuello de cisne",
-    "nombre": "Hervidor eléctrico cuello ",
-    "descripcion": "",
-    "precio": 260000,
-    "media": [
-      "molino_rg49td",
-      "molino_rg49td",
-      "molino_rg49td"
-    ],
-    "estado": "activo"
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "origami",
+        "precio": 60000
+      }
+    ]
   },
   {
     "categoria": "Máquinas espresso",
-    "nombre": "Modelo 1",
-    "descripcion": "",
-    "precio": 945000,
+    "nombre": "Oster",
+    "descripcion": "Descripción del producto",
     "media": [
-      "molino_rg49td",
-      "molino_rg49td",
-      "molino_rg49td"
+      "download_pg4lqf"
     ],
-    "estado": "inactivo"
-  },
-  {
-    "categoria": "Máquinas espresso",
-    "nombre": "Modelo 2",
-    "descripcion": "",
-    "precio": 1850000,
-    "media": [
-      "molino_rg49td",
-      "molino_rg49td",
-      "molino_rg49td"
-    ],
-    "estado": "inactivo"
-  },
-  {
-    "categoria": "Máquinas espresso",
-    "nombre": "Modelo 3",
-    "descripcion": "",
-    "precio": 11000000,
-    "media": [
-      "molino_rg49td",
-      "molino_rg49td",
-      "molino_rg49td"
-    ],
-    "estado": "activo"
-  },
-  {
-    "categoria": "Grameras",
-    "nombre": "G1",
-    "descripcion": "",
-    "precio": 110000,
-    "media": [
-      "molino_rg49td",
-      "molino_rg49td",
-      "molino_rg49td"
-    ],
-    "estado": "activo"
-  },
-  {
-    "categoria": "Grameras",
-    "nombre": "G2",
-    "descripcion": "",
-    "precio": 145000,
-    "media": [
-      "molino_rg49td",
-      "molino_rg49td",
-      "molino_rg49td"
-    ],
-    "estado": "inactivo"
-  },
-  {
-    "categoria": "Grameras",
-    "nombre": "G3",
-    "descripcion": "",
-    "precio": 180000,
-    "media": [
-      "molino_rg49td",
-      "molino_rg49td",
-      "molino_rg49td"
-    ],
-    "estado": "activo"
-  },
-  {
-    "categoria": "Jarras para Arte Latte",
-    "nombre": "Jarra 480ml",
-    "descripcion": "",
-    "precio": 175000,
-    "media": [
-      "molino_rg49td",
-      "molino_rg49td",
-      "molino_rg49td"
-    ],
-    "estado": "activo"
-  },
-  {
-    "categoria": "Jarras para Arte Latte",
-    "nombre": "Jarra PRO",
-    "descripcion": "",
-    "precio": 240000,
-    "media": [
-      "molino_rg49td",
-      "molino_rg49td",
-      "molino_rg49td"
-    ],
-    "estado": "activo"
-  },
-  {
-    "categoria": "Jarras para Arte Latte",
-    "nombre": "Jarra jibbi 350ml",
-    "descripcion": "",
-    "precio": 175000,
-    "media": [
-      "molino_rg49td",
-      "molino_rg49td",
-      "molino_rg49td"
-    ],
-    "estado": "inactivo"
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "oster",
+        "precio": 990000
+      }
+    ]
   }
 ]

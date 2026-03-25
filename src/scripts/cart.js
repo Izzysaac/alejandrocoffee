@@ -23,7 +23,6 @@ const formatPrice = (n) => {
 
 const render = () => {
 	const cart = getCart();
-
 	// Calcula el total
 	const total = cart.items.reduce(
 		(acc, it) => acc + (Number(it.price) || 0) * (Number(it.quantity) || 0),
@@ -44,7 +43,7 @@ const render = () => {
 					<div class="cart-item flex gap-2" data-id="${it.id}">
 						<img class="object-cover w-16 h-16 rounded" src="${getCloudinaryImageUrl(it.image, { w: 150, h: 150 })}" alt="${it.title}" />
 						<div>
-							<p>${it.title}</p>
+							<p>${it.title} <span>${it.variant}</span></p>
 							<p>${formatPrice(it.price)}</p>
 						</div>
 						<div class="ms-auto flex flex-col justify-end gap-2">

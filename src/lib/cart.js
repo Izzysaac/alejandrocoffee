@@ -56,6 +56,7 @@ export function addToCart(product) {
 	const title = String(product?.title ?? "");
 	const price = Number(product?.price ?? 0);
 	const image = String(product?.image ?? "");
+	const variant = String(product?.variant ?? "");
 
 	const idx = cart.items.findIndex((i) => i.id === id);
 	if (idx >= 0) {
@@ -65,7 +66,7 @@ export function addToCart(product) {
 		return persist({ ...cart, items });
 	}
 
-	const items = cart.items.concat([{ id, title, price, image, quantity: 1 }]);
+	const items = cart.items.concat([{ id, title, price, variant, image, quantity: 1 }]);
 	return persist({ ...cart, items });
 }
 

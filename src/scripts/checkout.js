@@ -2,7 +2,7 @@ import { getCloudinaryImageUrl } from "./imgHelper.js";
 
 (() => {
 	const STORAGE_KEY = "cart";
-	const WHATSAPP_PHONE = "573227323425";
+	const WHATSAPP_PHONE = "573123899080";
 	const SHIPPING_PRICE = 9900;
 
 	const elEmpty = document.getElementById("emptyState");
