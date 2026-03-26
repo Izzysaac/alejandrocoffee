@@ -44,7 +44,7 @@ const productId = item.nombre
 			<p class="text-sm">{item.descripcion}</p>
 
 			<!-- PRECIO dinámico -->
-			<p id="price">${item.variantes?.[0]?.precio.toLocaleString()}</p>
+			<p id="price" class="font-bold text-lg">${item.variantes?.[0]?.precio.toLocaleString()}</p>
 
 			<form id="form" class="text-left">
 
@@ -80,13 +80,13 @@ const productId = item.nombre
 			</form>
 
 			<button
-			id="add-to-cart"
-			data-id={productId}
-			data-title={item.nombre}
-			data-image={item.media?.[0] ?? ""}
-			class="bg-(--brand) text-(--on-brand) active:bg-(--brand-hover) font-bold py-2 px-4 rounded"
+				id="add-to-cart"
+				data-id={productId}
+				data-title={item.nombre}
+				data-image={item.media?.[0] ?? ""}
+				class="bg-(--brand) text-(--on-brand) active:bg-(--brand-hover) font-bold py-2 px-4 rounded"
 			>
-			Añadir al carrito
+				Añadir al carrito
 			</button>
 
 			{

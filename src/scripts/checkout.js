@@ -3,7 +3,10 @@ import { getCloudinaryImageUrl } from "./imgHelper.js";
 (() => {
 	const STORAGE_KEY = "cart";
 	const WHATSAPP_PHONE = "573123899080";
-	const SHIPPING_PRICE = 9900;
+	const BASE_SHIPPING = 10000;
+	const FREE_SHIPPING_THRESHOLD = 100000;
+
+
 
 	const elEmpty = document.getElementById("emptyState");
 	const elContent = document.getElementById("checkoutContent");
@@ -77,27 +80,57 @@ import { getCloudinaryImageUrl } from "./imgHelper.js";
 	};
 
 	const parseCart = () => {
-		const raw = localStorage.getItem(STORAGE_KEY);
-		if (!raw) return { items: [] };
-		try {
-			const parsed = JSON.parse(raw);
-			if (!parsed || typeof parsed !== "object") return { items: [] };
-			if (!Array.isArray(parsed.items)) return { items: [] };
-			const items = parsed.items
-				.filter((i) => i && typeof i === "object")
-				.map((i) => ({
+	const raw = localStorage.getItem(STORAGE_KEY);
+
+	if (!raw) return { items: [] };
+
+	try {
+		const parsed = JSON.parse(raw);
+
+		if (!parsed || typeof parsed !== "object")
+			return { items: [] };
+
+		if (!Array.isArray(parsed.items))
+			return { items: [] };
+
+		const items = parsed.items
+			.filter((i) => i && typeof i === "object")
+			.map((i) => {
+
+				const options =
+					i.options && typeof i.options === "object"
+						? i.options
+						: {};
+
+				const variant =
+					typeof i.variant === "string"
+						? i.variant
+						: Object.values(options).join(" · ");
+
+				return {
 					id: String(i.id ?? ""),
 					title: String(i.title ?? ""),
 					price: Number(i.price ?? 0),
-					quantity: Math.max(1, Number(i.quantity ?? 1)),
+					quantity: Math.max(
+						1,
+						Number(i.quantity ?? 1)
+					),
 					image: String(i.image ?? ""),
-				}))
-				.filter((i) => i.id);
-			return { items };
-		} catch {
-			return { items: [] };
-		}
-	};
+
+					// NUEVO
+					options,
+					variant
+				};
+
+			})
+			.filter((i) => i.id);
+
+		return { items };
+
+	} catch {
+		return { items: [] };
+	}
+};
 
 	const computeTotal = (items) =>
 		items.reduce(
@@ -106,8 +139,13 @@ import { getCloudinaryImageUrl } from "./imgHelper.js";
 		);
 
 	const getShipping = (items) => {
-		if (!items.length) return 0;
-		return SHIPPING_PRICE;
+		const subtotal = computeTotal(items);
+
+		if (subtotal >= FREE_SHIPPING_THRESHOLD) {
+			return 0;
+		}
+
+		return BASE_SHIPPING;
 	};
 
 	const renderOrder = () => {
@@ -127,7 +165,10 @@ import { getCloudinaryImageUrl } from "./imgHelper.js";
 		const grandTotal = subtotal + shipping;
 
 		productsTotalEl.textContent = formatPrice(subtotal);
-		shippingEl.textContent = formatPrice(shipping);
+		shippingEl.textContent =
+		shipping === 0
+			? "Gratis"
+			: formatPrice(shipping);
 		grandTotalEl.textContent = formatPrice(grandTotal);
 		finalTotalEl.textContent = formatPrice(grandTotal);
 
@@ -140,7 +181,10 @@ import { getCloudinaryImageUrl } from "./imgHelper.js";
 									<img src="${getCloudinaryImageUrl(it.image, { w: 150, h: 150 })}" alt="${escapeHtml(it.title)}" width="64" height="64" class="rounded"/>
 									<span class="product-badge self-end absolute -top-1 -right-1 bg-(--brand) text-(--on-brand) rounded px-1.5 py-0.5 text-xs font-bold">${escapeHtml(it.quantity)}</span>
 								</div>
-                                <p class="product-name">${escapeHtml(it.title)}</p>
+                                <p class="product-name" style="display: flex; flex-direction: column;">
+									<span>${escapeHtml(it.title)}</span>
+									<span>${escapeHtml(it.variant)}</span>
+								</p>
                                 <p class="product-subtotal  ms-auto text-nowrap">${escapeHtml(formatPrice(itSubtotal))}</p>
 							</li>
 						`;
@@ -214,23 +258,28 @@ import { getCloudinaryImageUrl } from "./imgHelper.js";
 		const lines = [];
 		lines.push("🛒 NUEVO PEDIDO");
 		lines.push("");
+		lines.push("☕ Productos:");
+		items.forEach((it) => {
+			const quantity = Number(it.quantity) || 0;
+			const price = Number(it.price) || 0;
+			const itSubtotal = price * quantity;
+
+			const variantText = it.variant
+				? ` (${sanitizeText(it.variant)})`
+				: "";
+
+			lines.push(
+				`- ${quantity} x ${sanitizeText(it.title)}${variantText} - ${formatPrice(itSubtotal)}`
+			);
+		});
+		lines.push("");
+		lines.push(`🚚 Envío: ${formatPrice(shipping)}`);
+		lines.push(`💰 Total: ${formatPrice(grandTotal)}`);
+		lines.push("");
 		lines.push(`👤 Nombre: ${name}`);
 		lines.push(`📞 Teléfono: ${phone}`);
 		lines.push(`📍 Dirección: ${address}`);
 		lines.push("");
-		lines.push("☕ Productos:");
-
-		items.forEach((it) => {
-			const itSubtotal = (Number(it.price) || 0) * (Number(it.quantity) || 0);
-			lines.push(
-				`- ${sanitizeText(it.title)} x${Number(it.quantity) || 0} - ${formatPrice(itSubtotal)}`,
-			);
-		});
-
-		lines.push("");
-		lines.push(`🚚 Envío: ${formatPrice(shipping)}`);
-
-		lines.push(`💰 Total: ${formatPrice(grandTotal)}`);
 
 		return lines.join("\n");
 	};

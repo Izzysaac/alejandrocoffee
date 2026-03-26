@@ -5,19 +5,36 @@
 
 	btn?.addEventListener("click", () => {
 
-		const data = new FormData(form);
-        const values = Object.fromEntries(data.entries());
-        console.log(values.presentacion);
+	const data = new FormData(form);
 
-		const product = {
-			id: btn.dataset.id,
-			title: btn.dataset.title,
-			price: Number(btn.dataset.price),
-			image: btn.dataset.image,
-            variant: values?.presentacion
-		};
+	// opciones seleccionadas
+	const selectedOptions = Object.fromEntries(data.entries());
 
-		addToCart(product);
-		document.dispatchEvent(new Event("cart:open"));
-		window.dispatchEvent(new Event("cartUpdated"));
-	});
+	// encontrar variante
+	const variant = item.variantes.find(v =>
+		Object.entries(selectedOptions).every(
+			([key, value]) => v[key] === value
+		)
+	);
+
+	if (!variant) {
+		console.error("Variante no encontrada");
+		return;
+	}
+
+	const product = {
+		id: variant.sku,
+		title: btn.dataset.title,
+		price: Number(variant.precio),
+		image: btn.dataset.image,
+
+		// opciones seleccionadas
+		options: selectedOptions
+	};
+
+	addToCart(product);
+
+	document.dispatchEvent(new Event("cart:open"));
+	window.dispatchEvent(new Event("cartUpdated"));
+
+});

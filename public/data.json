@@ -10,39 +10,65 @@
     "estado": "activo",
     "detalles": "🗺️ Región: Palestina, Huila – Colombia\n⛰️ Altura: 1400 m s. n. m.\n🌿 Variedad: Papayo\n⚙️ Beneficio: Lavado\n♨️ Tostión: Media\n👨‍🌾 Productor: Adrian Samboni\n👨‍🔬 Tostador: Adrian Samboni",
     "opciones": {
-      "PESO": [
+      "Peso": [
         "340g",
         "500g"
       ],
-      "MOLIENDA": [
+      "Molienda": [
         "Grano",
-        "Molido"
+        "Fina",
+        "Media",
+        "Gruesa"
       ]
     },
     "variantes": [
       {
         "sku": "gesha-340-grano",
         "precio": 40000,
-        "PESO": "340g",
-        "MOLIENDA": "Grano"
+        "Peso": "340g",
+        "Molienda": "Grano"
       },
       {
-        "sku": "gesha-340-molido",
+        "sku": "gesha-340-fina",
         "precio": 40000,
-        "PESO": "340g",
-        "MOLIENDA": "Molido"
+        "Peso": "340g",
+        "Molienda": "Fina"
+      },
+      {
+        "sku": "gesha-340-media",
+        "precio": 40000,
+        "Peso": "340g",
+        "Molienda": "Media"
+      },
+      {
+        "sku": "gesha-340-gruesa",
+        "precio": 40000,
+        "Peso": "340g",
+        "Molienda": "Gruesa"
       },
       {
         "sku": "gesha-500-grano",
         "precio": 50000,
-        "PESO": "500g",
-        "MOLIENDA": "Grano"
+        "Peso": "500g",
+        "Molienda": "Grano"
       },
       {
-        "sku": "gesha-500-grano",
+        "sku": "gesha-500-fina",
         "precio": 50000,
-        "PESO": "500g",
-        "MOLIENDA": "Molido"
+        "Peso": "500g",
+        "Molienda": "Fina"
+      },
+      {
+        "sku": "gesha-500-media",
+        "precio": 50000,
+        "Peso": "500g",
+        "Molienda": "Media"
+      },
+      {
+        "sku": "gesha-500-gruesa",
+        "precio": 50000,
+        "Peso": "500g",
+        "Molienda": "Gruesa"
       }
     ]
   },
@@ -57,10 +83,10 @@
     "estado": "activo",
     "detalles": "🗺️ Región: Palestina, Huila – Colombia\n⛰️ Altura: 1400 m s. n. m.\n🌿 Variedad: Papayo\n⚙️ Beneficio: Lavado\n♨️ Tostión: Media\n👨‍🌾 Productor: Adrian Samboni\n👨‍🔬 Tostador: Adrian Samboni",
     "opciones": {
-      "PESO": [
+      "Peso": [
         "500g"
       ],
-      "MOLIENDA": [
+      "Molienda": [
         "Grano",
         "Molido"
       ]
@@ -69,14 +95,14 @@
       {
         "sku": "borbonrojo-500-grano",
         "precio": 50000,
-        "PESO": "500g",
-        "MOLIENDA": "Grano"
+        "Peso": "500g",
+        "Molienda": "Grano"
       },
       {
         "sku": "borbonrojo-500-grano",
         "precio": 50000,
-        "PESO": "500g",
-        "MOLIENDA": "Molido"
+        "Peso": "500g",
+        "Molienda": "Molido"
       }
     ]
   },

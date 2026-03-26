@@ -46,10 +46,16 @@ def fetch_excel_products():
             valor2 = item.get("VALOR2", "").strip()
 
             if opcion1 and valor1:
-                producto["opciones"].setdefault(opcion1, set()).add(valor1)
+                producto["opciones"].setdefault(opcion1, [])
+
+                if valor1 not in producto["opciones"][opcion1]:
+                    producto["opciones"][opcion1].append(valor1)
 
             if opcion2 and valor2:
-                producto["opciones"].setdefault(opcion2, set()).add(valor2)
+                producto["opciones"].setdefault(opcion2, [])
+
+                if valor2 not in producto["opciones"][opcion2]:
+                    producto["opciones"][opcion2].append(valor2)
 
             # -------- VARIANTE --------
 
@@ -65,13 +71,6 @@ def fetch_excel_products():
                 variante[opcion2] = valor2
 
             producto["variantes"].append(variante)
-
-        # Convertir sets a listas
-        for producto in productos.values():
-            producto["opciones"] = {
-                k: sorted(list(v))
-                for k, v in producto["opciones"].items()
-            }
 
         return list(productos.values())
         

@@ -12,27 +12,58 @@ const emptyCart = () => {
 // Convierte tipos evita que el resto de funciones se rompan
 const safeParseCart = (raw) => {
 	if (!raw) return emptyCart();
+
 	try {
 		const parsed = JSON.parse(raw);
-		if (!parsed || typeof parsed !== "object") return emptyCart();
-		if (!Array.isArray(parsed.items)) return emptyCart();
+
+		if (!parsed || typeof parsed !== "object")
+			return emptyCart();
+
+		if (!Array.isArray(parsed.items))
+			return emptyCart();
+
 		return {
 			items: parsed.items
 				.filter((i) => i && typeof i === "object")
-				.map((i) => ({
-					id: String(i.id ?? ""),
-					title: String(i.title ?? ""),
-					price: Number(i.price ?? 0),
-					image: String(i.image ?? ""),
-					quantity: Math.max(1, Number(i.quantity ?? 1)),
-				}))
+				.map((i) => {
+
+					const options =
+						i.options && typeof i.options === "object"
+							? i.options
+							: {};
+
+					const variant =
+						typeof i.variant === "string"
+							? i.variant
+							: Object.values(options).join(" · ");
+
+					return {
+						id: String(i.id ?? ""),
+						title: String(i.title ?? ""),
+						price: Number(i.price ?? 0),
+						image: String(i.image ?? ""),
+						quantity: Math.max(
+							1,
+							Number(i.quantity ?? 1)
+						),
+
+						// NUEVO
+						options,
+						variant
+					};
+
+				})
 				.filter((i) => i.id),
-			updatedAt: Number(parsed.updatedAt ?? Date.now()),
+
+			updatedAt: Number(
+				parsed.updatedAt ?? Date.now()
+			),
 		};
+
 	} catch {
 		return emptyCart();
 	}
-}
+};
 
 // Guarda en localStorage y actualiza updatedAt
 const persist = (cart) => {
@@ -50,23 +81,44 @@ export function getCart() {
 // Agrega un producto al carrito o incrementa su cantidad
 export function addToCart(product) {
 	const cart = getCart();
+
 	const id = String(product?.id ?? "");
 	if (!id) return cart;
 
 	const title = String(product?.title ?? "");
 	const price = Number(product?.price ?? 0);
 	const image = String(product?.image ?? "");
-	const variant = String(product?.variant ?? "");
+	const options = product?.options ?? {};
+
+	const variant =
+		Object.values(options).join(" · ");
 
 	const idx = cart.items.findIndex((i) => i.id === id);
+
 	if (idx >= 0) {
-		const next = { ...cart.items[idx], quantity: cart.items[idx].quantity + 1 };
+		const next = {
+			...cart.items[idx],
+			quantity: cart.items[idx].quantity + 1
+		};
+
 		const items = cart.items.slice();
 		items[idx] = next;
+
 		return persist({ ...cart, items });
 	}
 
-	const items = cart.items.concat([{ id, title, price, variant, image, quantity: 1 }]);
+	const items = cart.items.concat([
+		{
+			id,
+			title,
+			price,
+			image,
+			options,
+			variant,
+			quantity: 1
+		}
+	]);
+
 	return persist({ ...cart, items });
 }
 
