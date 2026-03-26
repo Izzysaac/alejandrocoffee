@@ -1,8 +1,7 @@
 ---
 import NavMenu from "@components/NavMenu.astro";
 import CartDialog from "@components/cart/CartDialog.astro";
-
-
+import ScrollAnimation from "../components/sequence/ScrollAnimation.astro";
 const titulo = "Alejandro's Coffee";
 const descripcion = "El arte de continuar el legado";
 const logo = "/logotipo.jpg";
@@ -35,6 +34,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<NavMenu />
 		<CartDialog />
 		<slot />
+		<ScrollAnimation 
+			sequencePath="/sequence" 
+			frameCount={210} 
+			aspectRatio={16/9} 
+			/>
 	</body>
 </html>
 
