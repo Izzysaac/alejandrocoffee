@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const images = {
+	taller1: "https://res.cloudinary.com/dr5knskbb/image/upload/v1774457104/curso1_lu2qdi.jpg",
+	taller2:"https://res.cloudinary.com/dr5knskbb/image/upload/v1774457104/curso2_g73ovd.jpg",
+    taller3:"https://res.cloudinary.com/dr5knskbb/image/upload/v1774457104/curso3_yyv11w.jpg",
+    taller4:"https://res.cloudinary.com/dr5knskbb/image/upload/v1774457104/curso4_aj7rjk.jpg",
+}
+---
+
+<Layout>
+	<div class="flex flex-col gap-4 pb-20 bg-black">
+		<img src={images.taller1} alt="Taller 1" />
+		<img src={images.taller2} alt="Taller 2" />
+		<img src={images.taller3} alt="Taller 3" />
+		<img src={images.taller4} alt="Taller 4" />
+
+        <a href="https://wa.me/573123899080?text=Hola, quiero más información sobre el taller" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg mt-4 text-center w-fit mx-auto font-bold text-xl">
+            Más información por Whatsapp
+        </a>
+	</div>
+</Layout>
