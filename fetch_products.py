@@ -3,7 +3,7 @@ import json
 
 def fetch_excel_products():
     try:
-        response = requests.get('https://opensheet.elk.sh/1OZ5m8Ri8tkU3gCzkZ1u2mM6cAzLuo-J-o76y2IyOnsc/catalog')
+        response = requests.get('https://opensheet.elk.sh/1OV2ZSt4TFBLC7V2JrUxYD5PONTxXWQ5HcB2Bnrhh7-I/catalog')
         response.raise_for_status()
         data = response.json()
         

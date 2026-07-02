@@ -2,8 +2,8 @@
 import NavMenu from "@components/NavMenu.astro";
 import CartDialog from "@components/cart/CartDialog.astro";
 import ScrollAnimation from "../components/sequence/ScrollAnimation.astro";
-const titulo = "Alejandro's Coffee";
-const descripcion = "El arte de continuar el legado";
+const titulo = "Parrillas y Defensas";
+const descripcion = "Encuentra la parrilla y defensa perfecta para tu moto. Calidad, durabilidad y estilo en cada producto.";
 const logo = "/logotipo.jpg";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -19,7 +19,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<link rel="dns-prefetch" href="//res.cloudinary.com">
 		<!-- <link rel="preload" href="/fonts/main.woff2" as="font" type="font/woff2" crossorigin> -->
 		<link rel="preload" as="image" href={logo} />
-		<link rel="icon" href={logo} />
+		<link rel="icon" href="https://res.cloudinary.com/dr5knskbb/image/upload/v1782964448/parrillasydefensas-logo_hbl6be.webp" />
 		<meta name="description" content={descripcion} />
 		<meta name="robots" content="index, follow" />
 		<meta name="og:image" content={logo} />
@@ -34,11 +34,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<NavMenu />
 		<CartDialog />
 		<slot />
-		<ScrollAnimation 
+		<!-- <ScrollAnimation 
 			sequencePath="/sequence" 
 			frameCount={210} 
 			aspectRatio={16/9} 
-			/>
+			/> -->
 	</body>
 </html>
 
@@ -54,7 +54,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 	--neutral-0: #ffffff;
 	--neutral-900: #1A1A1A;
 
-	--color-bg: #1A1A1A;
+	--color-bg: #000000;
+	--color-bg: #f0f0f0;
 	--color-bg-secondary: #F4F3ED;
 	--color-text: var(--neutral-0);
 
@@ -104,6 +105,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		scroll-behavior: smooth;
 		width: 100%;
         height: 100%;
+		background-color: var(--color-bg);
 	}
 	button {
         touch-action: manipulation;

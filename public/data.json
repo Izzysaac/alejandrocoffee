@@ -1,176 +1,371 @@
 [
   {
-    "categoria": "Café",
-    "nombre": "Alejandro's Gesha",
-    "descripcion": "Presentamos este café variedad Gesha, cultivado en San Agustín y procesado mediante método lavado con un secado de 11 días.\nEn taza se caracteriza por un perfil aromático elegante, donde destacan notas cítricas a limoncillo y lima, acompañadas de matices dulces a panela y caramelo, que evolucionan y se intensifican a medida que la bebida se enfría.",
+    "categoria": "Hero Eco Deluxe",
+    "nombre": "Parrilla Eco Deluxe",
+    "descripcion": "",
     "media": [
-      "alejandrogesha_rxo6ro",
-      "alejandrogesha2_temb9e"
-    ],
-    "estado": "activo",
-    "detalles": "🗺️ Región: Palestina, Huila – Colombia\n⛰️ Altura: 1400 m s. n. m.\n🌿 Variedad: Papayo\n⚙️ Beneficio: Lavado\n♨️ Tostión: Media\n👨‍🌾 Productor: Adrian Samboni\n👨‍🔬 Tostador: Adrian Samboni",
-    "opciones": {
-      "Peso": [
-        "340g",
-        "500g"
-      ],
-      "Molienda": [
-        "Grano",
-        "Fina",
-        "Media",
-        "Gruesa"
-      ]
-    },
-    "variantes": [
-      {
-        "sku": "gesha-340-grano",
-        "precio": 40000,
-        "Peso": "340g",
-        "Molienda": "Grano"
-      },
-      {
-        "sku": "gesha-340-fina",
-        "precio": 40000,
-        "Peso": "340g",
-        "Molienda": "Fina"
-      },
-      {
-        "sku": "gesha-340-media",
-        "precio": 40000,
-        "Peso": "340g",
-        "Molienda": "Media"
-      },
-      {
-        "sku": "gesha-340-gruesa",
-        "precio": 40000,
-        "Peso": "340g",
-        "Molienda": "Gruesa"
-      },
-      {
-        "sku": "gesha-500-grano",
-        "precio": 50000,
-        "Peso": "500g",
-        "Molienda": "Grano"
-      },
-      {
-        "sku": "gesha-500-fina",
-        "precio": 50000,
-        "Peso": "500g",
-        "Molienda": "Fina"
-      },
-      {
-        "sku": "gesha-500-media",
-        "precio": 50000,
-        "Peso": "500g",
-        "Molienda": "Media"
-      },
-      {
-        "sku": "gesha-500-gruesa",
-        "precio": 50000,
-        "Peso": "500g",
-        "Molienda": "Gruesa"
-      }
-    ]
-  },
-  {
-    "categoria": "Café",
-    "nombre": "Alejandro's Borbón Rojo",
-    "descripcion": "Presentamos este café de Wilson Ordoñez, cultivado en San Agustín, variedad Bourbon Rojo y proceso lavado con secado de 12 días.\nEn taza se expresa con notas a frutos rojos, flores y matices cítricos que evolucionan a medida que la bebida se enfría, ofreciendo una experiencia aromática y balanceada.",
-    "media": [
-      "borbonrojo01_yfqpkv",
-      "borbonrojo02_lqtak3"
-    ],
-    "estado": "activo",
-    "detalles": "🗺️ Región: Palestina, Huila – Colombia\n⛰️ Altura: 1400 m s. n. m.\n🌿 Variedad: Papayo\n⚙️ Beneficio: Lavado\n♨️ Tostión: Media\n👨‍🌾 Productor: Adrian Samboni\n👨‍🔬 Tostador: Adrian Samboni",
-    "opciones": {
-      "Peso": [
-        "500g"
-      ],
-      "Molienda": [
-        "Grano",
-        "Molido"
-      ]
-    },
-    "variantes": [
-      {
-        "sku": "borbonrojo-500-grano",
-        "precio": 50000,
-        "Peso": "500g",
-        "Molienda": "Grano"
-      },
-      {
-        "sku": "borbonrojo-500-grano",
-        "precio": 50000,
-        "Peso": "500g",
-        "Molienda": "Molido"
-      }
-    ]
-  },
-  {
-    "categoria": "Molinos",
-    "nombre": "Molino X",
-    "descripcion": "Descripción del producto",
-    "media": [
-      "molino-manual-cafe-portatil-Acero-inoxidable-moderno-cilindrico-molienda-ajustable_3_dmyey3"
+      "hero-eco-deluxe-01",
+      "hero-eco-deluxe-02",
+      "hero-eco-deluxe-03",
+      "hero-eco-deluxe-04"
     ],
     "estado": "activo",
     "detalles": "",
     "opciones": {},
     "variantes": [
       {
-        "sku": "molino",
-        "precio": 250000
+        "sku": "",
+        "precio": 84
       }
     ]
   },
   {
-    "categoria": "Métodos de preparación",
-    "nombre": "V60",
-    "descripcion": "Descripción del producto",
+    "categoria": "Hero Eco Deluxe",
+    "nombre": "Defensa Eco Deluxe",
+    "descripcion": "",
     "media": [
-      "download_xk54ou"
+      "defensa-eco-deluxe-01",
+      "defensa-eco-deluxe-02"
     ],
     "estado": "activo",
     "detalles": "",
     "opciones": {},
     "variantes": [
       {
-        "sku": "v60",
-        "precio": 50000
+        "sku": "",
+        "precio": 0
       }
     ]
   },
   {
-    "categoria": "Métodos de preparación",
-    "nombre": "Origami",
-    "descripcion": "Descripción del producto",
+    "categoria": "Honda CB o TB",
+    "nombre": "Parrilla CB o TB 110",
+    "descripcion": "",
     "media": [
-      "download_enbgdz"
+      "dudacb-01",
+      "dudacb-02",
+      "dudacb-03"
     ],
     "estado": "activo",
     "detalles": "",
     "opciones": {},
     "variantes": [
       {
-        "sku": "origami",
-        "precio": 60000
+        "sku": "",
+        "precio": 93
       }
     ]
   },
   {
-    "categoria": "Máquinas espresso",
-    "nombre": "Oster",
-    "descripcion": "Descripción del producto",
+    "categoria": "Honda CB",
+    "nombre": "Parrilla CB 125",
+    "descripcion": "",
     "media": [
-      "download_pg4lqf"
+      "parrilla-cb125-01",
+      "parrilla-cb125-02",
+      "parrilla-cb125-03"
     ],
     "estado": "activo",
     "detalles": "",
     "opciones": {},
     "variantes": [
       {
-        "sku": "oster",
-        "precio": 990000
+        "sku": "",
+        "precio": 74
+      }
+    ]
+  },
+  {
+    "categoria": "Honda CB",
+    "nombre": "Defensa Tipo Alerón CB 110",
+    "descripcion": "",
+    "media": [
+      "defensa-aleron-pulsar-180-01",
+      "defensa-aleron-pulsar-180-02"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "",
+        "precio": 58
+      }
+    ]
+  },
+  {
+    "categoria": "Honda CB",
+    "nombre": "Defensa Doble Tope CB 110",
+    "descripcion": "",
+    "media": [
+      "defensa-doble-tope-pulsar-180-01",
+      "defensa-doble-tope-pulsar-180-02"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "",
+        "precio": 48
+      }
+    ]
+  },
+  {
+    "categoria": "Honda CB",
+    "nombre": "Defensa CB 110 Tipo Alerón",
+    "descripcion": "",
+    "media": [
+      "defensa-aleron-cb110-01",
+      "defensa-aleron-cb110-02"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "",
+        "precio": 68
+      }
+    ]
+  },
+  {
+    "categoria": "Universal",
+    "nombre": "Defensa Universal",
+    "descripcion": "",
+    "media": [
+      "defensa-universal-01",
+      "defensa-universal-02"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "",
+        "precio": 48
+      }
+    ]
+  },
+  {
+    "categoria": "Universal",
+    "nombre": "Defensa Universal Curva",
+    "descripcion": "",
+    "media": [
+      "defensa-universal-curva-01",
+      "defensa-universal-curva-02"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "",
+        "precio": 48
+      }
+    ]
+  },
+  {
+    "categoria": "Universal",
+    "nombre": "Defensa Universal Ancho",
+    "descripcion": "",
+    "media": [
+      "defensa-aleron-cb110-01",
+      "defensa-aleron-cb110-02"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "",
+        "precio": 68
+      }
+    ]
+  },
+  {
+    "categoria": "Universal",
+    "nombre": "Alerón Universal",
+    "descripcion": "",
+    "media": [
+      "defensa-aleron-universal-01",
+      "defensa-aleron-universal-02",
+      "defensa-aleron-universal-03"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "",
+        "precio": 68
+      }
+    ]
+  },
+  {
+    "categoria": "Universal",
+    "nombre": "Alerón Universal Curvo",
+    "descripcion": "",
+    "media": [
+      "defensa-aleron-curvo-universal-01",
+      "defensa-aleron-curvo-universal-02",
+      "defensa-aleron-curvo-universal-03"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "",
+        "precio": 58
+      }
+    ]
+  },
+  {
+    "categoria": "Universal",
+    "nombre": "Defensa Universal Mariposa",
+    "descripcion": "",
+    "media": [
+      "defensa-universal-mariposa-01",
+      "defensa-universal-mariposa-02"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "",
+        "precio": 36
+      }
+    ]
+  },
+  {
+    "categoria": "AKT NKD",
+    "nombre": "Cola NKD 125",
+    "descripcion": "",
+    "media": [
+      "cola-nkd-01",
+      "cola-nkd-02",
+      "cola-nkd-03"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "",
+        "precio": 28
+      }
+    ]
+  },
+  {
+    "categoria": "Bajaj Boxer",
+    "nombre": "Parrilla Boxer SP CT100 - CT125",
+    "descripcion": "",
+    "media": [
+      "parrilla-boxersp-100-125-01",
+      "parrilla-boxersp-100-125-02",
+      "parrilla-boxersp-100-125-03"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "",
+        "precio": 55
+      }
+    ]
+  },
+  {
+    "categoria": "Bajaj Pulsar",
+    "nombre": "Defensa Alerón Pulsar 180",
+    "descripcion": "",
+    "media": [
+      "defensa-aleron-pulsar-180-01",
+      "defensa-aleron-pulsar-180-02"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "",
+        "precio": 58
+      }
+    ]
+  },
+  {
+    "categoria": "Bajaj Pulsar",
+    "nombre": "Defensa Doble Tope Pulsar 180",
+    "descripcion": "",
+    "media": [
+      "defensa-doble-tope-pulsar-180-01",
+      "defensa-doble-tope-pulsar-180-02"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "",
+        "precio": 48
+      }
+    ]
+  },
+  {
+    "categoria": "Bajaj Discover",
+    "nombre": "Parrilla Discover SP 125 - 150",
+    "descripcion": "",
+    "media": [
+      "parrilla-discover-01",
+      "parrilla-discover-02",
+      "parrilla-discover-03",
+      "parrilla-discover-04"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "",
+        "precio": 74
+      }
+    ]
+  },
+  {
+    "categoria": "Yamaha Crypton",
+    "nombre": "Cola Crypton 110",
+    "descripcion": "",
+    "media": [
+      "cola-crypton-01",
+      "cola-crypton-02"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "",
+        "precio": 27
+      }
+    ]
+  },
+  {
+    "categoria": "Suzuki GN",
+    "nombre": "Defensa Mariposa GN 125",
+    "descripcion": "",
+    "media": [
+      "defensa-universal-mariposa-01",
+      "defensa-universal-mariposa-02"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "",
+        "precio": 36
       }
     ]
   }

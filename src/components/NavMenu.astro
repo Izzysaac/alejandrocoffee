@@ -1,16 +1,17 @@
 ---
 import { Image } from "astro:assets";
-import logotipo from "../assets/logotipo.png";
+
 import MenuIcon from "../assets/menu.svg";
 import SearchIcon from "../assets/search.svg";
 import CartIcon from "../assets/cart.svg";
 import CrossIcon from "../assets/cross.svg";
 
 import { getCategoriesWithSlug } from "@lib/builder";
+const logotipo = "https://res.cloudinary.com/dr5knskbb/image/upload/v1782964448/parrillasydefensas-logo_hbl6be.webp";
 const categories = getCategoriesWithSlug();
 ---
 
-<menu class="flex w-full items-center justify-between p-2.5 text-(--color-text) bg-(--color-bg) m-0 box-border fixed top-0 z-100">
+<menu class="flex w-full items-center justify-between px-2.5 text-(--color-text) bg-black m-0 box-border fixed top-0 z-100">
 
 	<div class="flex items-center gap-2">
 		<button
@@ -28,8 +29,12 @@ const categories = getCategoriesWithSlug();
 		
 	</div>
 
+	<!-- <a href="/" class="block text-xl font-bold" >
+			Parrillas y Defensas Para Tu Moto
+	</a> -->
+
 	<a href="/" class="block text-xl font-bold" >
-			Alejandro's Coffee
+			<img src={logotipo} alt="Parrillas y Defensas Para Tu Moto" width={75} />
 	</a>
 
 	<div class="flex items-center gap-2">

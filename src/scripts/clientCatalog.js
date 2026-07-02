@@ -42,12 +42,15 @@ export const renderProducts = (products) => {
 					${
 						product.media?.length > 0
 							? `
-								<img
-									src="${getCloudinaryImageUrl(product.media[0], { width: 600, height: 600 })}"
-									alt="${product.nombre}"
-									loading="lazy"
-									class="order-first"
-								/>
+
+								<figure>
+									<img
+										src="${getCloudinaryImageUrl(product.media[0], { width: 600, height: 600 })}"
+										alt="${product.nombre}"
+										loading="lazy"
+										class="order-first catalog-image"
+									/>
+								</figure>
 							`
 							: ""
 					}
