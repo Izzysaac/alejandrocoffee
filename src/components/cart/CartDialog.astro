@@ -6,7 +6,7 @@ import CrossIcon from "@assets/cross.svg";
 <dialog id="cart-dialog" class="cart-dialog">
 	<div class="contenido flex flex-col">
 		<div
-			class="flex items-center justify-between bg-(--brand) px-3 py-2.5 text-(--on-brand)"
+			class="flex items-center justify-between bg-(--accent) px-3 py-2.5 text-(--on-accent)"
 		>
 			<h2 class="text-lg font-semibold">Pedido</h2>
 			<button
@@ -19,20 +19,20 @@ import CrossIcon from "@assets/cross.svg";
 			</button>
 		</div>
 
-		<button type="button" id="cart-clear" class="ms-auto flex items-center p-3">
+		<button type="button" id="cart-clear" class="ms-auto flex items-center p-3 invisible">
 			Vaciar <DeleteIcon class="inline" />
 		</button>
 
 		<div id="cart-items" class="cart-items"></div>
 
-	<div class="mt-auto mb-4 px-3 flex flex-col border-t border-(--brand)"> 
+	<div class="mt-auto mb-4 px-3 flex flex-col border-t border-(--accent)"> 
 		<div class="flex justify-between py-3">
 			<span>Total</span>
 			<strong id="cart-total">$0</strong>
 		</div>
 		<a
 			href="/checkout"
-			class="w-full rounded-full bg-(--brand) py-2 text-center text-lg font-bold text-(--on-brand)"
+			class="w-full rounded-full bg-(--accent) py-2 text-center text-lg font-bold text-(--on-accent)"
 			>Continuar con el pedido</a
 		>
 	</div>
@@ -49,8 +49,8 @@ import CrossIcon from "@assets/cross.svg";
 		min-height: 100%;
 		max-height: 100vh;
 		margin-left: auto;
-		color: var(--color-bg);
-		background-color: var(--color-text);
+		/* color: var(--color-bg); */
+		/* background-color: var(--color-text); */
 		z-index: 100;
 
 		/* NUEVO */
@@ -75,7 +75,7 @@ import CrossIcon from "@assets/cross.svg";
 	}
 
 	.cart-items {
-		padding: 16px;
+		padding: 12px;
 		display: flex;
 		flex-direction: column;
 		gap: 12px;

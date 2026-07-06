@@ -49,7 +49,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 	--on-brand: #FFFFFF;
 	--brand-hover: #9A601D;
 
-	--accent: #B98141;
+	--accent: #be1419;
+	/* --accent: #dcdcdc; */
+	--on-accent: #ffffff;
+
 
 	--neutral-0: #ffffff;
 	--neutral-900: #1A1A1A;
@@ -57,7 +60,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 	--color-bg: #000000;
 	--color-bg: #f0f0f0;
 	--color-bg-secondary: #F4F3ED;
-	--color-text: var(--neutral-0);
+	--color-text: black;
+
+	--menu-bg: #000000;
+	--menu-text: #ffffff;
 
 	--primary-color: #007bff;
 	--secondary-color: #6c757d;
@@ -106,6 +112,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		width: 100%;
         height: 100%;
 		background-color: var(--color-bg);
+		font-family: Poppins, sans-serif;
 	}
 	button {
         touch-action: manipulation;

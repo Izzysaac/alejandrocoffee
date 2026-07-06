@@ -14,7 +14,7 @@
     "opciones": {},
     "variantes": [
       {
-        "sku": "",
+        "sku": "par-ecodeluxe",
         "precio": 84
       }
     ]
@@ -32,7 +32,7 @@
     "opciones": {},
     "variantes": [
       {
-        "sku": "",
+        "sku": "def-ecodeluxe",
         "precio": 0
       }
     ]
@@ -51,7 +51,7 @@
     "opciones": {},
     "variantes": [
       {
-        "sku": "",
+        "sku": "par-cbtb",
         "precio": 93
       }
     ]
@@ -70,7 +70,7 @@
     "opciones": {},
     "variantes": [
       {
-        "sku": "",
+        "sku": "par-cb125",
         "precio": 74
       }
     ]
@@ -88,7 +88,7 @@
     "opciones": {},
     "variantes": [
       {
-        "sku": "",
+        "sku": "def-ale-cb110",
         "precio": 58
       }
     ]
@@ -106,7 +106,7 @@
     "opciones": {},
     "variantes": [
       {
-        "sku": "",
+        "sku": "def-dob-cb110",
         "precio": 48
       }
     ]
@@ -124,7 +124,7 @@
     "opciones": {},
     "variantes": [
       {
-        "sku": "",
+        "sku": "def-",
         "precio": 68
       }
     ]
@@ -142,7 +142,7 @@
     "opciones": {},
     "variantes": [
       {
-        "sku": "",
+        "sku": "def-uni",
         "precio": 48
       }
     ]
@@ -160,7 +160,7 @@
     "opciones": {},
     "variantes": [
       {
-        "sku": "",
+        "sku": "def-uni-cur",
         "precio": 48
       }
     ]
@@ -178,7 +178,7 @@
     "opciones": {},
     "variantes": [
       {
-        "sku": "",
+        "sku": "def-uni-anc",
         "precio": 68
       }
     ]
@@ -197,7 +197,7 @@
     "opciones": {},
     "variantes": [
       {
-        "sku": "",
+        "sku": "ale-uni",
         "precio": 68
       }
     ]
@@ -216,7 +216,7 @@
     "opciones": {},
     "variantes": [
       {
-        "sku": "",
+        "sku": "ale-uni-cur",
         "precio": 58
       }
     ]
@@ -234,7 +234,7 @@
     "opciones": {},
     "variantes": [
       {
-        "sku": "",
+        "sku": "def-uni-ḿari",
         "precio": 36
       }
     ]
@@ -253,7 +253,7 @@
     "opciones": {},
     "variantes": [
       {
-        "sku": "",
+        "sku": "cola-nkd125",
         "precio": 28
       }
     ]
@@ -272,7 +272,7 @@
     "opciones": {},
     "variantes": [
       {
-        "sku": "",
+        "sku": "par-boxer",
         "precio": 55
       }
     ]
@@ -290,7 +290,7 @@
     "opciones": {},
     "variantes": [
       {
-        "sku": "",
+        "sku": "def-ale-pulsar180",
         "precio": 58
       }
     ]
@@ -308,7 +308,7 @@
     "opciones": {},
     "variantes": [
       {
-        "sku": "",
+        "sku": "def-dob-pulsar180",
         "precio": 48
       }
     ]
@@ -328,7 +328,7 @@
     "opciones": {},
     "variantes": [
       {
-        "sku": "",
+        "sku": "par-dis",
         "precio": 74
       }
     ]
@@ -346,7 +346,7 @@
     "opciones": {},
     "variantes": [
       {
-        "sku": "",
+        "sku": "cryp-110",
         "precio": 27
       }
     ]
@@ -364,7 +364,7 @@
     "opciones": {},
     "variantes": [
       {
-        "sku": "",
+        "sku": "def-mari-gn125",
         "precio": 36
       }
     ]

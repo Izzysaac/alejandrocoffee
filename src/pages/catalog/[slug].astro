@@ -20,7 +20,6 @@ export function getStaticPaths() {
 const { item } = Astro.props;
 
 
-
 const productId = item.nombre
 	.toLowerCase()
 	.normalize("NFD")
@@ -30,7 +29,7 @@ const productId = item.nombre
 ---
 
 <Layout>
-	<main class="flex flex-col text-center pt-18.75 gap-4">
+	<main class="flex flex-col text-center pt-18.75 gap-4 max-w-125 m-auto!">
 
 		<ImageCarousel media={item.media}/>
 		<div class="flex flex-col gap-4 px-2.5 pb-10 max-w-100 m-auto">
@@ -84,7 +83,7 @@ const productId = item.nombre
 				data-id={productId}
 				data-title={item.nombre}
 				data-image={item.media?.[0] ?? ""}
-				class="bg-(--brand) text-(--on-brand) active:bg-(--brand-hover) font-bold py-2 px-4 rounded"
+				class="bg-(--accent) text-(--on-accent) active:bg-(--brand-hover) font-bold py-2 px-4 rounded"
 			>
 				Añadir al carrito
 			</button>

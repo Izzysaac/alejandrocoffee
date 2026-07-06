@@ -6,8 +6,8 @@ const { media } = Astro.props;
 <div class="wrapper flex w-full snap-x snap-mandatory gap-5 overflow-x-scroll">
 	{
         media.map((mediaSrc, i) => (
-            <div class="card snap-center w-full max-w-125 shrink-0 box-border flex flex-col justify-center items-center text-center items-center gap-2.5 aspect-square">
-                <img src={getCldImageUrl({ src: mediaSrc })} alt="" />
+            <div class="card snap-center w-full max-w-125 shrink-0 box-border flex flex-col justify-center items-center text-center gap-2.5 aspect-square">
+                <img src={getCldImageUrl({ src: mediaSrc, width: 1200, height: 1200 })} alt="" />
             </div>
         ))
     }

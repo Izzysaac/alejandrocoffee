@@ -41,29 +41,31 @@ const render = () => {
 		.map(
 			(it) => `
 					<div class="cart-item flex gap-2" data-id="${it.id}">
-						<img class="object-cover w-16 h-16 rounded" src="${getCloudinaryImageUrl(it.image, { w: 150, h: 150 })}" alt="${it.title}" />
-						<div>
+						<img class="w-16 h-16 rounded object-contain" src="${getCloudinaryImageUrl(it.image, { w: 150, h: 150 })}" alt="${it.title}" />
+						<div class="grow">
 							<p class="flex flex-col"><span>${it.title}</span><span>${it.variant}</span></p>
 							<p>${formatPrice(it.price)}</p>
 						</div>
-						<div class="ms-auto flex flex-col justify-end gap-2">
-							<div class="flex rounded-full border border-gray-300 ">
-								<button type="button" data-action="dec" class="px-3 py-2">
+						<div class="flex flex-col justify-end gap-2 w-fit">
+							<div class="flex rounded-sm border border-black/20 ">
+								<button type="button" data-action="dec" class="px-1.5 py-1">
 									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 -960 960 960" class="pointer-events-none"><path d="M200-440v-80h560v80z"/></svg>
 								</button>
-								<input value="${it.quantity}" inputmode="numeric" class="qty-input w-5 text-center" />
-								<button type="button" data-action="inc" class="px-3 py-2">
+								<input value="${it.quantity}" inputmode="numeric" class="qty-input text-center w-[4ch] border-x border-black/10" />
+								<button type="button" data-action="inc" class="px-1.5 py-1">
 									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 -960 960 960" class="pointer-events-none"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80z"/></svg>								</button>
 							</div>
-							<button type="button" class="remove flex justify-end" aria-label="Eliminar" data-action="remove">
-								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 -960 960 960" class="pointer-events-none"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120zm400-600H280v520h400zM360-280h80v-360h-80zm160 0h80v-360h-80zM280-720v520z"/></svg>
-							</button>
 						</div>
 					</div>
 				`,
 		)
 		.join("");
 };
+
+{/* <button type="button" class="remove flex justify-end" aria-label="Eliminar" data-action="remove">
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 -960 960 960" class="pointer-events-none"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120zm400-600H280v520h400zM360-280h80v-360h-80zm160 0h80v-360h-80zM280-720v520z"/></svg>
+							</button> */}
+
 
 /* === Eventos de interacción dentro del listado === */
 const onClick = (e) => {
@@ -85,9 +87,16 @@ const onClick = (e) => {
 		const cart = getCart();
 		const item = cart.items.find((i) => i.id === id);
 		if (!item) return;
-		const nextQ =
-			action === "inc" ? item.quantity + 1 : Math.max(1, item.quantity - 1);
-		updateQuantity(id, nextQ);
+
+		if (action === "inc") {
+			updateQuantity(id, item.quantity + 1);
+		} else {
+			if (item.quantity <= 1) {
+				removeFromCart(id);
+			} else {
+				updateQuantity(id, item.quantity - 1);
+			}
+		}
 		window.dispatchEvent(new Event("cartUpdated"));
 		render();
 		return;

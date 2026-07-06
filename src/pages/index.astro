@@ -4,7 +4,7 @@ import Image from "astro/components/Image.astro";
 import heroimg from "../assets/heroimg.png";
 
 const images = {
-	hero: "https://res.cloudinary.com/dr5knskbb/image/upload/v1774457056/hero-provisional_dwsdmg.jpg",
+	hero: "https://res.cloudinary.com/dr5knskbb/image/upload/v1783319098/bg-parillasydefensas_tnfgjg.webp",
 	catalog:
 		"https://res.cloudinary.com/dr5knskbb/image/upload/v1771733861/catalog_iamghp.jpg",
 }
@@ -13,17 +13,17 @@ const images = {
 <Layout>
 	<div 
 		id="hero"
-		style={`background-image: url(${images.hero});`}
-		class="m-auto min-h-full pb-4 max-w-120 flex flex-col items-center background-image text-white">
+		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url(${images.hero});`}
+		class="m-auto min-h-full pb-4 max-w-120 flex flex-col items-center background-image text-white ">
 
-		<p class="mt-[30%] block px-2.5 text-center text-lg font-bold w-full">
+		<h1 class="mt-[30%] block px-2.5 text-center text-3xl font-bold w-full bg-black/50">
 			Las Mejores Parrillas y Defensas Para Tu Moto
-		</p>
-		<div class="w-full mt-auto px-5 text-center flex flex-col gap-4">
+</h1>
+		<div class="w-full mt-auto mb-20 px-5 text-center flex flex-col gap-4">
 			<a
 				href="catalog"
-				class="block rounded bg-(--brand) px-5 py-2 text-lg font-semibold text-(--on-brand)"
-				>Tienda</a
+				class="block rounded bg-(--accent) px-5 py-2 text-lg font-semibold text-(--on-accent)"
+				>Catálogo</a
 			>
 			<!-- <a
 				href="taller"

@@ -2,11 +2,9 @@ import { getCloudinaryImageUrl } from "./imgHelper.js";
 
 (() => {
 	const STORAGE_KEY = "cart";
-	const WHATSAPP_PHONE = "573123899080";
+	const WHATSAPP_PHONE = "573163896572";
 	const BASE_SHIPPING = 10000;
-	const FREE_SHIPPING_THRESHOLD = 100000;
-
-
+	const FREE_SHIPPING_THRESHOLD = 1000000;
 
 	const elEmpty = document.getElementById("emptyState");
 	const elContent = document.getElementById("checkoutContent");
@@ -177,8 +175,8 @@ import { getCloudinaryImageUrl } from "./imgHelper.js";
 				const itSubtotal = (Number(it.price) || 0) * (Number(it.quantity) || 0);
 				return `
 							<li class="product-item flex gap-2 items-center">
-								<div class="flex relative w-fit">
-									<img src="${getCloudinaryImageUrl(it.image, { w: 150, h: 150 })}" alt="${escapeHtml(it.title)}" width="64" height="64" class="rounded"/>
+								<div class="flex relative w-fit aspect-square">
+									<img src="${getCloudinaryImageUrl(it.image, { w: 150, h: 150 })}" alt="${escapeHtml(it.title)}" width="64" height="64" class="rounded object-contain"/>
 									<span class="product-badge self-end absolute -top-1 -right-1 bg-(--brand) text-(--on-brand) rounded px-1.5 py-0.5 text-xs font-bold">${escapeHtml(it.quantity)}</span>
 								</div>
                                 <p class="product-name" style="display: flex; flex-direction: column;">
@@ -258,7 +256,7 @@ import { getCloudinaryImageUrl } from "./imgHelper.js";
 		const lines = [];
 		lines.push("🛒 NUEVO PEDIDO");
 		lines.push("");
-		lines.push("☕ Productos:");
+		lines.push("🏍️ Productos:");
 		items.forEach((it) => {
 			const quantity = Number(it.quantity) || 0;
 			const price = Number(it.price) || 0;

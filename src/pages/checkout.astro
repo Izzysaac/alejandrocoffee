@@ -3,12 +3,15 @@ import CheckoutLayout from "../layouts/CheckoutLayout.astro";
 import Logotipo from "../assets/logotipo.jpg";
 import { Image } from "astro:assets";
 import OrderSummary from "../components/cart/OrderSummary.astro";
+
+const logotipo = "https://res.cloudinary.com/dr5knskbb/image/upload/v1782964448/parrillasydefensas-logo_hbl6be.webp";
+
 ---
 
 <CheckoutLayout>
 	<main class="checkout">
-		<div class="flex justify-center mb-8">
-			<Image src={Logotipo} alt="Logotipo" height={50} />
+		<div class="flex justify-center mb-5">
+			<img src={logotipo} alt="Logotipo" width="80" class="rounded-sm" />
 		</div>
 	
 		<section id="emptyState" class="empty" hidden>
@@ -22,7 +25,7 @@ import OrderSummary from "../components/cart/OrderSummary.astro";
 				<OrderSummary />
 
 				<section class="">
-					<h2 class="text-lg font-semibold">Datos del envío</h2>
+					<h2 class="text-lg font-bold">Datos del envío</h2>
 					<form id="customerForm" novalidate>
 						<label class="field">
 							<small>Nombre completo
@@ -39,7 +42,7 @@ import OrderSummary from "../components/cart/OrderSummary.astro";
 						</label>
 
 						<label class="field">
-							<small>Dirección completa
+							<small>Dirección completa (calle, número, ciudad, departamento)
 								<!-- <small class="error" data-for="address" aria-live="polite"></small> -->
 							</small>
 							<textarea id="customerAddress" name="address" rows="4" autocomplete="street-address" required placeholder="Dirección completa" class="field-sizing-content"></textarea>
