@@ -2,8 +2,8 @@
 import NavMenu from "@components/NavMenu.astro";
 import CartDialog from "@components/cart/CartDialog.astro";
 import ScrollAnimation from "../components/sequence/ScrollAnimation.astro";
-const titulo = "Parrillas y Defensas";
-const descripcion = "Encuentra la parrilla y defensa perfecta para tu moto. Calidad, durabilidad y estilo en cada producto.";
+const titulo = "Parrillas y Defensas para Moto";
+const descripcion = "Encuentra la parrilla y defensa perfecta para tu moto. Calidad, durabilidad y estilo en cada producto. Somos fabricantes";
 const logo = "/logotipo.jpg";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -18,11 +18,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<link rel="preconnect" href="//res.cloudinary.com" />
 		<link rel="dns-prefetch" href="//res.cloudinary.com">
 		<!-- <link rel="preload" href="/fonts/main.woff2" as="font" type="font/woff2" crossorigin> -->
-		<link rel="preload" as="image" href={logo} />
+		<!-- <link rel="preload" as="image" href={logo} /> -->
 		<link rel="icon" href="https://res.cloudinary.com/dr5knskbb/image/upload/v1782964448/parrillasydefensas-logo_hbl6be.webp" />
 		<meta name="description" content={descripcion} />
 		<meta name="robots" content="index, follow" />
-		<meta name="og:image" content={logo} />
+		<meta name="og:image" content="https://res.cloudinary.com/dr5knskbb/image/upload/v1782964448/parrillasydefensas-logo_hbl6be.webp" />
 		<meta name="og:title" content={titulo} />
 		<meta name="og:description" content={descripcion} />
 		<meta name="og:url" content={canonicalURL.href} />
