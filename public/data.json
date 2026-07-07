@@ -38,8 +38,8 @@
     ]
   },
   {
-    "categoria": "Honda CB o TB",
-    "nombre": "Parrilla CB o TB 110",
+    "categoria": "Honda CB",
+    "nombre": "Parrilla CB 110",
     "descripcion": "",
     "media": [
       "dudacb-01",
@@ -77,24 +77,6 @@
   },
   {
     "categoria": "Honda CB",
-    "nombre": "Defensa Tipo Alerón CB 110",
-    "descripcion": "",
-    "media": [
-      "defensa-aleron-pulsar-180-01",
-      "defensa-aleron-pulsar-180-02"
-    ],
-    "estado": "activo",
-    "detalles": "",
-    "opciones": {},
-    "variantes": [
-      {
-        "sku": "def-ale-cb110",
-        "precio": 58
-      }
-    ]
-  },
-  {
-    "categoria": "Honda CB",
     "nombre": "Defensa Doble Tope CB 110",
     "descripcion": "",
     "media": [
@@ -113,7 +95,7 @@
   },
   {
     "categoria": "Honda CB",
-    "nombre": "Defensa CB 110 Tipo Alerón",
+    "nombre": "Defensa Tipo Alerón CB 110",
     "descripcion": "",
     "media": [
       "defensa-aleron-cb110-01",
@@ -124,7 +106,25 @@
     "opciones": {},
     "variantes": [
       {
-        "sku": "def-",
+        "sku": "def-ale-cb110",
+        "precio": 58
+      }
+    ]
+  },
+  {
+    "categoria": "Honda CB",
+    "nombre": "Defensa Tipo Alerón Doble CB 110",
+    "descripcion": "",
+    "media": [
+      "defensa-aleron-pulsar-180-01",
+      "defensa-aleron-pulsar-180-02"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-ale-dob-cb110",
         "precio": 68
       }
     ]
