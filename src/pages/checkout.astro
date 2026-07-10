@@ -4,14 +4,14 @@ import Logotipo from "../assets/logotipo.jpg";
 import { Image } from "astro:assets";
 import OrderSummary from "../components/cart/OrderSummary.astro";
 
-const logotipo = "https://res.cloudinary.com/dr5knskbb/image/upload/v1782964448/parrillasydefensas-logo_hbl6be.webp";
+const logotipo = "https://res.cloudinary.com/dr5knskbb/image/upload/v1783647601/logotipo-parrillasydefensas_xwaddk.webp";
 
 ---
 
 <CheckoutLayout>
 	<main class="checkout">
 		<div class="flex justify-center mb-5">
-			<img src={logotipo} alt="Logotipo" width="80" class="rounded-sm" />
+			<img src={logotipo} alt="Logotipo" width="200" class="rounded-sm" />
 		</div>
 	
 		<section id="emptyState" class="empty" hidden>
@@ -35,10 +35,10 @@ const logotipo = "https://res.cloudinary.com/dr5knskbb/image/upload/v1782964448/
 						</label>
 
 						<label class="field">	
-							<small>Teléfono
+							<small>Celular
 								<!-- <small class="error" data-for="phone" aria-live="polite"></small> -->
 							</small>
-							<input id="customerPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="Teléfono" />
+							<input id="customerPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="Celular" />
 						</label>
 
 						<label class="field">

@@ -4,7 +4,7 @@ import { getCloudinaryImageUrl } from "./imgHelper.js";
 	const STORAGE_KEY = "cart";
 	const WHATSAPP_PHONE = "573163896572";
 	const BASE_SHIPPING = 10000;
-	const FREE_SHIPPING_THRESHOLD = 1000000;
+	const FREE_SHIPPING_THRESHOLD = 0;
 
 	const elEmpty = document.getElementById("emptyState");
 	const elContent = document.getElementById("checkoutContent");
@@ -165,7 +165,7 @@ import { getCloudinaryImageUrl } from "./imgHelper.js";
 		productsTotalEl.textContent = formatPrice(subtotal);
 		shippingEl.textContent =
 		shipping === 0
-			? "Gratis"
+			? "GRATIS"
 			: formatPrice(shipping);
 		grandTotalEl.textContent = formatPrice(grandTotal);
 		finalTotalEl.textContent = formatPrice(grandTotal);
@@ -176,7 +176,7 @@ import { getCloudinaryImageUrl } from "./imgHelper.js";
 				return `
 							<li class="product-item flex gap-2 items-center">
 								<div class="flex relative w-fit aspect-square">
-									<img src="${getCloudinaryImageUrl(it.image, { w: 150, h: 150 })}" alt="${escapeHtml(it.title)}" width="64" height="64" class="rounded object-contain"/>
+									<img src="${getCloudinaryImageUrl(it.image, { w: 150, h: 150 })}" alt="${escapeHtml(it.title)}" width="64" height="64" class="rounded object-contain aspect-square"/>
 									<span class="product-badge self-end absolute -top-1 -right-1 bg-(--brand) text-(--on-brand) rounded px-1.5 py-0.5 text-xs font-bold">${escapeHtml(it.quantity)}</span>
 								</div>
                                 <p class="product-name" style="display: flex; flex-direction: column;">
@@ -271,11 +271,11 @@ import { getCloudinaryImageUrl } from "./imgHelper.js";
 			);
 		});
 		lines.push("");
-		lines.push(`🚚 Envío: ${formatPrice(shipping)}`);
+		lines.push(`🚚 Envío: ${ shipping === 0 ? "GRATIS" : formatPrice(shipping)}`);
 		lines.push(`💰 Total: ${formatPrice(grandTotal)}`);
 		lines.push("");
 		lines.push(`👤 Nombre: ${name}`);
-		lines.push(`📞 Teléfono: ${phone}`);
+		lines.push(`📞 Celular: ${phone}`);
 		lines.push(`📍 Dirección: ${address}`);
 		lines.push("");
 

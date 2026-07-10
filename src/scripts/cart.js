@@ -18,7 +18,11 @@ const clearBtn = document.getElementById("cart-clear");
 
 const formatPrice = (n) => {
 	const num = Number(n) || 0;
-	return `$${num.toLocaleString()}`;
+	return `${num.toLocaleString("es-CO", {
+				style: "currency",
+				currency: "COP",
+				maximumFractionDigits: 0,
+			})}`;
 };
 
 const render = () => {
@@ -41,7 +45,7 @@ const render = () => {
 		.map(
 			(it) => `
 					<div class="cart-item flex gap-2" data-id="${it.id}">
-						<img class="w-16 h-16 rounded object-contain" src="${getCloudinaryImageUrl(it.image, { w: 150, h: 150 })}" alt="${it.title}" />
+						<img class="w-16 h-16 aspect-square rounded object-contain" src="${getCloudinaryImageUrl(it.image, { w: 150, h: 150 })}" alt="${it.title}" />
 						<div class="grow">
 							<p class="flex flex-col"><span>${it.title}</span><span>${it.variant}</span></p>
 							<p>${formatPrice(it.price)}</p>

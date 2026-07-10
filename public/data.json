@@ -15,7 +15,7 @@
     "variantes": [
       {
         "sku": "par-ecodeluxe",
-        "precio": 84
+        "precio": 119000
       }
     ]
   },
@@ -33,7 +33,7 @@
     "variantes": [
       {
         "sku": "def-ecodeluxe",
-        "precio": 0
+        "precio": 78000
       }
     ]
   },
@@ -52,7 +52,7 @@
     "variantes": [
       {
         "sku": "par-cbtb",
-        "precio": 93
+        "precio": 130000
       }
     ]
   },
@@ -71,7 +71,7 @@
     "variantes": [
       {
         "sku": "par-cb125",
-        "precio": 74
+        "precio": 107000
       }
     ]
   },
@@ -89,7 +89,7 @@
     "variantes": [
       {
         "sku": "def-dob-cb110",
-        "precio": 48
+        "precio": 76000
       }
     ]
   },
@@ -107,7 +107,7 @@
     "variantes": [
       {
         "sku": "def-ale-cb110",
-        "precio": 58
+        "precio": 88000
       }
     ]
   },
@@ -125,7 +125,7 @@
     "variantes": [
       {
         "sku": "def-ale-dob-cb110",
-        "precio": 68
+        "precio": 100000
       }
     ]
   },
@@ -143,7 +143,7 @@
     "variantes": [
       {
         "sku": "def-uni",
-        "precio": 48
+        "precio": 76000
       }
     ]
   },
@@ -161,7 +161,7 @@
     "variantes": [
       {
         "sku": "def-uni-cur",
-        "precio": 48
+        "precio": 76000
       }
     ]
   },
@@ -179,7 +179,7 @@
     "variantes": [
       {
         "sku": "def-uni-anc",
-        "precio": 68
+        "precio": 100000
       }
     ]
   },
@@ -198,7 +198,7 @@
     "variantes": [
       {
         "sku": "ale-uni",
-        "precio": 68
+        "precio": 100000
       }
     ]
   },
@@ -217,7 +217,7 @@
     "variantes": [
       {
         "sku": "ale-uni-cur",
-        "precio": 58
+        "precio": 88000
       }
     ]
   },
@@ -235,7 +235,7 @@
     "variantes": [
       {
         "sku": "def-uni-ḿari",
-        "precio": 36
+        "precio": 61000
       }
     ]
   },
@@ -254,7 +254,7 @@
     "variantes": [
       {
         "sku": "cola-nkd125",
-        "precio": 28
+        "precio": 52000
       }
     ]
   },
@@ -273,7 +273,7 @@
     "variantes": [
       {
         "sku": "par-boxer",
-        "precio": 55
+        "precio": 84000
       }
     ]
   },
@@ -291,7 +291,7 @@
     "variantes": [
       {
         "sku": "def-ale-pulsar180",
-        "precio": 58
+        "precio": 88000
       }
     ]
   },
@@ -309,7 +309,7 @@
     "variantes": [
       {
         "sku": "def-dob-pulsar180",
-        "precio": 48
+        "precio": 76000
       }
     ]
   },
@@ -329,7 +329,7 @@
     "variantes": [
       {
         "sku": "par-dis",
-        "precio": 74
+        "precio": 107000
       }
     ]
   },
@@ -347,7 +347,7 @@
     "variantes": [
       {
         "sku": "cryp-110",
-        "precio": 27
+        "precio": 50000
       }
     ]
   },
@@ -365,7 +365,7 @@
     "variantes": [
       {
         "sku": "def-mari-gn125",
-        "precio": 36
+        "precio": 61000
       }
     ]
   }

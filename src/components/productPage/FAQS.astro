@@ -1,0 +1,117 @@
+---
+const preguntas = [
+	{
+		pregunta: "¿Es compatible con mi moto?",
+		respuesta:
+			"Cada producto indica los modelos y años compatibles. Antes de comprar, verifica la referencia de tu motocicleta. Si tienes dudas, escríbenos con la marca, modelo y año de tu moto y te ayudaremos a elegir el accesorio correcto.",
+	},
+	{
+		pregunta: "¿Necesito hacer modificaciones para instalarla?",
+		respuesta:
+			"La mayoría de nuestras parrillas y defensas están diseñadas para instalarse utilizando los puntos de anclaje originales de la motocicleta, sin realizar perforaciones ni modificaciones permanentes. Cada producto incluye la información correspondiente y, cuando aplica, los accesorios de instalación.",
+	},
+	{
+		pregunta: "¿De qué material están fabricadas?",
+		respuesta:
+			"Fabricamos nuestras piezas con acero de alta resistencia, utilizando procesos de soldadura y acabados diseñados para ofrecer durabilidad y protección frente al uso diario y las condiciones del camino.",
+	},
+	{
+		pregunta: "¿Qué garantía tienen?",
+		respuesta:
+			"Nuestros productos cuentan con garantía por defectos de fabricación. Si recibes un producto con algún inconveniente o presenta una falla atribuible al proceso de fabricación, nos encargaremos de evaluar el caso y ofrecer la solución correspondiente.",
+	},
+	{
+		pregunta: "¿Hacen envíos a todo el país y cuánto tardan?",
+		respuesta:
+			"Sí. Realizamos envíos a todo Colombia. El tiempo de entrega depende de la ciudad de destino, pero normalmente entre 2 y 5 días hábiles. Una vez despachado el pedido, recibirás la información de seguimiento.",
+	},
+];
+---
+
+<section class="faq-section bg-(--accent) text-(--on-accent)">
+	<h2 class="faq-title font-bold text-xl mb-4">Preguntas Frecuentes</h2>
+	<div class="faq-list">
+		{
+			preguntas.map((item) => (
+				<details class="faq-item text-left">
+					<summary class="faq-question">{item.pregunta}</summary>
+					<div
+						class="faq-content"
+						itemscope
+						itemprop="acceptedAnswer"
+						itemtype="https://schema.org"
+					>
+						<div itemprop="text" class="faq-text">
+							<p class="faq-answer">{item.respuesta}</p>
+						</div>
+					</div>
+				</details>
+			))
+		}
+	</div>
+</section>
+
+<style>
+	/* Container Layout */
+	.faq-section {
+		max-width: 500px;
+		margin: 1rem auto 0px auto;
+        padding: 12px 8px;
+	}
+
+	/* Individual Accordion Item */
+	.faq-item {
+		border-bottom: 1px solid #ffffff;
+		overflow: hidden;
+	}
+
+	/* Clickable Header */
+	.faq-question {
+		display: flex;
+        gap: 6px;
+		justify-content: space-between;
+		align-items: center;
+		padding: .5rem 0;
+		font-weight: 600;
+		cursor: pointer;
+		list-style: none; /* Removes default Chrome arrow */
+	}
+
+	.faq-question::-webkit-details-marker {
+		display: none; /* Removes default Safari arrow */
+	}
+
+	/* Custom CSS Indicator Arrow */
+	.faq-question::after {
+		content: '▶';
+		font-weight: normal;
+		transition: transform 0.25s ease;
+	}
+
+	.faq-item[open] .faq-question::after {
+		transform: rotate(90deg);
+	}
+
+	/* Smooth Height Animation Setup */
+	.faq-content {
+		display: grid;
+		grid-template-rows: 0fr;
+		transition: grid-template-rows 0.3s ease-out;
+	}
+
+	.faq-item[open] .faq-content {
+		grid-template-rows: 1fr;
+	}
+
+	.faq-text {
+		min-height: 0;
+	}
+
+	.faq-text p {
+        font-size: 15px;
+		padding-bottom: 1.25rem;
+		margin: 0;
+		color: #ffffffec;
+		line-height: 1.5;
+	}
+</style>

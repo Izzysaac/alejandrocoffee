@@ -1,0 +1,17 @@
+---
+
+const { modelo } = Astro.params;
+
+const bulletPoints = [
+    `✅ <b>Ajuste perfecto</b> en los puntos originales`,
+    "🛡️ Fabricado en <b>acero de alta resistencia</b>",
+    "🔩  <b>Instalación rápida </b> con kit incluido"
+];
+
+---
+
+<ul class="text-left">
+    {bulletPoints.map((point) => (
+        <li class="bullet-point" set:html={point} />
+    ))}
+</ul>

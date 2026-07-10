@@ -1,0 +1,119 @@
+---
+import Shop from "../../assets/shop.svg";
+import Box from "../../assets/box.svg";
+import OrderDelivery from "../../assets/orderDelivery.svg";
+
+---
+
+<div class="container-order-checkpoint py-2">
+	<div class="timeline">&nbsp;</div>
+	<div>
+
+		<div class="icon">
+			<Shop />
+		</div>
+		<p>
+			<span id="order-date" class="">Compra Hoy</span>
+			<span class="poppins-regular">Pedido confirmado</span>
+		</p>
+	</div>
+	<div>
+		<div class="icon">
+			<OrderDelivery />
+		</div>
+		<p>
+			<span id="personalization-date" class="">Fecha de personalización</span>
+			<span class="poppins-regular">Pedido enviado</span>
+		</p>
+	</div>
+	<div>
+		<div class="icon">
+			<Box />
+		</div>
+		<p>
+			<span id="delivery-date" class="">Fecha de entrega</span>
+			<span class="poppins-regular">Fecha de entrega</span>
+		</p>
+	</div>
+</div>
+
+<style>
+	.container-order-checkpoint {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+		color: rgb(14, 14, 14);
+		div {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+	.icon {
+		border: 2px solid black;
+		border-radius: 50%;
+		aspect-ratio: 1 / 1;
+		padding: 12px;
+		width: fit-content;
+		background-color: white;
+	}
+	.timeline {
+		height: 3px;
+		background-color: black;
+		position: absolute;
+		top: 25px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 70%;
+		z-index: -1;
+	}
+	p {
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		text-align: center;
+		font-size: 13px;
+		margin-top: 4px;
+
+		span:first-child {
+			line-height: 1.2;
+			font-size: 14px;
+			font-weight: bold;
+		}
+		span:last-child {
+			line-height: 1.2;
+			font-size: 12px;
+		}
+	}
+</style>
+
+<script is:inline>
+
+    const obtenerFechas = (diasArray) => {
+    const hoy = new Date();
+
+    return diasArray.map(dias => {
+        const fecha = new Date(hoy);
+        fecha.setDate(hoy.getDate() + dias);
+
+        return fecha.toLocaleDateString("es-CO", {
+            month: "long", // "April"
+            day: "numeric"  // "16"
+        });
+    });
+    }
+
+    const dias = [0, 1, 4];
+    const resultado = obtenerFechas(dias);
+
+    const orderDate = document.getElementById("order-date");
+    const personalizationDate = document.getElementById("personalization-date");
+    const deliveryDate = document.getElementById("delivery-date");
+
+    orderDate.textContent = resultado[0];
+    personalizationDate.textContent = resultado[1];
+    deliveryDate.textContent = resultado[2];
+
+</script>

@@ -3,6 +3,13 @@ import ImageCarousel from "@components/ImageCarousel.astro";
 import Layout from "../../layouts/Layout.astro";
 import data from "@public/data.json";
 
+
+import BulletPointsAstroComponent from "@components/productPage/BulletPoints.astro";
+import MainReviewAstroComponent from "@components/productPage/MainReview.astro";
+import PaymentMethodsAstroComponent from "@components/productPage/PaymentMethods.astro";
+import FAQSAstroComponent from "@components/productPage/FAQS.astro";
+import OrderTimeline from "@components/productPage/OrderTimeline.astro";
+
 export function getStaticPaths() {
 	return data.map((item) => ({
 		params: {
@@ -19,6 +26,7 @@ export function getStaticPaths() {
 
 const { item } = Astro.props;
 
+console.log(item);
 
 const productId = item.nombre
 	.toLowerCase()
@@ -29,10 +37,10 @@ const productId = item.nombre
 ---
 
 <Layout>
-	<main class="flex flex-col text-center pt-18.75 gap-4 max-w-125 m-auto!">
+	<main class="flex flex-col text-center pt-24 gap-4 max-w-125 m-auto!">
 
 		<ImageCarousel media={item.media}/>
-		<div class="flex flex-col gap-4 px-2.5 pb-10 max-w-100 m-auto">
+		<div class="flex flex-col gap-4 px-2.5 max-w-100 m-auto">
 
 			<div style="display: none;" id="product-data">
 				{JSON.stringify(item)}
@@ -40,10 +48,16 @@ const productId = item.nombre
 
 			<h1 class="text-2xl font-bold mt-2">{item.nombre}</h1>
 
-			<p class="text-sm">{item.descripcion}</p>
+			<BulletPointsAstroComponent />
 
+			{
+				item.descripcion && (
+					<p class="text-sm">{item.descripcion}</p>
+				)
+			}
+			
 			<!-- PRECIO dinámico -->
-			<p id="price" class="font-bold text-lg">${item.variantes?.[0]?.precio.toLocaleString()}</p>
+			<p id="price" class="font-bold text-lg">${item.variantes?.[0]?.precio.toLocaleString("es-CO")}</p>
 
 			<form id="form" class="text-left">
 
@@ -83,10 +97,16 @@ const productId = item.nombre
 				data-id={productId}
 				data-title={item.nombre}
 				data-image={item.media?.[0] ?? ""}
-				class="bg-(--accent) text-(--on-accent) active:bg-(--brand-hover) font-bold py-2 px-4 rounded"
+				class="bg-(--accent) text-(--on-accent) active:bg-(--brand-hover) font-bold py-2 px-4 rounded text-lg"
 			>
 				Añadir al carrito
 			</button>
+
+			<PaymentMethodsAstroComponent />
+
+			<MainReviewAstroComponent />
+
+			<OrderTimeline/>
 
 			{
 			item.detalles && (
@@ -98,11 +118,14 @@ const productId = item.nombre
 					<p class="whitespace-pre-line text-left">
 						{item.detalles}
 					</p>
-				</>
+				</Order>
 			)
 			}
 
 		</div>
+
+		<FAQSAstroComponent />
+
 
 	</main>
 </Layout>
@@ -139,7 +162,7 @@ const productId = item.nombre
 
 		if (!variant) return;
 
-		priceElement.textContent = "$" + variant.precio.toLocaleString();
+		priceElement.textContent = "$" + variant.precio.toLocaleString("es-CO");
 
 		addToCartButton.dataset.price = variant.precio;
 		addToCartButton.dataset.sku = variant.sku;

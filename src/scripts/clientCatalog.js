@@ -1,5 +1,5 @@
 import data from "../../public/data.json";
-import { getCloudinaryImageUrl } from "../scripts/imgHelper";
+import { getCloudinaryImageUrl } from "./imgHelper";
 
 let allProducts = [];
 let filteredProducts = [];
@@ -30,8 +30,8 @@ export const renderProducts = (products) => {
 
 			const priceLabel =
 				prices.length > 1
-					? `Desde $${minPrice.toLocaleString()}`
-					: `$${minPrice.toLocaleString()}`;
+					? `Desde ${minPrice.toLocaleString("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 })}`
+					: `${minPrice.toLocaleString("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 })}`;
 
 			return `
 			<div class="product-card">
@@ -60,7 +60,7 @@ export const renderProducts = (products) => {
 					</h2>
 
 					<p>
-						${priceLabel}
+						${priceLabel.toLocaleString("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 })}
 					</p>
 
 				</a>

@@ -1,6 +1,10 @@
 ---
 import NavMenu from "@components/NavMenu.astro";
 import CartDialog from "@components/cart/CartDialog.astro";
+import AnnouncementBar from "@components/AnnouncementBar.astro";
+
+import Footer from "@components/Footer.astro";
+
 import ScrollAnimation from "../components/sequence/ScrollAnimation.astro";
 const titulo = "Parrillas y Defensas para Moto";
 const descripcion = "Encuentra la parrilla y defensa perfecta para tu moto. Calidad, durabilidad y estilo en cada producto. Somos fabricantes";
@@ -31,6 +35,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta name="og:locale" content="es_CO" />
 	</head>
 	<body>
+		<AnnouncementBar />
 		<NavMenu />
 		<CartDialog />
 		<slot />
@@ -39,6 +44,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 			frameCount={210} 
 			aspectRatio={16/9} 
 			/> -->
+
+		<Footer />
 	</body>
 </html>
 
