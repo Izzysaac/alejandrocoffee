@@ -4,8 +4,8 @@ import CartDialog from "@components/cart/CartDialog.astro";
 import AnnouncementBar from "@components/AnnouncementBar.astro";
 
 import Footer from "@components/Footer.astro";
+import Analytics from '@vercel/analytics/astro'
 
-import ScrollAnimation from "../components/sequence/ScrollAnimation.astro";
 const titulo = "Parrillas y Defensas para Moto";
 const descripcion = "Encuentra la parrilla y defensa perfecta para tu moto. Calidad, durabilidad y estilo en cada producto. Somos fabricantes";
 const logo = "/logotipo.jpg";
@@ -33,17 +33,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta name="og:site_name" content={titulo} />
 		<meta name="og:type" content="website" />
 		<meta name="og:locale" content="es_CO" />
+		<Analytics />
 	</head>
 	<body>
 		<AnnouncementBar />
 		<NavMenu />
 		<CartDialog />
 		<slot />
-		<!-- <ScrollAnimation 
-			sequencePath="/sequence" 
-			frameCount={210} 
-			aspectRatio={16/9} 
-			/> -->
 
 		<Footer />
 	</body>

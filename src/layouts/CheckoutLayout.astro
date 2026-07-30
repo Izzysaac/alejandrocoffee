@@ -1,5 +1,6 @@
 ---
 const logo = "/logotipo.png";
+import Analytics from '@vercel/analytics/astro'
 ---
 
 <!doctype html>
@@ -8,6 +9,7 @@ const logo = "/logotipo.png";
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<title>Pantalla de pago</title>
+        <Analytics />
 	</head>
 	<body>
 		<slot />
