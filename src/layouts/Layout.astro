@@ -6,10 +6,9 @@ import AnnouncementBar from "@components/AnnouncementBar.astro";
 import Footer from "@components/Footer.astro";
 import Analytics from '@vercel/analytics/astro'
 
-const titulo = "Parrillas y Defensas para Moto";
-const descripcion = "Encuentra la parrilla y defensa perfecta para tu moto. Calidad, durabilidad y estilo en cada producto. Somos fabricantes";
-const logo = "/logotipo.jpg";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,20 +16,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<title>{titulo}</title>
+		<title>{title}</title>
 		<link rel="canonical" href={canonicalURL.href} />
 		<link rel="preconnect" href="//res.cloudinary.com" />
 		<link rel="dns-prefetch" href="//res.cloudinary.com">
+
+		<meta name="robots" content="index, follow" />
+		<meta name="googlebot" content="index, follow" />
+
 		<!-- <link rel="preload" href="/fonts/main.woff2" as="font" type="font/woff2" crossorigin> -->
 		<!-- <link rel="preload" as="image" href={logo} /> -->
 		<link rel="icon" href="https://res.cloudinary.com/dr5knskbb/image/upload/v1782964448/parrillasydefensas-logo_hbl6be.webp" />
-		<meta name="description" content={descripcion} />
+		<meta name="description" content={description} />
 		<meta name="robots" content="index, follow" />
 		<meta name="og:image" content="https://res.cloudinary.com/dr5knskbb/image/upload/v1782964448/parrillasydefensas-logo_hbl6be.webp" />
-		<meta name="og:title" content={titulo} />
-		<meta name="og:description" content={descripcion} />
+		<meta name="og:title" content={title} />
+		<meta name="og:description" content={description} />
 		<meta name="og:url" content={canonicalURL.href} />
-		<meta name="og:site_name" content={titulo} />
+		<meta name="og:site_name" content={title} />
 		<meta name="og:type" content="website" />
 		<meta name="og:locale" content="es_CO" />
 		<Analytics />

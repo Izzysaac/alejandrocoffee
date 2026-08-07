@@ -1,0 +1,72 @@
+---
+import { getCldImageUrl } from 'astro-cloudinary/helpers';
+const reviews  = [
+    {
+        image: "https://res.cloudinary.com/dr5knskbb/image/upload/v1786090189/cliente-parrillasydefensa-01_zy1c9x.webp",
+        name: "Gustavo V.",
+        text: "Ya me salvó de una caída en parado y solo se rayó la pintura. La moto quedó intacta. Muy buena inversión."
+    },
+    {
+        image: "https://res.cloudinary.com/dr5knskbb/image/upload/v1786090190/cliente-parrillasydefensa-02_q0askx.webp",
+        name: "Miguel A.",
+        text:  "Le he cargado mercado, maleta y hasta caja de herramientas. No vibra ni se dobla. Quedó una berraca."
+    },
+    {
+        image: "https://res.cloudinary.com/dr5knskbb/image/upload/v1786090189/cliente-parrillasydefensa-03_tchonp.webp",
+        name: "Jhonatan R.",
+        text: "Se nota la diferencia apenas uno la tiene en la mano. Tubo grueso, buenas soldaduras y los refuerzos le dan mucha firmeza. Calidad de verdad."
+    },
+    {
+        image: "https://res.cloudinary.com/dr5knskbb/image/upload/v1786090189/cliente-parrillasydefensa-04_rvtxix.webp",
+        name: "Alberio M.",
+        text: "La pedí un lunes y en dos días ya la tenía. Llegó bien empacada y sin un rayón. Muy cumplidos."
+    }
+]
+---
+
+<div class="wrapper flex w-full snap-x snap-mandatory gap-5 overflow-x-scroll items-start">
+	{
+        reviews.map((review, i) => (
+            <div class="card snap-center w-full max-w-125 shrink-0 box-border flex flex-col justify-center items-center text-center gap-2.5 aspect-square bg-slate-100">
+                <img src={review.image} alt="" />
+                <span>⭐⭐⭐⭐⭐</span>
+                <h3 class="text-lg font-bold">{review.name}</h3>
+                <p class="text-gray-600">{review.text}</p>
+            </div>
+        ))
+    }
+<!-- transition:name={`img-${mediaSrc}-${i}`} -->
+</div>
+
+<style>
+	.wrapper {
+		scroll-marker-group: after;
+		scroll-behavior: smooth;
+	}
+	.wrapper::scroll-marker-group {
+		display: flex;
+		justify-content: center;
+		gap: 0.5rem;
+		padding: 0.5rem;
+	}
+
+	.card::scroll-marker {
+		content: '';
+		display: block;
+		width: 16px;
+		height: 16px;
+		border-radius: 50%;
+		background-color: black;
+		flex-shrink: 0;
+	}
+
+	.card::scroll-marker:target-current {
+		background-color: var(--accent);
+	}
+
+	img {
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: contain;
+	}
+</style>    

@@ -9,6 +9,7 @@ import MainReviewAstroComponent from "@components/productPage/MainReview.astro";
 import PaymentMethodsAstroComponent from "@components/productPage/PaymentMethods.astro";
 import FAQSAstroComponent from "@components/productPage/FAQS.astro";
 import OrderTimeline from "@components/productPage/OrderTimeline.astro";
+import ReviewsAstroComponent from "@components/Reviews.astro";
 
 export function getStaticPaths() {
 	return data.map((item) => ({
@@ -34,9 +35,15 @@ const productId = item.nombre
 	.replace(/[\u0300-\u036f]/g, "")
 	.replace(/\s+/g, "-")
 	.replace(/[^a-z0-9-]/g, "");
+
+
+const data = {
+	title: `${item.nombre} - Parrillas y Defensas para Moto`,
+	description: `${item.nombre}, ${item.categoria} - Parrillas y Defensas para Moto`,
+};
 ---
 
-<Layout>
+<Layout title={data.title} description={data.description}>
 	<main class="flex flex-col text-center pt-24 gap-4 max-w-125 m-auto!">
 
 		<ImageCarousel media={item.media}/>
@@ -107,6 +114,8 @@ const productId = item.nombre
 			<MainReviewAstroComponent />
 
 			<OrderTimeline/>
+
+			<ReviewsAstroComponent />
 
 			{
 			item.detalles && (

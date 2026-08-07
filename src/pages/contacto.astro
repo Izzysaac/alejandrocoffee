@@ -1,0 +1,27 @@
+---
+import LayoutAstroComponent from "@layoutsLayout.astro";
+
+const data = {
+	title: "Contacto - Parrillas y Defensas para Moto",
+	description:
+		"Encuentra la parrilla y defensa perfecta para tu moto. Somos fabricantes. Calidad y durabilidad en cada producto.",
+};
+---
+
+<LayoutAstroComponent title={data.title} description={data.description}>
+    <div class="flex flex-col gap-4 px-2.5 py-24 max-w-100 m-auto">
+        <h1 class="text-2xl font-bold mt-2">Contacto</h1>
+        <p>
+            ¿Tienes alguna pregunta o necesitas ayuda para elegir el producto adecuado para tu moto? Estamos aquí para ayudarte.
+        </p>
+        <p>
+            Puedes comunicarte con nosotros a través de nuestro <a href="https://wa.me/573163896572" class="underline">WhatsApp</a>
+        </p>
+        <p>
+            <strong>Horario de atención:</strong> Lunes a viernes de 9:00 AM a 6:00 PM (hora local)
+        </p>
+        <p>
+            Puedes escribirnos directamente por WhatsApp para consultar disponibilidad, compatibilidad con tu moto, estado de un pedido o cualquier otra inquietud. Te responderemos lo antes posible.
+        </p>
+    </div>
+</LayoutAstroComponent>

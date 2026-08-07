@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Reviews from "@components/Reviews.astro";
 import Image from "astro/components/Image.astro";
 import heroimg from "../assets/heroimg.png";
 
@@ -7,36 +8,38 @@ const images = {
 	hero: "https://res.cloudinary.com/dr5knskbb/image/upload/v1783319098/bg-parillasydefensas_tnfgjg.webp",
 	catalog:
 		"https://res.cloudinary.com/dr5knskbb/image/upload/v1771733861/catalog_iamghp.jpg",
-}
+};
+
+const data = {
+	title: "Parrillas y Defensas para Moto",
+	description:
+		"Encuentra la parrilla y defensa perfecta para tu moto. Somos fabricantes. Calidad y durabilidad en cada producto.",
+};
 ---
 
-<Layout>
-	<div 
+<Layout title={data.title} description={data.description}>
+	<div
 		id="hero"
 		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url(${images.hero});`}
-		class="m-auto min-h-full pb-4 max-w-120 flex flex-col items-center background-image text-white ">
-
-		<h1 class="mt-[30%] block px-2.5 text-center text-3xl font-bold w-full bg-black/50">
+		class="background-image m-auto flex min-h-full max-w-120 flex-col items-center pb-4 text-white"
+	>
+		<h1
+			class="mt-[30%] block w-full bg-black/50 px-2.5 text-center text-3xl font-bold"
+		>
 			Las Mejores Parrillas y Defensas Para Tu Moto
-</h1>
-		<div class="w-full mt-auto mb-20 px-5 text-center flex flex-col gap-4">
+		</h1>
+		<div class="mt-auto mb-20 flex w-full flex-col gap-4 px-5 text-center">
 			<a
 				href="catalog"
 				class="block rounded bg-(--accent) px-5 py-2 text-lg font-semibold text-(--on-accent)"
 				>Catálogo</a
 			>
-			<!-- <a
-				href="taller"
-				class="block rounded bg-(--brand) px-5 py-2 text-lg font-semibold text-(--on-brand)"
-				>Talleres</a
-			> -->
+			<p>Llevo más de tres años con ella y sigue como el primer día - ⭐⭐⭐⭐⭐ </p>
 		</div>
 	</div>
-<div>
-
-
-
-	<!-- <div id="catalog" class="relative h-screen">
+	<div class="p-3">
+		<Reviews />
+		<!-- <div id="catalog" class="relative h-screen">
 		<img src={images.catalog} alt="Barista profesional realizando arte latte" class="absolute inset-0 w-full h-full object-cover" />
 		<div class="absolute bottom-20 left-0 right-0 text-white p-3 text-center">
 			<p class="text-lg font-bold">
@@ -49,14 +52,14 @@ const images = {
 		</div>
 	</div> -->
 
-	<!-- <div class="border-10 border-blue-600">
+		<!-- <div class="border-10 border-blue-600">
 		<p>Beneficio 1 Beneficio 2 Beneficio 3</p>
 	<p>Precisión en cada vertido · Calidad de competencia · Eleva tu estatus como barista</p> 
 		Seccion de beneficos / sueños 
 		Dream outcome #1 outcome #2 outcome #3
 	</div> -->
 
-	<!-- <div class="border-10 border-red-600">
+		<!-- <div class="border-10 border-red-600">
 		Problem section headline that bluntly brings up the main pain pointe
 
 		<small>Then, agitate tge oriblem with symptoms of it</small>
@@ -68,7 +71,7 @@ const images = {
 		</ul>
 	</div> -->
 
-	<!-- <div class="border-10 border-green-600">
+		<!-- <div class="border-10 border-green-600">
 		Introduce the Solution
 
 		<strong>Lead-in with a short statment about how you get it</strong>
@@ -78,7 +81,7 @@ const images = {
 		<p>Short paragraph where you show why you're qualified to help them through it</p>
 	</div> -->
 
-	<!-- <div class="border-10 border-purple-600">
+		<!-- <div class="border-10 border-purple-600">
 		Introduce the Benefits
 		<ul>
 			<li>Benefit 1 Briefly mention the feature behind the benefit to tie it togheter</li>
@@ -87,34 +90,32 @@ const images = {
 		</ul>
 	</div> -->
 
-	<!-- <div class="border-10 border-yellow-600">
+		<!-- <div class="border-10 border-yellow-600">
 		Testimonials
 		Cards de 3 reseñas + Proyecto de Google Reviews
 	</div> -->
 
-	<!-- <div class="border-10 border-rose-500">
+		<!-- <div class="border-10 border-rose-500">
 		TOma de accion de 3 pasos estilo 
 		10 razones
 		Tabla comparacion
 	</div> -->
 
-	<!-- <div class="border-10 border-orange-900">
+		<!-- <div class="border-10 border-orange-900">
 		Preguntas frecuentes
 	</div> -->
 
-	<!-- <footer>
+		<!-- <footer>
 		Powered by Isaac
 	</footer> -->
-
-</div>
+	</div>
 </Layout>
 
 <style>
 	@import "tailwindcss";
 	.background-image {
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
 </style>
