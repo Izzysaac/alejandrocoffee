@@ -27,8 +27,6 @@ export function getStaticPaths() {
 
 const { item } = Astro.props;
 
-console.log(item);
-
 const productId = item.nombre
 	.toLowerCase()
 	.normalize("NFD")

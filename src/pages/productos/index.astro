@@ -1,29 +1,88 @@
 ---
-import Layout from "@layouts/Layout.astro";
 import { getCategoriesWithSlug } from "@lib/builder.js";
+import { getCloudinaryImageUrl } from "@scripts/imgHelper";
+
+import Layout from "@layouts/Layout.astro";
+import products from "@public/data.json";
+
 
 const categories = getCategoriesWithSlug();
 
 const data = {
 	title: "Catálogo de Parrillas y Defensas para Moto",
 	description:
-		"Catálogo completo de parrillas y defensas para moto. Encuentra la parrilla y defensa perfecta para tu moto. Somos fabricantes. Calidad y durabilidad en cada producto.",
+		"Catálogo completo de parrillas y defensas para moto. Encuentra la parrilla y defensa perfecta para tu marca y modelo de moto. Somos fabricantes. Calidad y durabilidad en cada producto.",
+};
+
+const createProductSlug = (name) => {
+	return name
+		.toLowerCase()
+		.normalize("NFD")
+		.replace(/[\u0300-\u036f]/g, "")
+		.replace(/\s+/g, "-")
+		.replace(/[^a-z0-9-]/g, "");
+};
+
+const getCategorySlug = (categoryName) => {
+	return categoryName
+		.toLowerCase()
+		.normalize("NFD")
+		.replace(/[\u0300-\u036f]/g, "")
+		.replace(/\s+/g, "-")
+		.replace(/[^a-z0-9-]/g, "");
+};
+
+const getPriceLabel = (product) => {
+	const prices = product.variantes?.map((v) => v.precio) ?? [];
+	const minPrice = prices.length ? Math.min(...prices) : 0;
+	return prices.length > 1
+		? `Desde ${minPrice.toLocaleString("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 })}`
+		: `${minPrice.toLocaleString("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 })}`;
 };
 ---
 
 <Layout title={data.title} description={data.description}>
-	<main class="px-2.5 pt-23">
-		<h1 class="text-2xl font-bold text-center mt-3">Catálogo de Productos</h1>
+	<main class="px-2.5 pt-23 pb-4">
+		<h1 class="mt-3 text-center text-lg font-bold">
+			Catálogo de Parrillas y Defensas para Moto
+		</h1>
+		<p class="text-center">Más protección. Más capacidad. Más utilidad</p>
 		<div class="filter-container flex items-center gap-2">
 			<label for="category-filter">Filtro</label>
 			<select id="category-filter" class="filter-select">
 				<option value="">Todos los modelos</option>
-				{categories.map((category) => (
-					<option value={category.slug}>{category.name}</option>
-				))}
+				{
+					categories.map((category) => (
+						<option value={category.slug}>{category.name}</option>
+					))
+				}
 			</select>
 		</div>
 		<div id="products-container" class="products-grid">
+			{
+				products.map((product) => (
+					<article class="product-card" data-category={`${getCategorySlug(product.categoria)}`}>
+						<a
+							href={`/productos/${createProductSlug(product.nombre)}`}
+							class="flex flex-col text-center"
+						>
+							<figure>
+								<img
+									src={`${getCloudinaryImageUrl(product.media[0], { w: 600, h: 600 })}`}
+									alt={product.nombre}
+									loading="lazy"
+									class="catalog-image order-first"
+									height="200px"
+								/>
+							</figure>
+							<h2>{product.nombre}</h2>
+							<p>
+								{getPriceLabel(product)}
+							</p>
+						</a>
+					</article>
+				))
+			}
 			<!-- <ProductCard products={data} /> -->
 		</div>
 	</main>
@@ -37,13 +96,13 @@ const data = {
 		border-radius: 8px;
 		border: 1px solid #dee2e6;
 	}
-	
+
 	.filter-container label {
 		display: block;
 		font-weight: 600;
 		color: #495057;
 	}
-	
+
 	.filter-select {
 		width: 100%;
 		padding: 0.5rem;
@@ -53,20 +112,20 @@ const data = {
 		font-size: 1rem;
 		cursor: pointer;
 	}
-	
+
 	.filter-select:focus {
 		outline: none;
 		border-color: #80bdff;
 		box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 	}
-	
+
 	@media (min-width: 768px) {
 		.filter-container {
 			max-width: 300px;
 			margin: 0 auto 2rem auto;
 		}
 	}
-	
+
 	.products-grid {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -96,7 +155,7 @@ const data = {
 			grid-template-columns: repeat(5, 1fr);
 		}
 	}
-	
+
 	.product-card {
 		border: 1px solid #ddd;
 		border-radius: 8px;
@@ -104,15 +163,17 @@ const data = {
 		color: inherit;
 		display: flex;
 		flex-direction: column;
-		transition: transform 0.2s ease, box-shadow 0.2s ease;
+		transition:
+			transform 0.2s ease,
+			box-shadow 0.2s ease;
 		background-color: white;
 	}
-	
+
 	.product-card:hover {
 		transform: translateY(-2px);
-		box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	}
-	
+
 	.product-card a figure {
 		max-width: 100%;
 		display: flex;
@@ -121,7 +182,6 @@ const data = {
 		aspect-ratio: 1 / 1;
 		height: 200px;
 		border-radius: 4px;
-		
 	}
 
 	.product-card img {
@@ -129,8 +189,12 @@ const data = {
 		height: 200px;
 		object-fit: contain;
 	}
-	
-	.product-card button {
+
+	.product-hidden {
+		display: none !important;
+	}
+
+	/* .product-card button {
 		margin-top: auto;
 		background-color: #007bff;
 		color: white;
@@ -139,10 +203,10 @@ const data = {
 		border-radius: 4px;
 		cursor: pointer;
 	}
-	
+
 	.product-card button:hover {
 		background-color: #0056b3;
-	}
+	} */
 </style>
 
 <script src="../../scripts/clientCatalog.js"></script>

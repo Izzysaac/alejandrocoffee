@@ -1,8 +1,5 @@
 ---
-import { Image } from "astro:assets";
-
 import MenuIcon from "../assets/menu.svg";
-import SearchIcon from "../assets/search.svg";
 import CartIcon from "../assets/cart.svg";
 import CrossIcon from "../assets/cross.svg";
 
@@ -23,37 +20,19 @@ const categories = getCategoriesWithSlug();
 		>
 			<MenuIcon width="28px" height="28px" />
 		</button>
-		<!-- <a href="/" class="block" >
-			<Image src={logotipo} alt="Buitrón" width={100} />
-		</a> -->
-		
 	</div>
 
-	<!-- <a href="/" class="block text-xl font-bold" >
-			Parrillas y Defensas Para Tu Moto
-	</a> -->
-
 	<a href="/" class="block text-xl font-bold" >
-			<img src={logotipo} alt="Parrillas y Defensas Para Tu Moto" width="180" />
+		<img src={logotipo} alt="Parrillas y Defensas Para Tu Moto" width="180px" height="60px" />
 	</a>
 
 	<div class="flex items-center gap-2">
-		<!-- <button
-			class="block border-0 bg-transparent cursor-pointer"
-			id="open-search-button"
-			aria-label="open search"
-			aria-expanded="false"
-			aria-controls="search"
-		>
-			<SearchIcon width="25px" height="25px" />
-	
-		</button> -->
 		<button
 			class="block border-0 bg-transparent cursor-pointer"
 			id="open-cart-button"	
-			aria-label="open cart"
+			aria-label="abrir carrito"
 			aria-expanded="false"
-			aria-controls="cart"
+			aria-controls="carrito"
 		>
 			<span class="cart-button">
 				<CartIcon width="25px" height="25px" />
@@ -80,7 +59,7 @@ const categories = getCategoriesWithSlug();
 			{
 				categories.map((category) => (
 					<li>
-						<a href={`/catalog/?category=${category.slug}`}>{category.name}</a>
+						<a href={`/productos/?categoria=${category.slug}`}>{category.name}</a>
 					</li>
 				))
 			}
@@ -160,102 +139,3 @@ const categories = getCategoriesWithSlug();
 </style>
 
 <script src="/src/scripts/navMenu.js"></script>
-
-<!-- <style>
-	nav {
-		background-color: var(--primary-color);
-		border-bottom: 1px solid var(--hover-color);
-	}
-	nav ul {
-		list-style: none;
-		display: flex;
-	}
-	nav .home-li {
-		margin-right: auto;
-	}
-	nav li {
-		display: flex;
-	}
-	nav a {
-		display: flex;
-		text-decoration: none;
-		color: var(--text-color);
-		padding: 1em 2em;
-		transition: background-color 150ms ease;
-	}
-	nav a:hover {
-		background-color: var(--hover-color);
-	}
-	nav a.active-link {
-		border-bottom: 2px solid var(--text-color);
-	}
-	nav a.accent-link {
-		background-color: var(--accent-color);
-	}
-
-	#close-sidebar-button {
-		display: none;
-		background: none;
-		border: none;
-		padding: 1em;
-		cursor: pointer;
-	}
-	#overlay {
-		background: rgba(0, 0, 0, 0.5);
-		position: fixed;
-		inset: 0;
-		z-index: 9;
-		display: none;
-	}
-	.skip-link {
-		opacity: 0;
-		pointer-events: none;
-		position: absolute;
-		top: 10px;
-		left: 10px;
-		z-index: 1000;
-		background-color: var(--accent-color);
-		color: #ffffff;
-		padding: 12px 24px;
-		border-radius: 5px;
-		text-decoration: none;
-		font-weight: bold;
-		font-size: 1rem;
-		transition: opacity 0.3s ease;
-	}
-
-	.skip-link:focus {
-		opacity: 1;
-		pointer-events: auto;
-		outline: 3px solid #ffffff;
-	}
-	@media screen and (max-width: 700px) {
-		#open-sidebar-button,
-		#close-sidebar-button {
-			display: block;
-		}
-
-		nav.show {
-			right: 0;
-		}
-		nav.show ~ #overlay {
-			display: block;
-		}
-		nav ul {
-			width: 100%;
-			flex-direction: column;
-		}
-		nav a {
-			width: 100%;
-			padding-left: 2.5em;
-		}
-		nav a.active-link {
-			border-bottom: none;
-		}
-		nav .home-li {
-			margin-right: unset;
-		}
-	}
-
-
-</style> -->

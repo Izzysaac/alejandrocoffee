@@ -1,0 +1,198 @@
+---
+import { getCloudinaryImageUrl } from "@scripts/imgHelper";
+
+const bestSellers = [
+	{
+		categoria: "Bajaj Pulsar",
+		nombre: "Defensa Doble Tope Pulsar 180",
+		descripcion: "",
+		media: [
+			"defensa-doble-tope-pulsar-180-01",
+			"defensa-doble-tope-pulsar-180-02",
+		],
+		estado: "activo",
+		detalles: "",
+		opciones: {},
+		variantes: [
+			{
+				sku: "def-dob-pulsar180",
+				precio: 76000,
+			},
+		],
+	},
+	{
+		categoria: "Bajaj Boxer",
+		nombre: "Parrilla Boxer SP CT100 - CT125",
+		descripcion: "",
+		media: [
+			"parrilla-boxersp-100-125-01",
+			"parrilla-boxersp-100-125-02",
+			"parrilla-boxersp-100-125-03",
+		],
+		estado: "activo",
+		detalles: "",
+		opciones: {},
+		variantes: [
+			{
+				sku: "par-boxer",
+				precio: 84000,
+			},
+		],
+	},
+	{
+		categoria: "Universal",
+		nombre: "Alerón Universal",
+		descripcion: "",
+		media: [
+			"defensa-aleron-universal-01",
+			"defensa-aleron-universal-02",
+			"defensa-aleron-universal-03",
+		],
+		estado: "activo",
+		detalles: "",
+		opciones: {},
+		variantes: [
+			{
+				sku: "ale-uni",
+				precio: 100000,
+			},
+		],
+	},
+	{
+		categoria: "AKT NKD",
+		nombre: "Cola NKD 125",
+		descripcion: "",
+		media: ["cola-nkd-01", "cola-nkd-02", "cola-nkd-03"],
+		estado: "activo",
+		detalles: "",
+		opciones: {},
+		variantes: [
+			{
+				sku: "cola-nkd125",
+				precio: 52000,
+			},
+		],
+	},
+];
+
+const createProductSlug = (name) => {
+	return name
+		.toLowerCase()
+		.normalize("NFD")
+		.replace(/[\u0300-\u036f]/g, "")
+		.replace(/\s+/g, "-")
+		.replace(/[^a-z0-9-]/g, "");
+};
+
+const getCategorySlug = (categoryName) => {
+	return categoryName
+		.toLowerCase()
+		.normalize("NFD")
+		.replace(/[\u0300-\u036f]/g, "")
+		.replace(/\s+/g, "-")
+		.replace(/[^a-z0-9-]/g, "");
+};
+
+const getPriceLabel = (product) => {
+	const prices = product.variantes?.map((v) => v.precio) ?? [];
+	const minPrice = prices.length ? Math.min(...prices) : 0;
+	return prices.length > 1
+		? `Desde ${minPrice.toLocaleString("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 })}`
+		: `${minPrice.toLocaleString("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 })}`;
+};
+---
+
+<div class="products-grid">
+{
+	bestSellers.map((product) => (
+		<article
+			class="product-card"
+			data-category={`${getCategorySlug(product.categoria)}`}
+		>
+			<a
+				href={`/productos/${createProductSlug(product.nombre)}`}
+				class="flex flex-col text-center"
+			>
+				<figure>
+					<img
+						src={`${getCloudinaryImageUrl(product.media[0], { w: 600, h: 600 })}`}
+						alt={product.nombre}
+						loading="lazy"
+						class="catalog-image order-first"
+					/>
+				</figure>
+				<h2>{product.nombre}</h2>
+				<p>{getPriceLabel(product)}</p>
+			</a>
+		</article>
+	))
+}
+
+</div>
+
+
+<style>
+
+    .products-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+	}
+
+	@media (min-width: 400px) {
+		.products-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (min-width: 600px) {
+		.products-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	@media (min-width: 800px) {
+		.products-grid {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	@media (min-width: 1000px) {
+		.products-grid {
+			grid-template-columns: repeat(5, 1fr);
+		}
+	}
+    .product-card {
+		border: 1px solid #ddd;
+		border-radius: 8px;
+		text-decoration: none;
+		color: inherit;
+		display: flex;
+		flex-direction: column;
+		transition:
+			transform 0.2s ease,
+			box-shadow 0.2s ease;
+		background-color: white;
+	}
+
+	.product-card:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.product-card a figure {
+		max-width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		aspect-ratio: 1 / 1;
+		/* height: 200px; */
+		border-radius: 4px;
+	}
+
+	.product-card img {
+		max-width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+</style>

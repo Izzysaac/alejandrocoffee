@@ -24,15 +24,15 @@ const reviews  = [
 ]
 ---
 
-<div class="wrapper flex w-full snap-x snap-mandatory gap-5 overflow-x-scroll items-start">
+<div class="wrapper flex w-full snap-x snap-mandatory gap-2 overflow-x-scroll items-start">
 	{
         reviews.map((review, i) => (
-            <div class="card snap-center w-full max-w-125 shrink-0 box-border flex flex-col justify-center items-center text-center gap-2.5 aspect-square bg-slate-100">
+            <article class="card snap-center w-11/12 max-w-125 shrink-0 box-border flex flex-col justify-center items-center text-center gap-2.5 aspect-square bg-slate-100 py-3">
                 <img src={review.image} alt="" />
                 <span>⭐⭐⭐⭐⭐</span>
                 <h3 class="text-lg font-bold">{review.name}</h3>
                 <p class="text-gray-600">{review.text}</p>
-            </div>
+            </article>
         ))
     }
 <!-- transition:name={`img-${mediaSrc}-${i}`} -->

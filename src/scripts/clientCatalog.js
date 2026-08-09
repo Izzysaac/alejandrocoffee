@@ -1,9 +1,7 @@
-import data from "../../public/data.json";
-import { getCloudinaryImageUrl } from "./imgHelper";
-
-let allProducts = [];
-let filteredProducts = [];
-
+let currentCategory = "";
+let $products = null;
+let $select = null;
+let productItems = [];
 /* ========= Helpers ========= */
 
 export const createProductSlug = (name) => {
@@ -14,74 +12,33 @@ export const createProductSlug = (name) => {
 		.replace(/\s+/g, "-")
 		.replace(/[^a-z0-9-]/g, "");
 };
-/* ========= ======= ========= */
+
+/* ========= FUNCTIONS ========= */
 
 // Render products to DOM
-export const renderProducts = (products) => {
-	const container = document.getElementById("products-container");
-	if (!container) return;
+export const renderProducts = () => {
+	if (productItems.length === 0) return;
 
-	container.innerHTML = products
-		.map((product) => {
-			// Precio mínimo de las variantes
-			const prices = product.variantes?.map((v) => v.precio) ?? [];
-
-			const minPrice = prices.length ? Math.min(...prices) : 0;
-
-			const priceLabel =
-				prices.length > 1
-					? `Desde ${minPrice.toLocaleString("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 })}`
-					: `${minPrice.toLocaleString("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 })}`;
-
-			return `
-			<div class="product-card">
-
-				<a href="/catalog/${createProductSlug(product.nombre)}"
-				class="flex flex-col text-center">
-
-					${
-						product.media?.length > 0
-							? `
-
-								<figure>
-									<img
-										src="${getCloudinaryImageUrl(product.media[0], { width: 600, height: 600 })}"
-										alt="${product.nombre}"
-										loading="lazy"
-										class="order-first catalog-image"
-									/>
-								</figure>
-							`
-							: ""
-					}
-
-					<h2>
-						${product.nombre}
-					</h2>
-
-					<p>
-						${priceLabel.toLocaleString("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 })}
-					</p>
-
-				</a>
-
-			</div>
-		`;
-		})
-		.join("");
+	for (const { el, category } of productItems) {
+		// Si la categoría actual es 'all' (opcional), se muestran todos
+		const hide = currentCategory !== '' && category !== currentCategory;
+		// Si hide es true -> añade la clase. Si es false -> la quita.
+		el.classList.toggle("product-hidden", hide);
+	}
 };
 
 // Update URL without page reload
-export const updateURL = (categorySlug) => {
-	const url = categorySlug ? `/catalog?category=${categorySlug}` : "/catalog";
+export const updateURL = () => {
+	const url = currentCategory ? `/productos?categoria=${currentCategory}` : "/productos";
+	const currentUrl = window.location.pathname + window.location.search;
+	if (currentUrl === url) return;
 	window.history.pushState({}, "", url);
 };
 
 // Update active filter in dropdown
-export const updateActiveFilter = (categorySlug) => {
-	const select = document.getElementById("category-filter");
-	if (select) {
-		select.value = categorySlug || "";
+export const updateActiveFilter = () => {
+	if ($select) {
+		$select.value = currentCategory || "";
 	}
 };
 
@@ -89,52 +46,47 @@ export const updateActiveFilter = (categorySlug) => {
 
 // Filter products by category
 export const filterByCategory = (categorySlug) => {
-	if (!categorySlug) {
-		filteredProducts = [...allProducts];
-	} else {
-		filteredProducts = allProducts.filter(
-			(product) =>
-				product.categoria
-					.toLowerCase()
-					.normalize("NFD")
-					.replace(/[\u0300-\u036f]/g, "")
-					.replace(/\s+/g, "-")
-					.replace(/[^a-z0-9-]/g, "") === categorySlug,
-		);
-	}
-
-	renderProducts(filteredProducts);
-	updateURL(categorySlug);
-	updateActiveFilter(categorySlug);
+	currentCategory = categorySlug;
+	renderProducts();
+	updateURL();
+	updateActiveFilter();
 };
 
 // Initialize products on page load
 export const initCatalog = () => {
-	allProducts = data;
-	filteredProducts = [...allProducts];
+
+	// Cache products once
+	if ($products) {
+		productItems = Array.from($products.children).map((product) => ({
+			el: product,
+			category: product.dataset.category,
+		}));
+	}
 
 	// Check URL params on load
 	const urlParams = new URLSearchParams(window.location.search);
-	const category = urlParams.get("category");
+	const category = urlParams.get("categoria");
 
 	if (category) {
 		filterByCategory(category);
 	} else {
-		renderProducts(allProducts);
+		renderProducts();
+		updateActiveFilter();
 	}
-	updateActiveFilter(category);
 };
 
 /* ========= ======= ========= */
 
 // Initialize when DOM is ready (catalog UI)
 document.addEventListener("DOMContentLoaded", () => {
+	$products = document.getElementById("products-container");
+	$select = document.getElementById("category-filter");
+
 	initCatalog();
 
 	// Add event listener for filter changes
-	const filterSelect = document.getElementById("category-filter");
-	if (filterSelect) {
-		filterSelect.addEventListener("change", (e) => {
+	if ($select) {
+		$select.addEventListener("change", (e) => {
 			filterByCategory(e.target.value);
 		});
 	}
