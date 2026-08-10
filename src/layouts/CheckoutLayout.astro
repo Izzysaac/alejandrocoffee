@@ -1,5 +1,5 @@
 ---
-const logo = "/logotipo.png";
+import SpeedInsights from "@vercel/speed-insights/astro"
 import Analytics from '@vercel/analytics/astro'
 ---
 
@@ -10,6 +10,7 @@ import Analytics from '@vercel/analytics/astro'
 		<meta name="viewport" content="width=device-width" />
 		<title>Pantalla de pago</title>
         <meta name="robots" content="noindex">
+        <SpeedInsights />
         <Analytics />
 	</head>
 	<body>
@@ -22,55 +23,6 @@ import Analytics from '@vercel/analytics/astro'
 	:root {
 	--brand: #be1419;
 	--on-brand: #FFFFFF;
-	--brand-hover: #9A601D;
-
-	--accent: #B98141;
-
-	--neutral-0: #ffffff;
-	--neutral-900: #1A1A1A;
-
-	--color-bg: #1A1A1A;
-	--color-bg-secondary: #F4F3ED;
-	--color-text: var(--neutral-0);
-
-	--primary-color: #007bff;
-	--secondary-color: #6c757d;
-
-	--theme-ui-colors-text: #1A1A1A;
-    --theme-ui-colors-background: #FFFFFF;
-    --theme-ui-colors-primary: #B98141;
-    --theme-ui-colors-goldLighter: #F4D2A0;
-    --theme-ui-colors-goldLight: #E0AB6F;
-    --theme-ui-colors-goldPrimary: #B98141;
-    --theme-ui-colors-goldDark: #9A601D;
-    --theme-ui-colors-black: #000000;
-    --theme-ui-colors-white: #FFFFFF;
-    --theme-ui-colors-beige50: #F7F7F6;
-    --theme-ui-colors-beige100: #F4F3ED;
-    --theme-ui-colors-grey50: #F5F5F5;
-    --theme-ui-colors-grey100: #E6E6E6;
-    --theme-ui-colors-grey200: #D0D0D0;
-    --theme-ui-colors-grey300: #B2B2B2;
-    --theme-ui-colors-grey400: #6E6E6E;
-    --theme-ui-colors-grey500: #5A5A5A;
-    --theme-ui-colors-grey600: #3C3C3C;
-    --theme-ui-colors-grey700: #1A1A1A;
-    --theme-ui-colors-navy: #213B58;
-    --theme-ui-colors-olive: #B6B8AC;
-    --theme-ui-colors-sand: #EBE2CC;
-    --theme-ui-colors-charcoal: #202020;
-    --theme-ui-colors-canvas: #E5E3DC;
-    --theme-ui-colors-critical100: #FEF2F2;
-    --theme-ui-colors-critical400: #FF6161;
-    --theme-ui-colors-critical500: #D60000;
-    --theme-ui-colors-critical700: #4D0000;
-    --theme-ui-colors-positive100: #F2FCF6;
-    --theme-ui-colors-positive400: #00C851;
-    --theme-ui-colors-positive500: #008033;
-    --theme-ui-colors-positive700: #00481D;
-    --theme-ui-colors-tcsPurple: #6402A2;
-    --theme-ui-colors-holidayRed: #E00000;
-    --theme-ui-colors-tmobilePink: #ED008C;
 }
 	html,
 	body {

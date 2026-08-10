@@ -1,0 +1,24 @@
+# Parrillas y Defensas para Moto en Colombia
+
+> Fabricante y tienda de lujos y accesorios para motocicletas,
+> especializados en parrillas y defensas diseñadas para
+> modelos específicos de motos.
+
+## Productos
+
+- [Parrillas y defensas para motos](https://parrillasydefensas.com/productos/): Catálogo de parrillas y defensas compatibles con diferentes modelos de motocicletas.
+- [Contacto](https://example.com/contacto): Página de contacto.
+
+## Productos destacados
+
+- [Defensa Bajaj Pulsar 180](https://parrillasydefensas.com/productos/defensa-doble-tope-pulsar-180): Defensa Doble Tope para Moto Marca Bajaj Pulsar 180.
+
+## Guías (próximamente)
+
+- [Cómo elegir una parrilla para moto](https://parrillasydefensas.com/blog/como-elegir-parrilla-moto/): Guía para elegir una parrilla según modelo y necesidades.
+- [Cómo elegir una defensa para moto](https://parrillasydefensas.com/blog/como-elegir-defensa-moto/): Factores de compatibilidad y características.
+
+## Información
+
+- [Preguntas frecuentes](https://parrillasydefensas.com/#faq/): Preguntas sobre compatibilidad, instalación y productos.
+- [Contacto](https://parrillasydefensas.com/contacto/): Información para contactar con la empresa.

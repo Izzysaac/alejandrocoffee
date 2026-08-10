@@ -2,17 +2,14 @@
 import { getCategoriesWithSlug } from "@lib/builder.js";
 import { getCloudinaryImageUrl } from "@scripts/imgHelper";
 
-import Layout from "@layouts/Layout.astro";
 import products from "@public/data.json";
+
+import Layout from "@layouts/Layout.astro";
+import Filter from "@components/Filter.astro";
+import Breadcrumb from "@components/Breadcrumb.astro";
 
 
 const categories = getCategoriesWithSlug();
-
-const data = {
-	title: "Catálogo de Parrillas y Defensas para Moto",
-	description:
-		"Catálogo completo de parrillas y defensas para moto. Encuentra la parrilla y defensa perfecta para tu marca y modelo de moto. Somos fabricantes. Calidad y durabilidad en cada producto.",
-};
 
 const createProductSlug = (name) => {
 	return name
@@ -39,93 +36,110 @@ const getPriceLabel = (product) => {
 		? `Desde ${minPrice.toLocaleString("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 })}`
 		: `${minPrice.toLocaleString("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 })}`;
 };
+
+const getStartPrice = (product) => {
+	const prices = product.variantes?.map((v) => v.precio) ?? [];
+	return prices.length ? Math.min(...prices) : 0;
+}
+
+const seo = {
+	title: "Catálogo de Parrillas y Defensas para Moto",
+	description:
+		"Catálogo completo de parrillas y defensas para moto. Encuentra la parrilla y defensa perfecta para tu marca y modelo de moto. Somos fabricantes. Calidad y durabilidad en cada producto.",
+	catalogSchema: {
+    	'@context': 'https://schema.org',
+		'@graph': [
+			{
+				'@type': 'CollectionPage',
+				'@id': 'https://parrillasydefensas.com/productos/#webpage',
+				url: 'https://parrillasydefensas.com/productos',
+				name: 'Catálogo de Parrillas y Defensas para Moto',
+				description:
+					'Catálogo completo de parrillas y defensas para moto. Encuentra la parrilla y defensa perfecta para tu marca y modelo de moto. Somos fabricantes. Calidad y durabilidad en cada producto.',
+				isPartOf: {
+					'@id': 'https://parrillasydefensas.com/#website',
+				},
+			},
+
+			{
+				'@type': 'ItemList',
+				'@id': 'https://parrillasydefensas.com/products/#itemlist',
+				itemListElement: products.map((product, index) => ({
+					'@type': 'ListItem',
+					position: index + 1,
+					name: product.nombre,
+					url: createProductSlug(product.nombre),
+				})),
+			},
+
+			{
+				'@type': 'BreadcrumbList',
+				'@id': 'https://parrillasydefensas.com/products/#breadcrumb',
+				itemListElement: [
+					{
+						'@type': 'ListItem',
+						position: 1,
+						name: 'Inicio',
+						item: 'https://parrillasydefensas.com/',
+					},
+					{
+						'@type': 'ListItem',
+						position: 2,
+						name: 'Catálogo',
+						item: 'https://parrillasydefensas.com/productos/',
+					},
+				],
+			}
+		]
+	}
+};
 ---
 
-<Layout title={data.title} description={data.description}>
-	<main class="px-2.5 pt-23 pb-4">
-		<h1 class="mt-3 text-center text-lg font-bold">
+<Layout title={seo.title} description={seo.description} schema={seo.catalogSchema}>
+	<!-- <Breadcrumb class="pt-23 px-2.5" items={[{name: "Productos"}]} /> -->
+	<header class="pt-23 px-2.5">
+		<h1 class="mt-2 text-center text-lg font-bold">
 			Catálogo de Parrillas y Defensas para Moto
 		</h1>
-		<p class="text-center">Más protección. Más capacidad. Más utilidad</p>
-		<div class="filter-container flex items-center gap-2">
-			<label for="category-filter">Filtro</label>
-			<select id="category-filter" class="filter-select">
-				<option value="">Todos los modelos</option>
+		<p class="text-center hidden">Más protección. Más capacidad. Más utilidad</p>
+	</header>
+	<main class="px-2.5 pb-4">
+		<Filter />
+		<section >
+			<ul id="products-container" class="list-none products-grid">
 				{
-					categories.map((category) => (
-						<option value={category.slug}>{category.name}</option>
+					products.map((product, i) => (
+					<li data-category={`${getCategorySlug(product.categoria)}`}>
+						<article class="product-card relative text-center" >
+								<figure class="">
+									<img
+										src={`${getCloudinaryImageUrl(product.media[0], { w: 600, h: 600 })}`}
+										alt={product.nombre}
+										class="catalog-image order-first m-auto"
+										height="200px"
+										loading={i < 4 ? "eager" : "lazy"}
+										fetchpriority={i < 4 ? "high" : "auto"}
+										
+									/>
+								</figure>
+								<h2>
+									<a href={`/productos/${createProductSlug(product.nombre)}`} class="flex flex-col link">
+									{product.nombre}
+									</a>
+								</h2>
+								<p>
+									<data value={getStartPrice(product)}>{getPriceLabel(product)}</data>
+								</p>
+						</article>
+					</li>
 					))
 				}
-			</select>
-		</div>
-		<div id="products-container" class="products-grid">
-			{
-				products.map((product) => (
-					<article class="product-card" data-category={`${getCategorySlug(product.categoria)}`}>
-						<a
-							href={`/productos/${createProductSlug(product.nombre)}`}
-							class="flex flex-col text-center"
-						>
-							<figure>
-								<img
-									src={`${getCloudinaryImageUrl(product.media[0], { w: 600, h: 600 })}`}
-									alt={product.nombre}
-									loading="lazy"
-									class="catalog-image order-first"
-									height="200px"
-								/>
-							</figure>
-							<h2>{product.nombre}</h2>
-							<p>
-								{getPriceLabel(product)}
-							</p>
-						</a>
-					</article>
-				))
-			}
-			<!-- <ProductCard products={data} /> -->
-		</div>
+			</ul>
+		</section>
 	</main>
 </Layout>
 
 <style is:global>
-	.filter-container {
-		margin: 1rem 0;
-		padding: 0.75rem;
-		background: #f8f9fa;
-		border-radius: 8px;
-		border: 1px solid #dee2e6;
-	}
-
-	.filter-container label {
-		display: block;
-		font-weight: 600;
-		color: #495057;
-	}
-
-	.filter-select {
-		width: 100%;
-		padding: 0.5rem;
-		border: 1px solid #ced4da;
-		border-radius: 4px;
-		background-color: white;
-		font-size: 1rem;
-		cursor: pointer;
-	}
-
-	.filter-select:focus {
-		outline: none;
-		border-color: #80bdff;
-		box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-	}
-
-	@media (min-width: 768px) {
-		.filter-container {
-			max-width: 300px;
-			margin: 0 auto 2rem auto;
-		}
-	}
-
 	.products-grid {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -207,6 +221,15 @@ const getPriceLabel = (product) => {
 	.product-card button:hover {
 		background-color: #0056b3;
 	} */
+	.link::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1; /* Hace que el área clicable cubra toda la tarjeta */
+	}
 </style>
 
 <script src="../../scripts/clientCatalog.js"></script>

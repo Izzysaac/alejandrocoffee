@@ -4,7 +4,7 @@ import CartIcon from "../assets/cart.svg";
 import CrossIcon from "../assets/cross.svg";
 
 import { getCategoriesWithSlug } from "@lib/builder";
-const logotipo = "https://res.cloudinary.com/dr5knskbb/image/upload/v1783648214/edited-logotipo.webp";
+const logotipo = "/nav-logo-parrillas-y-defensas";
 const categories = getCategoriesWithSlug();
 ---
 
@@ -23,7 +23,7 @@ const categories = getCategoriesWithSlug();
 	</div>
 
 	<a href="/" class="block text-xl font-bold" >
-		<img src={logotipo} alt="Parrillas y Defensas Para Tu Moto" width="180px" height="60px" />
+		<img src={logotipo} alt="Parrillas y Defensas Para Tu Moto" width="180px" height="60px" fetchpriority="high" />
 	</a>
 
 	<div class="flex items-center gap-2">

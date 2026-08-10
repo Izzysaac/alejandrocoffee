@@ -1,8 +1,9 @@
 ---
-import ImageCarousel from "@components/ImageCarousel.astro";
-import Layout from "../../layouts/Layout.astro";
 import data from "@public/data.json";
 
+import Layout from "../../layouts/Layout.astro";
+import Breadcrumb from "@components/Breadcrumb.astro";
+import ImageCarousel from "@components/ImageCarousel.astro";
 
 import BulletPointsAstroComponent from "@components/productPage/BulletPoints.astro";
 import MainReviewAstroComponent from "@components/productPage/MainReview.astro";
@@ -10,6 +11,68 @@ import PaymentMethodsAstroComponent from "@components/productPage/PaymentMethods
 import FAQSAstroComponent from "@components/productPage/FAQS.astro";
 import OrderTimeline from "@components/productPage/OrderTimeline.astro";
 import ReviewsAstroComponent from "@components/Reviews.astro";
+
+import { getCldImageUrl } from 'astro-cloudinary/helpers';
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+
+const { item } = Astro.props;
+
+const seo = {
+	title: `${item.nombre} - Parrillas y Defensas para Moto`,
+	description: `${item.nombre}, ${item.categoria} - Parrillas y Defensas para Moto`,
+	image: `${getCldImageUrl({ src: item.media[0]})}`,
+	productSchema: {
+		'@context': 'https://schema.org',
+		"@graph": [
+			{
+				'@type': 'Product',
+				"@id": `${canonicalURL.href}/#product`,
+				name: item.nombre,
+				image: `${getCldImageUrl({ src: item.media[0]})}`,
+				description: item.categoria,
+				sku: item.variantes[0].sku,
+				offers: {
+					'@type': 'Offer',
+					"availability": "https://schema.org/InStock",
+					priceCurrency: "COP",
+					price: item.variantes[0].precio.toString(),
+					url: canonicalURL.href,
+				}
+			},
+			{
+				"@type": "BreadcrumbList",
+				"@id": `${canonicalURL.href}/#breadcrumb`,
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 1,
+						"name": "Inicio",
+						"item": "https://parrillasydefensas.com/"
+					},
+					{
+						"@type": "ListItem",
+						"position": 2,
+						"name": "Catálogo",
+						"item": "https://parrillasydefensas.com/productos/"
+					},
+					{
+						"@type": "ListItem",
+						"position": 3,
+						name: item.nombre,
+					}
+				]
+			}
+		]
+	}
+};
+
+const productId = item.nombre
+	.toLowerCase()
+	.normalize("NFD")
+	.replace(/[\u0300-\u036f]/g, "")
+	.replace(/\s+/g, "-")
+	.replace(/[^a-z0-9-]/g, "");
 
 export function getStaticPaths() {
 	return data.map((item) => ({
@@ -24,27 +87,12 @@ export function getStaticPaths() {
 		props: { item },
 	}));
 }
-
-const { item } = Astro.props;
-
-const productId = item.nombre
-	.toLowerCase()
-	.normalize("NFD")
-	.replace(/[\u0300-\u036f]/g, "")
-	.replace(/\s+/g, "-")
-	.replace(/[^a-z0-9-]/g, "");
-
-
-const data = {
-	title: `${item.nombre} - Parrillas y Defensas para Moto`,
-	description: `${item.nombre}, ${item.categoria} - Parrillas y Defensas para Moto`,
-};
 ---
 
-<Layout title={data.title} description={data.description}>
-	<main class="flex flex-col text-center pt-24 gap-4 max-w-125 m-auto!">
-
-		<ImageCarousel media={item.media}/>
+<Layout title={seo.title} description={seo.description} schema={seo.productSchema} image={seo.image}>
+	<!-- <Breadcrumb class="pt-23 px-2.5" items={[{name:"Productos", href:"/productos/"},{name: item.nombre}]} /> -->
+	<main class=" pt-23 flex flex-col text-center gap-2 max-w-125 m-auto!">
+		<ImageCarousel name={item.nombre} description={item.descripcion} media={item.media}/>
 		<div class="flex flex-col gap-4 px-2.5 max-w-100 m-auto">
 
 			<div style="display: none;" id="product-data">
@@ -62,12 +110,15 @@ const data = {
 			}
 			
 			<!-- PRECIO dinámico -->
-			<p id="price" class="font-bold text-lg">${item.variantes?.[0]?.precio.toLocaleString("es-CO")}</p>
+			<p>
+				<data id="price" class="font-bold text-lg" value=`${item.variantes?.[0]?.precio}`>${item.variantes?.[0]?.precio.toLocaleString("es-CO")}</data>
+			</p>
+
 
 			<form id="form" class="text-left">
 
 			{
-				Object.entries(item.opciones || {}).map(([opcion, valores]) => (
+				Object.entries(item.opciones || {}).map(([opcion, valores]) => (	
 					<fieldset class="flex flex-col gap-2">
 						<legend class="font-semibold capitalize">
 							{opcion}
@@ -75,7 +126,7 @@ const data = {
 
 						<div class="flex gap-4">
 							{
-								valores.map((valor, i) => (
+								(valores as string[]).map((valor, i) => (
 									<div>
 										<input
 											type="radio"
@@ -99,6 +150,7 @@ const data = {
 
 			<button
 				id="add-to-cart"
+				type="button"
 				data-id={productId}
 				data-title={item.nombre}
 				data-image={item.media?.[0] ?? ""}

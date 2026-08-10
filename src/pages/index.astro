@@ -6,18 +6,17 @@ import FAQS from "@components/productPage/FAQS.astro";
 
 const images = {
 	hero: "https://res.cloudinary.com/dr5knskbb/image/upload/v1783319098/bg-parillasydefensas_tnfgjg.webp",
-	catalog:
-		"https://res.cloudinary.com/dr5knskbb/image/upload/v1771733861/catalog_iamghp.jpg",
-};
 
-const data = {
+};
+// CollectionPage + ItemList + BreadcrumbList
+const seo = {
 	title: "Parrillas y Defensas para Moto",
 	description:
-		"Encuentra la parrilla y defensa perfecta para tu moto. Somos fabricantes. Calidad y durabilidad en cada producto.",
+		"Encuentra la parrilla y defensa perfecta para tu moto. Fabrica y venta de lujos y accesorios para motos."
 };
 ---
 
-<Layout title={data.title} description={data.description}>
+<Layout title={seo.title} description={seo.description} hero={images.hero}>
 	<div
 		id="hero"
 		style={`background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url(${images.hero});`}
@@ -26,10 +25,12 @@ const data = {
 		<h1
 			class="mt-[30%] block w-full bg-black/50 text-center text-2xl font-bold"
 		>
-			<span>Las Mejores Parrillas y Defensas</span><br>
+			<span>Las Mejores Parrillas y Defensas</span><br />
 			<span>Para Moto en Colombia</span>
 		</h1>
-		<p class="text-center block w-full bg-black/50">Más protección. Más capacidad. Más utilidad</p>
+		<p class="block w-full bg-black/50 text-center">
+			Más protección. Más capacidad. Más utilidad
+		</p>
 
 		<div class="mt-auto mb-20 flex w-full flex-col gap-4 px-5 text-center">
 			<a
@@ -37,62 +38,151 @@ const data = {
 				class="block rounded bg-(--accent) px-5 py-2 text-lg font-semibold text-(--on-accent)"
 				>Ver catálogo</a
 			>
-			<p>Llevo más de tres años con ella y sigue como el primer día - ⭐⭐⭐⭐⭐ </p>
+			<p>
+				Llevo más de tres años con ella y sigue como el primer día -
+				⭐⭐⭐⭐⭐
+			</p>
 		</div>
 	</div>
 
-	<div class="bg-black text-white/80 flex items-center justify-center text-center gap-4 py-6 text-sm">
-		<p class="flex flex-col justify-center items-center gap-2 flex-1">
-			<span><svg viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="40px" height="40px"><g id="SVGRepo_bgCarrier" stroke-width="0" ></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 3.5L13.0581 0.441881C12.4304 0.15802 11.7337 0 11 0C8.23858 0 6 2.23858 6 5C6 5.45802 6.06158 5.90165 6.17692 6.32308L0 12.5L3.5 16L9.67692 9.82308C10.0983 9.93842 10.542 10 11 10C13.7614 10 16 7.76142 16 5C16 4.26633 15.842 3.56956 15.5581 2.94188L12.5 6H10V3.5Z" fill="#currentColor"></path> </g></svg></span>
+	<div
+		class="flex items-center justify-center gap-4 bg-black py-6 text-center text-sm text-white/80"
+	>
+		<p class="flex flex-1 flex-col items-center justify-center gap-2">
+			<span
+				><svg
+					viewBox="0 0 16 16"
+					fill="currentColor"
+					xmlns="http://www.w3.org/2000/svg"
+					width="40px"
+					height="40px"
+					><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+						id="SVGRepo_tracerCarrier"
+						stroke-linecap="round"
+						stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+						<path
+							d="M10 3.5L13.0581 0.441881C12.4304 0.15802 11.7337 0 11 0C8.23858 0 6 2.23858 6 5C6 5.45802 6.06158 5.90165 6.17692 6.32308L0 12.5L3.5 16L9.67692 9.82308C10.0983 9.93842 10.542 10 11 10C13.7614 10 16 7.76142 16 5C16 4.26633 15.842 3.56956 15.5581 2.94188L12.5 6H10V3.5Z"
+							fill="#currentColor"></path>
+					</g></svg
+				></span
+			>
 			<span></span>
 			<span>
-				Somos <br> fabricantes
+				Somos <br /> fabricantes
 			</span>
 		</p>
-		<p class="flex flex-col justify-center items-center gap-2 flex-1">
-			<span><svg fill="currentColor" width="40px" height="40px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 370.04 370.04" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g id="Layer_5_21_"> <g> <path d="M341.668,314.412c0,0-41.071-70.588-48.438-83.248c8.382-2.557,17.311-4.815,21.021-11.221 c6.183-10.674-4.823-28.184-1.933-39.625c2.977-11.775,20.551-21.964,20.551-33.933c0-11.661-18.169-25.284-21.148-36.99 c-2.91-11.439,8.063-28.968,1.86-39.629c-6.203-10.662-26.864-9.786-35.369-17.97c-8.751-8.422-8.724-29.028-19.279-34.672 c-10.598-5.665-27.822,5.784-39.589,3.072C207.711,17.515,197.318,0,185.167,0c-12.331,0-31.944,19.868-35.02,20.583 c-11.761,2.734-29.007-8.687-39.594-2.998c-10.545,5.663-10.48,26.271-19.215,34.707c-8.491,8.199-29.153,7.361-35.337,18.035 c-6.183,10.672,4.823,28.178,1.934,39.625c-2.897,11.476-21.083,23.104-21.083,36.376c0,11.97,17.618,22.127,20.613,33.896 c2.911,11.439-8.062,28.966-1.859,39.631c3.377,5.805,11.039,8.188,18.691,10.479c0.893,0.267,2.582,1.266,1.438,2.933 c-5.235,9.036-47.37,81.755-47.37,81.755c-3.352,5.784-0.63,10.742,6.047,11.023l32.683,1.363 c6.677,0.281,15.053,5.133,18.617,10.786l17.44,27.674c3.564,5.653,9.219,5.547,12.57-0.236c0,0,48.797-84.246,48.817-84.27 c0.979-1.144,1.963-0.909,2.434-0.509c5.339,4.546,12.782,9.081,18.994,9.081c6.092,0,11.733-4.269,17.313-9.03 c0.454-0.387,1.559-1.18,2.367,0.466c0.013,0.026,48.756,83.811,48.756,83.811c3.36,5.776,9.016,5.874,12.569,0.214 l17.391-27.707c3.554-5.657,11.921-10.528,18.598-10.819l32.68-1.424C342.315,325.152,345.028,320.187,341.668,314.412z M239.18,238.631c-36.136,21.023-79.511,18.77-112.641-2.127c-48.545-31.095-64.518-95.419-35.335-145.788 c29.516-50.95,94.399-68.928,145.808-40.929c0.27,0.147,0.537,0.299,0.805,0.449c0.381,0.211,0.761,0.425,1.14,0.641 c15.86,9.144,29.613,22.415,39.461,39.342C308.516,141.955,290.915,208.533,239.18,238.631z"></path> <path d="M230.916,66.103c-0.15-0.087-0.302-0.168-0.452-0.254C203.002,49.955,168,48.793,138.665,65.86 c-43.532,25.326-58.345,81.345-33.019,124.876c7.728,13.284,18.318,23.888,30.536,31.498c1.039,0.658,2.09,1.305,3.164,1.927 c43.579,25.247,99.568,10.333,124.814-33.244C289.405,147.338,274.495,91.35,230.916,66.103z M241.818,137.344l-15.259,14.873 c-4.726,4.606-7.68,13.698-6.563,20.203l3.602,21.001c1.116,6.505-2.75,9.314-8.592,6.243l-18.861-9.916 c-5.842-3.071-15.401-3.071-21.243,0l-18.86,9.916c-5.842,3.071-9.709,0.262-8.593-6.243l3.602-21.001 c1.116-6.505-1.838-15.597-6.564-20.203l-15.258-14.873c-4.727-4.606-3.249-9.152,3.282-10.102l21.086-3.064 c6.531-0.949,14.265-6.568,17.186-12.486l9.43-19.107c2.921-5.918,7.701-5.918,10.621,0l9.431,19.107 c2.921,5.918,10.654,11.537,17.186,12.486l21.086,3.064C245.067,128.192,246.544,132.738,241.818,137.344z"></path> </g> </g> </g> </g></svg></span>
+		<p class="flex flex-1 flex-col items-center justify-center gap-2">
+			<span
+				><svg
+					fill="currentColor"
+					width="40px"
+					height="40px"
+					version="1.1"
+					id="Capa_1"
+					xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					viewBox="0 0 370.04 370.04"
+					xml:space="preserve"
+					><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+						id="SVGRepo_tracerCarrier"
+						stroke-linecap="round"
+						stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+						<g>
+							<g id="Layer_5_21_">
+								<g>
+									<path
+										d="M341.668,314.412c0,0-41.071-70.588-48.438-83.248c8.382-2.557,17.311-4.815,21.021-11.221 c6.183-10.674-4.823-28.184-1.933-39.625c2.977-11.775,20.551-21.964,20.551-33.933c0-11.661-18.169-25.284-21.148-36.99 c-2.91-11.439,8.063-28.968,1.86-39.629c-6.203-10.662-26.864-9.786-35.369-17.97c-8.751-8.422-8.724-29.028-19.279-34.672 c-10.598-5.665-27.822,5.784-39.589,3.072C207.711,17.515,197.318,0,185.167,0c-12.331,0-31.944,19.868-35.02,20.583 c-11.761,2.734-29.007-8.687-39.594-2.998c-10.545,5.663-10.48,26.271-19.215,34.707c-8.491,8.199-29.153,7.361-35.337,18.035 c-6.183,10.672,4.823,28.178,1.934,39.625c-2.897,11.476-21.083,23.104-21.083,36.376c0,11.97,17.618,22.127,20.613,33.896 c2.911,11.439-8.062,28.966-1.859,39.631c3.377,5.805,11.039,8.188,18.691,10.479c0.893,0.267,2.582,1.266,1.438,2.933 c-5.235,9.036-47.37,81.755-47.37,81.755c-3.352,5.784-0.63,10.742,6.047,11.023l32.683,1.363 c6.677,0.281,15.053,5.133,18.617,10.786l17.44,27.674c3.564,5.653,9.219,5.547,12.57-0.236c0,0,48.797-84.246,48.817-84.27 c0.979-1.144,1.963-0.909,2.434-0.509c5.339,4.546,12.782,9.081,18.994,9.081c6.092,0,11.733-4.269,17.313-9.03 c0.454-0.387,1.559-1.18,2.367,0.466c0.013,0.026,48.756,83.811,48.756,83.811c3.36,5.776,9.016,5.874,12.569,0.214 l17.391-27.707c3.554-5.657,11.921-10.528,18.598-10.819l32.68-1.424C342.315,325.152,345.028,320.187,341.668,314.412z M239.18,238.631c-36.136,21.023-79.511,18.77-112.641-2.127c-48.545-31.095-64.518-95.419-35.335-145.788 c29.516-50.95,94.399-68.928,145.808-40.929c0.27,0.147,0.537,0.299,0.805,0.449c0.381,0.211,0.761,0.425,1.14,0.641 c15.86,9.144,29.613,22.415,39.461,39.342C308.516,141.955,290.915,208.533,239.18,238.631z"
+									></path>
+									<path
+										d="M230.916,66.103c-0.15-0.087-0.302-0.168-0.452-0.254C203.002,49.955,168,48.793,138.665,65.86 c-43.532,25.326-58.345,81.345-33.019,124.876c7.728,13.284,18.318,23.888,30.536,31.498c1.039,0.658,2.09,1.305,3.164,1.927 c43.579,25.247,99.568,10.333,124.814-33.244C289.405,147.338,274.495,91.35,230.916,66.103z M241.818,137.344l-15.259,14.873 c-4.726,4.606-7.68,13.698-6.563,20.203l3.602,21.001c1.116,6.505-2.75,9.314-8.592,6.243l-18.861-9.916 c-5.842-3.071-15.401-3.071-21.243,0l-18.86,9.916c-5.842,3.071-9.709,0.262-8.593-6.243l3.602-21.001 c1.116-6.505-1.838-15.597-6.564-20.203l-15.258-14.873c-4.727-4.606-3.249-9.152,3.282-10.102l21.086-3.064 c6.531-0.949,14.265-6.568,17.186-12.486l9.43-19.107c2.921-5.918,7.701-5.918,10.621,0l9.431,19.107 c2.921,5.918,10.654,11.537,17.186,12.486l21.086,3.064C245.067,128.192,246.544,132.738,241.818,137.344z"
+									></path>
+								</g>
+							</g>
+						</g>
+					</g></svg
+				></span
+			>
 			<span></span>
 			<span>
-				Materiales de <br> primera calidad
+				Materiales de <br /> primera calidad
 			</span>
 		</p>
-		<p class="flex flex-col justify-center items-center gap-2 flex-1">
-			<span><svg viewBox="0 0 64 64" id="icons" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="40px" height="40px"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:currentColor;}</style></defs><title></title><path class="cls-1" d="M57.56,11.35l-25-7.26a2,2,0,0,0-1.14,0h0l-25,7.27A2,2,0,0,0,5,13.27V35.1c0,19,25.43,25.57,26.52,25.84A2,2,0,0,0,32,61a1.77,1.77,0,0,0,.52-.07C34.08,60.54,59,53.92,59,35.1V13.27A2,2,0,0,0,57.56,11.35ZM55,35.1C55,49.7,35.36,56,32,56.93,28.64,56,9,49.73,9,35.1V14.78l23-6.7,23,6.7Z"></path><path class="cls-1" d="M30,20v2.09A6,6,0,0,0,31,34h3a2,2,0,0,1,0,4H28a2,2,0,0,0,0,4h2v2a2,2,0,0,0,4,0V42a6,6,0,0,0,0-12H31a2,2,0,0,1,0-4h6a2,2,0,0,0,0-4H34V20a2,2,0,0,0-4,0Z"></path></g></svg></span>
-			<span>Garantía <br> de adaptación</span>
+		<p class="flex flex-1 flex-col items-center justify-center gap-2">
+			<span
+				><svg
+					viewBox="0 0 64 64"
+					id="icons"
+					xmlns="http://www.w3.org/2000/svg"
+					fill="currentColor"
+					width="40px"
+					height="40px"
+					><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+						id="SVGRepo_tracerCarrier"
+						stroke-linecap="round"
+						stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"
+						><defs
+							><style>
+								.cls-1 {
+									fill: currentColor;
+								}
+							</style></defs
+						><title></title><path
+							class="cls-1"
+							d="M57.56,11.35l-25-7.26a2,2,0,0,0-1.14,0h0l-25,7.27A2,2,0,0,0,5,13.27V35.1c0,19,25.43,25.57,26.52,25.84A2,2,0,0,0,32,61a1.77,1.77,0,0,0,.52-.07C34.08,60.54,59,53.92,59,35.1V13.27A2,2,0,0,0,57.56,11.35ZM55,35.1C55,49.7,35.36,56,32,56.93,28.64,56,9,49.73,9,35.1V14.78l23-6.7,23,6.7Z"
+						></path><path
+							class="cls-1"
+							d="M30,20v2.09A6,6,0,0,0,31,34h3a2,2,0,0,1,0,4H28a2,2,0,0,0,0,4h2v2a2,2,0,0,0,4,0V42a6,6,0,0,0,0-12H31a2,2,0,0,1,0-4h6a2,2,0,0,0,0-4H34V20a2,2,0,0,0-4,0Z"
+						></path></g
+					></svg
+				></span
+			>
+			<span>Garantía <br /> de adaptación</span>
 		</p>
-
 	</div>
 
-	<div class="px-2.5 py-4 flex flex-col gap-3">
-		<h2 class="text-xl mb-1">Los más vendidos</h2>
+	<div class="flex flex-col gap-3 px-2.5 py-4">
+		<h2 class="mb-1 text-xl">Los más vendidos</h2>
 
 		<BestSellers />
-		<a href="/productos" class="bg-red-600 text-white px-3 py-2 rounded m-auto">Ver todos los productos</a>
+		<a
+			href="/productos"
+			class="m-auto rounded bg-red-600 px-3 py-2 text-white"
+			>Ver todos los productos</a
+		>
 	</div>
 
 	<div class="py-4">
-		<h2 class="text-xl mb-1 px-2.5">Opiniones</h2>
+		<h2 class="mb-1 px-2.5 text-xl">Opiniones</h2>
 		<Reviews />
 	</div>
 
 	<div class="px-2.5 py-4 text-justify">
-		<h2 class="text-lg ">Sobre el taller</h2>
-		
-		<p class="my-2">
-			Somos un taller <strong>fabricante de accesorios para motos</strong>, ubicado en Pitalito, Huila, con más de <strong>20 años de experiencia</strong> trabajando el metal y desarrollando soluciones para motociclistas.
-		</p>
+		<h2 class="text-lg">Sobre el taller</h2>
 
 		<p class="my-2">
-			Fabricamos cada producto pensando en el uso real: <strong> buenos materiales, soldaduras resistentes y acabados de pintura duraderos</strong>, porque creemos que un accesorio para moto debe soportar el trabajo y las condiciones del día a día, no simplemente verse bien.
+			Somos un taller <strong>fabricante de accesorios para motos</strong
+			>, ubicado en Pitalito, Huila, con más de <strong
+				>20 años de experiencia</strong
+			> trabajando el metal y desarrollando soluciones para motociclistas.
 		</p>
 
-		<p class="my-2">			
-			Desarrollamos parrillas, defensas y otros accesorios buscando un equilibrio entre <strong>calidad, durabilidad y funcionalidad</strong>, para que los motociclistas puedan aprovechar más su moto y confiar en que lo que llevan instalado está hecho para durar.
+		<p class="my-2">
+			Fabricamos cada producto pensando en el uso real: <strong>
+				buenos materiales, soldaduras resistentes y acabados de pintura
+				duraderos</strong
+			>, porque creemos que un accesorio para moto debe soportar el
+			trabajo y las condiciones del día a día, no simplemente verse bien.
 		</p>
 
+		<p class="my-2">
+			Desarrollamos parrillas, defensas y otros accesorios buscando un
+			equilibrio entre <strong
+				>calidad, durabilidad y funcionalidad</strong
+			>, para que los motociclistas puedan aprovechar más su moto y
+			confiar en que lo que llevan instalado está hecho para durar.
+		</p>
 	</div>
 
-	
 	<div class="p-3">
 		<!-- <Reviews /> -->
 
@@ -153,7 +243,7 @@ const data = {
 		Powered by Isaac
 	</footer> -->
 	</div>
-	<div>
+	<div id="faq">
 		<FAQS />
 	</div>
 </Layout>

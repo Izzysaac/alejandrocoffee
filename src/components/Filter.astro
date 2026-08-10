@@ -1,83 +1,24 @@
 ---
 import { getCategoriesWithSlug } from "@lib/builder.js";
+import FilterSVG from "@assets/filter.svg"
 
 const categories = getCategoriesWithSlug();
-const { selectedCategory } = Astro.props;
 ---
 
-<div class="filter-container">
-	<h3>Filtrar</h3>
-	<select 
-		id="category-filter" 
-		class="filter-select"
-	>
-		<option value="">Todos los modelos</option>
-		{categories.map((category) => (
-			<option 
-				value={category.slug}
-				selected={selectedCategory === category.slug}
-			>
-				{category.name}
-			</option>
-		))}
-	</select>
-</div>
+<aside class="filter-container flex justify-end items-center gap-2 reverse mb-2">
+	<label for="category-filter" class="flex items-center justify-center gap-2">
+		
+		<span class="rounded border border-black px-2 py-px opacity-80">
+			<FilterSVG class="w-5 h-5 inline"/> Filtro
+		</span>
 
-<script>
-
-	const filterSelect = document.getElementById('category-filter') as HTMLSelectElement;
-
-	const filterProducts = (categorySlug: string) => {
-		if (categorySlug === '') {
-			// Mostrar todas las categorías
-			window.location.href = '/catalog';
-		} else {
-			// Redirigir a la categoría específica
-			window.location.href = `/catalog/${categorySlug}`;
-		}
-	}
-
-	filterSelect.addEventListener('change', () => {
-		filterProducts(filterSelect.value);
-	});
-
-</script>
-
-<style>
-	.filter-container {
-		padding: 1rem;
-		background: #f8f9fa;
-		border-radius: 8px;
-		border: 1px solid #dee2e6;
-		display: flex;
-	}
-	
-	.filter-container h3 {
-		margin: 0 0 1rem 0;
-		font-size: 1.1rem;
-		color: #495057;
-	}
-	
-	.filter-select {
-		width: 100%;
-		padding: 0.75rem;
-		border: 1px solid #ced4da;
-		border-radius: 4px;
-		background-color: white;
-		font-size: 1rem;
-		cursor: pointer;
-	}
-	
-	.filter-select:focus {
-		outline: none;
-		border-color: #80bdff;
-		box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-	}
-	
-	@media (min-width: 768px) {
-		.filter-container {
-			max-width: 300px;
-			margin: 0 auto 2rem auto;
-		}
-	}
-</style>
+		<select id="category-filter" name="category-filter" class="filter-select order-first">
+			<option value="">Todos los modelos</option>
+			{
+				categories.map((category) => (
+					<option value={category.slug}>{category.name}</option>
+				))
+			}
+		</select>
+	</label>
+</aside>
