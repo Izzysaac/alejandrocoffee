@@ -113,7 +113,15 @@ const seo = {
 						<article class="product-card relative text-center" >
 								<figure class="">
 									<img
-										src={`${getCloudinaryImageUrl(product.media[0], { w: 600, h: 600 })}`}
+										src={`${getCloudinaryImageUrl(product.media[0], { w: 400, h: 400 })}`}
+										srcset={
+											`
+												${getCloudinaryImageUrl(product.media[0], { w: 300, h: 300 })} 300w,
+												${getCloudinaryImageUrl(product.media[0], { w: 400, h: 400 })} 400w,
+												${getCloudinaryImageUrl(product.media[0], { w: 600, h: 600 })} 600w,
+											`
+										}
+										sizes="200px"
 										alt={product.nombre}
 										class="catalog-image order-first m-auto"
 										height="200px"
