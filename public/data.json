@@ -1,5 +1,204 @@
 [
   {
+    "categoria": "AKT NKD",
+    "nombre": "Cola NKD 125",
+    "descripcion": "",
+    "media": [
+      "cola-nkd-01",
+      "cola-nkd-02",
+      "cola-nkd-03"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "cola-nkd125",
+        "precio": 52000
+      }
+    ]
+  },
+  {
+    "categoria": "AKT TTR",
+    "nombre": "Defensa TTR 200",
+    "descripcion": "",
+    "media": [
+      "defensa-akt-ttr-200_drpwmv"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-ttr-200",
+        "precio": 0
+      }
+    ]
+  },
+  {
+    "categoria": "Bajaj Boxer",
+    "nombre": "Parrilla Boxer SP CT100 - CT125",
+    "descripcion": "",
+    "media": [
+      "parrilla-boxersp-100-125-01",
+      "parrilla-boxersp-100-125-02",
+      "parrilla-boxersp-100-125-03"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "par-boxer",
+        "precio": 84000
+      }
+    ]
+  },
+  {
+    "categoria": "Bajaj Pulsar",
+    "nombre": "Parrilla Pulsar 125",
+    "descripcion": "",
+    "media": [
+      "parrilla-pulsar-125_ybdbqv"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "par-pulsar-125",
+        "precio": 0
+      }
+    ]
+  },
+  {
+    "categoria": "Bajaj Pulsar",
+    "nombre": "Defensa Pulsar 125",
+    "descripcion": "",
+    "media": [
+      "pulsar-125-def_npdmyy"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-pulsar-125",
+        "precio": 0
+      }
+    ]
+  },
+  {
+    "categoria": "Bajaj Pulsar",
+    "nombre": "Defensa Pulsar 180",
+    "descripcion": "",
+    "media": [
+      "def-cb110-pulsar-180_sencillo",
+      "cb-110-pulsar-180-rojo_sencillo"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-pulsar180",
+        "precio": 0
+      }
+    ]
+  },
+  {
+    "categoria": "Bajaj Pulsar",
+    "nombre": "Defensa Doble Tope Pulsar 180",
+    "descripcion": "",
+    "media": [
+      "defensa-doble-tope-pulsar-180-01",
+      "defensa-doble-tope-pulsar-180-02",
+      "def-cb110-pulsar-180-doble_fyhzrt"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-dob-pulsar180",
+        "precio": 76000
+      }
+    ]
+  },
+  {
+    "categoria": "Bajaj Pulsar",
+    "nombre": "Defensa Alerón Pulsar 180",
+    "descripcion": "",
+    "media": [
+      "defensa-aleron-pulsar-180-01",
+      "defensa-aleron-pulsar-180-02"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-ale-pulsar180",
+        "precio": 88000
+      }
+    ]
+  },
+  {
+    "categoria": "Bajaj Pulsar",
+    "nombre": "Defensa Pulsar 220",
+    "descripcion": "",
+    "media": [
+      "defensa-pulsar-220_jlz3dw"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-pulsar-220",
+        "precio": 0
+      }
+    ]
+  },
+  {
+    "categoria": "Bajaj Discover",
+    "nombre": "Parrilla Discover SP 100 -125 - 150",
+    "descripcion": "",
+    "media": [
+      "parrilla-discover-01",
+      "parrilla-discover-02",
+      "parrilla-discover-03",
+      "parrilla-discover-04",
+      "parrilla-discoversp-125-150_zin9at"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "par-dis",
+        "precio": 107000
+      }
+    ]
+  },
+  {
+    "categoria": "Bajaj Discover",
+    "nombre": "Defensa Discover 125 - 150",
+    "descripcion": "",
+    "media": [
+      "defensa-discover-125-150"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-dis-125-150",
+        "precio": 0
+      }
+    ]
+  },
+  {
     "categoria": "Hero Eco Deluxe",
     "nombre": "Parrilla Eco Deluxe",
     "descripcion": "",
@@ -34,6 +233,80 @@
       {
         "sku": "def-ecodeluxe",
         "precio": 78000
+      }
+    ]
+  },
+  {
+    "categoria": "Hero Eco Deluxe",
+    "nombre": "Defensa Mariposa Eco Deluxe",
+    "descripcion": "",
+    "media": [
+      "def-hero-ecodeluxe-splendor-01",
+      "def-hero-ecodeluxe-splendor-02"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-mar-ecodeluxe",
+        "precio": 0
+      }
+    ]
+  },
+  {
+    "categoria": "Hero Splendor",
+    "nombre": "Parrilla Splendor",
+    "descripcion": "",
+    "media": [
+      "hero-eco-deluxe-01",
+      "hero-eco-deluxe-02",
+      "hero-eco-deluxe-03",
+      "hero-eco-deluxe-04"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "par-splendor",
+        "precio": 119000
+      }
+    ]
+  },
+  {
+    "categoria": "Hero Splendor",
+    "nombre": "Defensa Splendor",
+    "descripcion": "",
+    "media": [
+      "defensa-eco-deluxe-01",
+      "defensa-eco-deluxe-02"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-splendor",
+        "precio": 78000
+      }
+    ]
+  },
+  {
+    "categoria": "Hero Splendor",
+    "nombre": "Defensa Mariposa Splendor",
+    "descripcion": "",
+    "media": [
+      "def-hero-ecodeluxe-splendor-01",
+      "def-hero-ecodeluxe-splendor-02"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-mar-splendor",
+        "precio": 0
       }
     ]
   },
@@ -77,11 +350,31 @@
   },
   {
     "categoria": "Honda CB",
+    "nombre": "Defensa CB 110",
+    "descripcion": "",
+    "media": [
+      "def-cb110-pulsar-180_sencillo",
+      "cb-110-pulsar-180-rojo_sencillo"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-cb110",
+        "precio": 0
+      }
+    ]
+  },
+  {
+    "categoria": "Honda CB",
     "nombre": "Defensa Doble Tope CB 110",
     "descripcion": "",
     "media": [
       "defensa-doble-tope-pulsar-180-01",
-      "defensa-doble-tope-pulsar-180-02"
+      "defensa-doble-tope-pulsar-180-02",
+      "def-dob-cb110_mpfyfb",
+      "def-cb110-pulsar-180-doble_fyhzrt"
     ],
     "estado": "activo",
     "detalles": "",
@@ -126,6 +419,213 @@
       {
         "sku": "def-ale-dob-cb110",
         "precio": 100000
+      }
+    ]
+  },
+  {
+    "categoria": "Suzuki AX",
+    "nombre": "Soporte Direccional AX 100",
+    "descripcion": "",
+    "media": [
+      "SOPORTE-DIRECCIONAL-AX-100_y4whji"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "sop-dir-ax100",
+        "precio": 0
+      }
+    ]
+  },
+  {
+    "categoria": "Suzuki AX",
+    "nombre": "Defensa Mariposa AX 100",
+    "descripcion": "",
+    "media": [
+      "defensa-ax100-nkd_egxcpv"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-mar-ax100",
+        "precio": 0
+      }
+    ]
+  },
+  {
+    "categoria": "Suzuki GN",
+    "nombre": "Defensa Mariposa GN 125",
+    "descripcion": "",
+    "media": [
+      "defensa-universal-mariposa-01",
+      "defensa-universal-mariposa-02"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-mari-gn125",
+        "precio": 61000
+      }
+    ]
+  },
+  {
+    "categoria": "Suzuki GN",
+    "nombre": "Slider GN Nova",
+    "descripcion": "",
+    "media": [
+      "slider-gn-nova_ecytjo"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "sli-gn-nova",
+        "precio": 0
+      }
+    ]
+  },
+  {
+    "categoria": "TVS Apache",
+    "nombre": "Defensa TVS Apache 160 -180-200",
+    "descripcion": "",
+    "media": [
+      "tvs-apache-160-180-200_rlllwe"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-tvs-apache-160-180-200",
+        "precio": 0
+      }
+    ]
+  },
+  {
+    "categoria": "Yamaha Crypton",
+    "nombre": "Cola Crypton 110",
+    "descripcion": "",
+    "media": [
+      "cola-crypton-01",
+      "cola-crypton-02"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "cryp-110",
+        "precio": 50000
+      }
+    ]
+  },
+  {
+    "categoria": "Yamaha DR",
+    "nombre": "Defensa DR 150",
+    "descripcion": "",
+    "media": [
+      "defensa-dr-150-ym_t32gsu"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-dr-150",
+        "precio": 104000
+      }
+    ]
+  },
+  {
+    "categoria": "Yamaha FZ",
+    "nombre": "Defensa FZ16 150",
+    "descripcion": "",
+    "media": [
+      "fz-16-ym-150_gl3lip"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-fz16-150",
+        "precio": 0
+      }
+    ]
+  },
+  {
+    "categoria": "Yamaha FZ",
+    "nombre": "Defensa FZ 2.0",
+    "descripcion": "",
+    "media": [
+      "defensa-fz20_zigwfv"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-fz-20",
+        "precio": 0
+      }
+    ]
+  },
+  {
+    "categoria": "Yamaha FZ",
+    "nombre": "Defensa Alerón FZ 250",
+    "descripcion": "",
+    "media": [
+      "defensa-aleron-fz-250_wqnrzv"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-ale-fz-250",
+        "precio": 0
+      }
+    ]
+  },
+  {
+    "categoria": "Yamaha YBR",
+    "nombre": "Defensa YBR 125",
+    "descripcion": "",
+    "media": [
+      "ym-ybr-125_fmqhm5"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-ybr-125",
+        "precio": 0
+      }
+    ]
+  },
+  {
+    "categoria": "Yamaha XTZ ",
+    "nombre": "Defensa XTZ 250",
+    "descripcion": "",
+    "media": [
+      "defensa-xtz-250-01_qv2n4p",
+      "defensa-xtz-250_inxqsu"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-xtz-250",
+        "precio": 0
       }
     ]
   },
@@ -190,7 +690,8 @@
     "media": [
       "defensa-aleron-universal-01",
       "defensa-aleron-universal-02",
-      "defensa-aleron-universal-03"
+      "defensa-aleron-universal-03",
+      "aleron-universal-doble-tope_fxku59"
     ],
     "estado": "activo",
     "detalles": "",
@@ -235,136 +736,6 @@
     "variantes": [
       {
         "sku": "def-uni-ḿari",
-        "precio": 61000
-      }
-    ]
-  },
-  {
-    "categoria": "AKT NKD",
-    "nombre": "Cola NKD 125",
-    "descripcion": "",
-    "media": [
-      "cola-nkd-01",
-      "cola-nkd-02",
-      "cola-nkd-03"
-    ],
-    "estado": "activo",
-    "detalles": "",
-    "opciones": {},
-    "variantes": [
-      {
-        "sku": "cola-nkd125",
-        "precio": 52000
-      }
-    ]
-  },
-  {
-    "categoria": "Bajaj Boxer",
-    "nombre": "Parrilla Boxer SP CT100 - CT125",
-    "descripcion": "",
-    "media": [
-      "parrilla-boxersp-100-125-01",
-      "parrilla-boxersp-100-125-02",
-      "parrilla-boxersp-100-125-03"
-    ],
-    "estado": "activo",
-    "detalles": "",
-    "opciones": {},
-    "variantes": [
-      {
-        "sku": "par-boxer",
-        "precio": 84000
-      }
-    ]
-  },
-  {
-    "categoria": "Bajaj Pulsar",
-    "nombre": "Defensa Alerón Pulsar 180",
-    "descripcion": "",
-    "media": [
-      "defensa-aleron-pulsar-180-01",
-      "defensa-aleron-pulsar-180-02"
-    ],
-    "estado": "activo",
-    "detalles": "",
-    "opciones": {},
-    "variantes": [
-      {
-        "sku": "def-ale-pulsar180",
-        "precio": 88000
-      }
-    ]
-  },
-  {
-    "categoria": "Bajaj Pulsar",
-    "nombre": "Defensa Doble Tope Pulsar 180",
-    "descripcion": "",
-    "media": [
-      "defensa-doble-tope-pulsar-180-01",
-      "defensa-doble-tope-pulsar-180-02"
-    ],
-    "estado": "activo",
-    "detalles": "",
-    "opciones": {},
-    "variantes": [
-      {
-        "sku": "def-dob-pulsar180",
-        "precio": 76000
-      }
-    ]
-  },
-  {
-    "categoria": "Bajaj Discover",
-    "nombre": "Parrilla Discover SP 125 - 150",
-    "descripcion": "",
-    "media": [
-      "parrilla-discover-01",
-      "parrilla-discover-02",
-      "parrilla-discover-03",
-      "parrilla-discover-04"
-    ],
-    "estado": "activo",
-    "detalles": "",
-    "opciones": {},
-    "variantes": [
-      {
-        "sku": "par-dis",
-        "precio": 107000
-      }
-    ]
-  },
-  {
-    "categoria": "Yamaha Crypton",
-    "nombre": "Cola Crypton 110",
-    "descripcion": "",
-    "media": [
-      "cola-crypton-01",
-      "cola-crypton-02"
-    ],
-    "estado": "activo",
-    "detalles": "",
-    "opciones": {},
-    "variantes": [
-      {
-        "sku": "cryp-110",
-        "precio": 50000
-      }
-    ]
-  },
-  {
-    "categoria": "Suzuki GN",
-    "nombre": "Defensa Mariposa GN 125",
-    "descripcion": "",
-    "media": [
-      "defensa-universal-mariposa-01",
-      "defensa-universal-mariposa-02"
-    ],
-    "estado": "activo",
-    "detalles": "",
-    "opciones": {},
-    "variantes": [
-      {
-        "sku": "def-mari-gn125",
         "precio": 61000
       }
     ]
