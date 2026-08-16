@@ -130,8 +130,9 @@
     "nombre": "Defensa Alerón Pulsar 180",
     "descripcion": "",
     "media": [
-      "defensa-aleron-pulsar-180-01",
-      "defensa-aleron-pulsar-180-02"
+      "defensa-sencilla-aleron-pulsar180-cb110_xis0qm",
+      "defensa-sencilla-aleron-pulsar180-cb110-03_fauoop",
+      "defensa-sencilla-aleron-pulsar180-cb110-02_uvfytj"
     ],
     "estado": "activo",
     "detalles": "",
@@ -140,6 +141,24 @@
       {
         "sku": "def-ale-pulsar180",
         "precio": 88000
+      }
+    ]
+  },
+  {
+    "categoria": "Bajaj Pulsar",
+    "nombre": "Defensa Doble Tope Alerón Pulsar 180",
+    "descripcion": "",
+    "media": [
+      "defensa-aleron-pulsar-180-01",
+      "defensa-aleron-pulsar-180-02"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-dob-ale-pulsar180",
+        "precio": 100000
       }
     ]
   },
@@ -353,8 +372,9 @@
     "nombre": "Defensa CB 110",
     "descripcion": "",
     "media": [
-      "def-cb110-pulsar-180_jtcxmd",
-      "cb-110-pulsar-180-rojo_sn68o2"
+      "defensa-cb100_appalq",
+      "defensa-cb100-02_bmh626",
+      "defensa-cb100-03_ooh3tq"
     ],
     "estado": "activo",
     "detalles": "",
@@ -362,7 +382,7 @@
     "variantes": [
       {
         "sku": "def-cb110",
-        "precio": 64000
+        "precio": 68000
       }
     ]
   },
@@ -406,7 +426,7 @@
   },
   {
     "categoria": "Honda CB",
-    "nombre": "Defensa Tipo Alerón Doble CB 110",
+    "nombre": "Defensa Doble Tope Tipo Alerón Doble CB 110",
     "descripcion": "",
     "media": [
       "defensa-aleron-pulsar-180-01",
@@ -505,6 +525,26 @@
       {
         "sku": "def-tvs-apache-160-180-200",
         "precio": 76000
+      }
+    ]
+  },
+  {
+    "categoria": "TVS Apache",
+    "nombre": "Defensa Alerón TVS Apache 160 -180-200",
+    "descripcion": "",
+    "media": [
+      "defensa-aleron-apache-01_m32szz",
+      "defensa-aleron-apache-02_ego3gi",
+      "defensa-aleron-apache-03_mg63ub",
+      "defensa-aleron-apache-04_mg63ub"
+    ],
+    "estado": "activo",
+    "detalles": "",
+    "opciones": {},
+    "variantes": [
+      {
+        "sku": "def-ale-tvs-apache-160-180-200",
+        "precio": 100000
       }
     ]
   },

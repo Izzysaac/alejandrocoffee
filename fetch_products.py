@@ -1,11 +1,12 @@
-import requests
 import json
+import urllib.request
 
 def fetch_excel_products():
     try:
-        response = requests.get('https://opensheet.elk.sh/1OV2ZSt4TFBLC7V2JrUxYD5PONTxXWQ5HcB2Bnrhh7-I/catalog')
-        response.raise_for_status()
-        data = response.json()
+        url = "https://opensheet.elk.sh/1OV2ZSt4TFBLC7V2JrUxYD5PONTxXWQ5HcB2Bnrhh7-I/catalog"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req) as response:
+            data = json.loads(response.read().decode("utf-8"))
         
         productos = {}
 
@@ -74,7 +75,7 @@ def fetch_excel_products():
 
         return list(productos.values())
         
-    except requests.RequestException as e:
+    except urllib.request.RequestException as e:
         print(f"Error fetching data: {e}")
         return []
     except json.JSONDecodeError as e:
