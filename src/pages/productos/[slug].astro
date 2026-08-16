@@ -1,5 +1,5 @@
 ---
-import data from "@public/data.json";
+import rawProducts from "@public/data.json";
 
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumb from "@components/Breadcrumb.astro";
@@ -14,6 +14,8 @@ import ReviewsAstroComponent from "@components/Reviews.astro";
 
 import { getCldImageUrl } from 'astro-cloudinary/helpers';
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// const products = rawProducts.filter( product => product.estado == "activo")
 
 
 const { item } = Astro.props;
@@ -75,7 +77,7 @@ const productId = item.nombre
 	.replace(/[^a-z0-9-]/g, "");
 
 export function getStaticPaths() {
-	return data.map((item) => ({
+	return rawProducts.map((item) => ({
 		params: {
 			slug: item.nombre
 				.toLowerCase()

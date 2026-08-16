@@ -4,7 +4,7 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "astro dev --host",
-		"build": "astro build",
+		"build": "python3 fetch_products.py && astro build",
 		"preview": "astro preview",
 		"astro": "astro",
 		"format": "prettier . --write"

@@ -31,7 +31,7 @@
     "variantes": [
       {
         "sku": "def-ttr-200",
-        "precio": 0
+        "precio": 100000
       }
     ]
   },
@@ -61,7 +61,7 @@
     "media": [
       "parrilla-pulsar-125_ybdbqv"
     ],
-    "estado": "activo",
+    "estado": "inactivo",
     "detalles": "",
     "opciones": {},
     "variantes": [
@@ -78,7 +78,7 @@
     "media": [
       "pulsar-125-def_npdmyy"
     ],
-    "estado": "activo",
+    "estado": "inactivo",
     "detalles": "",
     "opciones": {},
     "variantes": [
@@ -102,7 +102,7 @@
     "variantes": [
       {
         "sku": "def-pulsar180",
-        "precio": 0
+        "precio": 64000
       }
     ]
   },
@@ -145,7 +145,7 @@
   },
   {
     "categoria": "Bajaj Pulsar",
-    "nombre": "Defensa Pulsar 220",
+    "nombre": "Defensa Pulsar 220 Radiador",
     "descripcion": "",
     "media": [
       "defensa-pulsar-220_jlz3dw"
@@ -156,7 +156,7 @@
     "variantes": [
       {
         "sku": "def-pulsar-220",
-        "precio": 0
+        "precio": 66000
       }
     ]
   },
@@ -194,7 +194,7 @@
     "variantes": [
       {
         "sku": "def-dis-125-150",
-        "precio": 0
+        "precio": 54000
       }
     ]
   },
@@ -250,7 +250,7 @@
     "variantes": [
       {
         "sku": "def-mar-ecodeluxe",
-        "precio": 0
+        "precio": 64000
       }
     ]
   },
@@ -306,7 +306,7 @@
     "variantes": [
       {
         "sku": "def-mar-splendor",
-        "precio": 0
+        "precio": 64000
       }
     ]
   },
@@ -362,7 +362,7 @@
     "variantes": [
       {
         "sku": "def-cb110",
-        "precio": 0
+        "precio": 64000
       }
     ]
   },
@@ -435,7 +435,7 @@
     "variantes": [
       {
         "sku": "sop-dir-ax100",
-        "precio": 0
+        "precio": 52000
       }
     ]
   },
@@ -452,7 +452,7 @@
     "variantes": [
       {
         "sku": "def-mar-ax100",
-        "precio": 0
+        "precio": 54000
       }
     ]
   },
@@ -487,7 +487,7 @@
     "variantes": [
       {
         "sku": "sli-gn-nova",
-        "precio": 0
+        "precio": 64000
       }
     ]
   },
@@ -504,7 +504,7 @@
     "variantes": [
       {
         "sku": "def-tvs-apache-160-180-200",
-        "precio": 0
+        "precio": 76000
       }
     ]
   },
@@ -539,7 +539,7 @@
     "variantes": [
       {
         "sku": "def-dr-150",
-        "precio": 104000
+        "precio": 108000
       }
     ]
   },
@@ -556,7 +556,7 @@
     "variantes": [
       {
         "sku": "def-fz16-150",
-        "precio": 0
+        "precio": 76000
       }
     ]
   },
@@ -573,7 +573,7 @@
     "variantes": [
       {
         "sku": "def-fz-20",
-        "precio": 0
+        "precio": 80000
       }
     ]
   },
@@ -590,7 +590,7 @@
     "variantes": [
       {
         "sku": "def-ale-fz-250",
-        "precio": 0
+        "precio": 104000
       }
     ]
   },
@@ -607,7 +607,7 @@
     "variantes": [
       {
         "sku": "def-ybr-125",
-        "precio": 0
+        "precio": 76000
       }
     ]
   },
@@ -625,7 +625,7 @@
     "variantes": [
       {
         "sku": "def-xtz-250",
-        "precio": 0
+        "precio": 92000
       }
     ]
   },

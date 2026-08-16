@@ -2,12 +2,14 @@
 import { getCategoriesWithSlug } from "@lib/builder.js";
 import { getCloudinaryImageUrl } from "@scripts/imgHelper";
 
-import products from "@public/data.json";
+import rawProducts from "@public/data.json";
 
 import Layout from "@layouts/Layout.astro";
 import Filter from "@components/Filter.astro";
 import Breadcrumb from "@components/Breadcrumb.astro";
 
+
+const products = rawProducts.filter( product => product.estado == "activo")
 
 const categories = getCategoriesWithSlug();
 
