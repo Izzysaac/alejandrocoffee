@@ -1,0 +1,246 @@
+---
+import { getCategoriesWithSlug } from "@lib/builder.js";
+import { getCloudinaryImageUrl } from "@scripts/imgHelper";
+
+import rawProducts from "@public/data.json";
+
+import Layout from "@layouts/Layout.astro";
+import Filter from "@components/Filter.astro";
+import Breadcrumb from "@components/Breadcrumb.astro";
+
+
+const products = rawProducts.filter( product => product.estado == "activo")
+
+const categories = getCategoriesWithSlug();
+
+const createProductSlug = (name) => {
+	return name
+		.toLowerCase()
+		.normalize("NFD")
+		.replace(/[\u0300-\u036f]/g, "")
+		.replace(/\s+/g, "-")
+		.replace(/[^a-z0-9-]/g, "");
+};
+
+const getCategorySlug = (categoryName) => {
+	return categoryName
+		.toLowerCase()
+		.normalize("NFD")
+		.replace(/[\u0300-\u036f]/g, "")
+		.replace(/\s+/g, "-")
+		.replace(/[^a-z0-9-]/g, "");
+};
+
+const getPriceLabel = (product) => {
+	const prices = product.variantes?.map((v) => v.precio) ?? [];
+	const minPrice = prices.length ? Math.min(...prices) : 0;
+	return prices.length > 1
+		? `Desde ${minPrice.toLocaleString("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 })}`
+		: `${minPrice.toLocaleString("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 })}`;
+};
+
+const getStartPrice = (product) => {
+	const prices = product.variantes?.map((v) => v.precio) ?? [];
+	return prices.length ? Math.min(...prices) : 0;
+}
+
+const seo = {
+	title: "Catálogo de Parrillas y Defensas para Moto",
+	description:
+		"Catálogo completo de parrillas y defensas para moto. Encuentra la parrilla y defensa perfecta para tu marca y modelo de moto. Somos fabricantes. Calidad y durabilidad en cada producto.",
+	catalogSchema: {
+    	'@context': 'https://schema.org',
+		'@graph': [
+			{
+				'@type': 'CollectionPage',
+				'@id': 'https://parrillasydefensas.com/productos/#webpage',
+				url: 'https://parrillasydefensas.com/productos',
+				name: 'Catálogo de Parrillas y Defensas para Moto',
+				description:
+					'Catálogo completo de parrillas y defensas para moto. Encuentra la parrilla y defensa perfecta para tu marca y modelo de moto. Somos fabricantes. Calidad y durabilidad en cada producto.',
+				isPartOf: {
+					'@id': 'https://parrillasydefensas.com/#website',
+				},
+			},
+
+			{
+				'@type': 'ItemList',
+				'@id': 'https://parrillasydefensas.com/products/#itemlist',
+				itemListElement: products.map((product, index) => ({
+					'@type': 'ListItem',
+					position: index + 1,
+					name: product.nombre,
+					url: createProductSlug(product.nombre),
+				})),
+			},
+
+			{
+				'@type': 'BreadcrumbList',
+				'@id': 'https://parrillasydefensas.com/products/#breadcrumb',
+				itemListElement: [
+					{
+						'@type': 'ListItem',
+						position: 1,
+						name: 'Inicio',
+						item: 'https://parrillasydefensas.com/',
+					},
+					{
+						'@type': 'ListItem',
+						position: 2,
+						name: 'Catálogo',
+						item: 'https://parrillasydefensas.com/productos/',
+					},
+				],
+			}
+		]
+	}
+};
+---
+
+<Layout title={seo.title} description={seo.description} schema={seo.catalogSchema} index={false}>
+	<!-- <Breadcrumb class="pt-23 px-2.5" items={[{name: "Productos"}]} /> -->
+	<header class="pt-23 px-2.5">
+		<h1 class="mt-2 text-center text-lg font-bold">
+			Catálogo de Parrillas y Defensas para Moto
+		</h1>
+		<p class="text-center hidden">Más protección. Más capacidad. Más utilidad</p>
+	</header>
+	<main class="px-2.5 pb-4">
+		<Filter />
+		<section >
+			<ul id="products-container" class="list-none products-grid">
+				{
+					products.map((product, i) => (
+					<li data-category={`${getCategorySlug(product.categoria)}`}>
+						<article class="product-card relative text-center" >
+								<figure class="">
+									<img
+										src={`${getCloudinaryImageUrl(product.media[0], { w: 400, h: 400 })}`}
+										srcset={
+											`
+												${getCloudinaryImageUrl(product.media[0], { w: 300, h: 300 })} 300w,
+												${getCloudinaryImageUrl(product.media[0], { w: 400, h: 400 })} 400w,
+												${getCloudinaryImageUrl(product.media[0], { w: 600, h: 600 })} 600w,
+											`
+										}
+										sizes="200px"
+										alt={product.nombre}
+										class="catalog-image order-first m-auto"
+										height="200px"
+										loading={i < 4 ? "eager" : "lazy"}
+										fetchpriority={i < 4 ? "high" : "auto"}
+										
+									/>
+								</figure>
+								<h2>
+									{/* <a href={`/productos/${createProductSlug(product.nombre)}`} class="flex flex-col link">
+									{product.nombre}
+									</a> */}
+                                    <p class="flex flex-col link">{product.nombre}</p>
+								</h2>
+								{/* <p>
+									<data value={getStartPrice(product)}>{getPriceLabel(product)}</data>
+								</p> */}
+						</article>
+					</li>
+					))
+				}
+			</ul>
+		</section>
+	</main>
+</Layout>
+
+<style is:global>
+	.products-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+	}
+
+	@media (min-width: 400px) {
+		.products-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (min-width: 600px) {
+		.products-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	@media (min-width: 800px) {
+		.products-grid {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	@media (min-width: 1000px) {
+		.products-grid {
+			grid-template-columns: repeat(5, 1fr);
+		}
+	}
+
+	.product-card {
+		border: 1px solid #ddd;
+		border-radius: 8px;
+		text-decoration: none;
+		color: inherit;
+		display: flex;
+		flex-direction: column;
+		transition:
+			transform 0.2s ease,
+			box-shadow 0.2s ease;
+		background-color: white;
+	}
+
+	.product-card:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.product-card a figure {
+		max-width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		aspect-ratio: 1 / 1;
+		height: 200px;
+		border-radius: 4px;
+	}
+
+	.product-card img {
+		max-width: 100%;
+		height: 200px;
+		object-fit: contain;
+	}
+
+	.product-hidden {
+		display: none !important;
+	}
+
+	/* .product-card button {
+		margin-top: auto;
+		background-color: #007bff;
+		color: white;
+		border: none;
+		padding: 0.5rem 1rem;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	.product-card button:hover {
+		background-color: #0056b3;
+	} */
+	.link::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1; /* Hace que el área clicable cubra toda la tarjeta */
+	}
+</style>
+
+<script src="../scripts/clientCatalog.js"></script>
